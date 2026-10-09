@@ -1,0 +1,31 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--color-cream); color: var(--color-forest);
+  font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.6; }
+a { color: inherit; }
+
+.site-header { display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 1.5rem; background: var(--color-forest); color: var(--color-cream); }
+.site-header a { text-decoration: none; }
+.site-header__logo { font-size: 1.4rem; font-weight: 600; letter-spacing: .02em; }
+.site-header__nav { display: flex; gap: 1.5rem; }
+.site-header__nav a:hover { color: var(--color-sage); }
+
+.hero__media, .hero__img { display: block; width: 100%; height: auto; }
+.hero__content { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; text-align: center; }
+.hero__content h1 { margin: 0 0 .75rem; font-size: clamp(1.8rem, 4vw, 2.75rem); font-weight: 400; line-height: 1.15; }
+.hero__content p { margin: 0 0 1.5rem; font-size: 1.1rem; color: var(--color-green); }
+
+.button { display: inline-block; padding: .9rem 2.25rem; border-radius: 999px;
+  background: var(--color-forest); color: var(--color-cream); text-decoration: none;
+  font-weight: 600; letter-spacing: .04em; border: 2px solid var(--color-forest);
+  transition: background .2s, color .2s; }
+.button:hover, .button:focus-visible { background: var(--color-green); border-color: var(--color-green); }
+.button:focus-visible { outline: 3px solid var(--color-rose); outline-offset: 3px; }
+
+.site-footer { background: var(--color-sage); padding: 2rem 1.5rem; text-align: center; }
+.site-footer p { margin: 0 auto .5rem; max-width: 46rem; }
+.site-footer__fine { font-size: .8rem; opacity: .85; }
+
+@media (max-width: 749px) {
+  .site-header { flex-direction: column; gap: .5rem; }
+}

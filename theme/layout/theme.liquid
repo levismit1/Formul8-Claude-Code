@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_forest }}">
+  <title>{{ page_title }}{% unless page_title contains shop.name %} – {{ shop.name }}{% endunless %}</title>
+  {% if page_description %}<meta name="description" content="{{ page_description | escape }}">{% endif %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  {{ content_for_header }}
+  <style>
+    :root {
+      --color-forest: {{ settings.color_forest }};
+      --color-green: {{ settings.color_green }};
+      --color-sage: {{ settings.color_sage }};
+      --color-cream: {{ settings.color_cream }};
+      --color-rose: {{ settings.color_rose }};
+    }
+  </style>
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+  {% sections 'header-group' %}
+  <main id="main" role="main">{{ content_for_layout }}</main>
+  {% sections 'footer-group' %}
+</body>
+</html>

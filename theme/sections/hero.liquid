@@ -1,0 +1,38 @@
+{%- comment -%}
+  First-page hero. The banner image already contains the jar and tagline,
+  so the headline/CTA sit in a band below it rather than over the jar.
+  Image is eager + high priority (it is the LCP element).
+{%- endcomment -%}
+<section class="hero">
+  <picture class="hero__media">
+    <source media="(max-width: 749px)" srcset="{{ 'formul8-hero-mobile.webp' | asset_url }}" type="image/webp">
+    <source srcset="{{ 'formul8-hero.webp' | asset_url }}" type="image/webp">
+    {%- if section.settings.image != blank -%}
+      {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'eager', fetchpriority: 'high', alt: section.settings.alt, class: 'hero__img' }}
+    {%- else -%}
+      <img class="hero__img" src="{{ 'formul8-hero.jpg' | asset_url }}" width="2000" height="857"
+           alt="{{ section.settings.alt | escape }}" loading="eager" fetchpriority="high">
+    {%- endif -%}
+  </picture>
+  <div class="hero__content">
+    <h1>{{ section.settings.heading }}</h1>
+    <p>{{ section.settings.subheading }}</p>
+    {%- if section.settings.button_label != blank -%}
+      <a class="button" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Hero image (leave empty to use the bundled jar banner)" },
+    { "type": "text", "id": "alt", "label": "Image description (alt text)", "default": "Formul8 Nutrition dietary supplement jar, 30 servings, in dark green packaging" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Your gut. Your health. Your formula." },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Formul8 Nutrition is a daily dietary supplement made for your gut-health routine." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Formul8" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

@@ -20,7 +20,14 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 4. Sales-data analysis to inform the page
 5. SEO audit + implementation
 
+## Design
+- Green colour scheme sampled from the jar: forest `#2E4A37`, mid green `#4A6649`, sage `#B5C4A8`, cream `#F5ECE5`, rose-gold `#C99A8B` (small highlights only). Defined in `theme/config/settings_schema.json`; use the CSS variables in `theme/assets/theme.css`, never hard-coded hex.
+- Homepage hero = the owner's jar banner (`theme/assets/formul8-hero.jpg`, WebP + mobile crop alongside). The banner already holds the logo and tagline, so don't overlay text on the jar.
+- Keep text/background contrast at WCAG AA (4.5:1).
+- Footer carries the FDA disclaimer; keep it.
+
 ## Layout
 - `CLAUDE.md` – this file
 - `PROGRESS.md` – audit log
 - `.mcp.json` – project MCP servers (Shopify Dev MCP)
+- `theme/` – local DRAFT Shopify theme. Push only with `shopify theme push --unpublished`, never `--live`
