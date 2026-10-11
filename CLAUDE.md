@@ -55,7 +55,7 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 
 ## Before publishing checklist (owner)
 1. Supplement Facts + ingredients + directions on label and product page
-2. Refund policy written to match the 30-day money-back guarantee
+2. Refund policy (owner text in `content/refund-policy.md`) finalised, support email filled in once the owner has a business email, pasted into Shopify Settings -> Policies -> Refund policy, and matching the 30-day money-back guarantee
 3. Offer button link set (cart link adding jar + both gifts) and the 2 gift discounts created and tested
 4. Gift stock in Shopify = number in theme settings; pause offer at 0
 5. Real shipping terms; FAQ answers edited (ingredients, shipping)
@@ -65,5 +65,5 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 - `CLAUDE.md` – this file
 - `PROGRESS.md` – audit log
 - `.mcp.json` – project MCP servers (Shopify Dev MCP)
-- `content/` – draft copy for owner review (`product-copy.md`, `listicle-outline.md`)
+- `content/` – draft copy for owner review (`product-copy.md`, `listicle-outline.md`, `refund-policy.md`)
 - `theme/` – local DRAFT Shopify theme. Push only with `shopify theme push --unpublished`, never `--live`

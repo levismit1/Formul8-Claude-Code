@@ -31,8 +31,10 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 25 | 2026-10-11 | File | Recorded 30-day money-back guarantee, cart-link button approach, landing-page claim rules; fixed copy that wrongly said gifts are "added automatically"; removed "one month of daily servings" wording (directions unknown) | CLAUDE.md, content/ | OK | revert commit |
 | 26 | 2026-10-11 | Review | Independent 3-lens review workflow (claims/compliance, Shopify validity, UX/accessibility), 15 agents, each finding adversarially verified: 11 confirmed, 1 refuted | theme/, content/ | Findings recorded; see #27 | n/a |
 | 27 | 2026-10-11 | File | Fixed confirmed findings: gift prices to `text` settings (Shopify rejects 2-decimal `number`), theme_info docs/support URLs, homepage subheading to jar-only facts, "risk-free" -> exact guarantee wording, "TODAY" removed, hard-coded stars removed, conditional hero sources + image dimensions, refund-policy link only if policy exists, FAQ button promise conditional on offer link, focus ring, FAQ tap targets, FDA text contrast/size (opacity removed), sticky-bar padding only on listicle, scroll padding, screen-reader text for struck prices, out-of-stock state for gift pill | theme/ | `@shopify/theme-check-node` 3.30.1: NO OFFENSES (also confirmed it catches planted errors); liquidjs render OK; Playwright 1440/390 OK; not on Shopify | revert commit |
+| 28 | 2026-10-11 | File | Saved owner-supplied refund policy verbatim as `content/refund-policy.md` (placeholders for support email + website URL; owner has no business email yet) | content/ | OK; not published to Shopify | delete file |
 
 ## Status
+- [~] Refund policy: owner text saved in `content/refund-policy.md`; review in progress; waiting on business email
 - [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` + `formul8nutrition.com` + `www.formul8nutrition.com` in network settings, (b) add `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN` to the environment
 - [~] Product (draft) – copy drafted in `content/product-copy.md`; not created in Shopify
 - [ ] Bundle + discount + gifts (draft)
