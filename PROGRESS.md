@@ -19,6 +19,7 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 13 | 2026-10-11 | Web search | Searched for Grüns landing-page structure | public web | Only promo/deal-site snippets; no layout or conversion data found | n/a |
 | 14 | 2026-10-11 | File | Saved Grüns reference in `CLAUDE.md` | CLAUDE.md | OK | revert commit |
 | 15 | 2026-10-11 | File | Recorded confirmed offer (30% off, 1 jar, free shaker + free frother) and planned build approach in `CLAUDE.md` | CLAUDE.md | OK | revert commit |
+| 16 | 2026-10-11 | File | Recorded that no ingredients list exists yet (MVP) and the no-invented-claims rule in `CLAUDE.md` | CLAUDE.md | OK | revert commit |
 
 ## Status
 - [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` + `formul8nutrition.com` + `www.formul8nutrition.com` in network settings, (b) add `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN` to the environment

@@ -22,6 +22,7 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 - **Offer (owner-confirmed):** 30% off + 1 jar of Formul8 Nutrition + 1 FREE shaker bottle + 1 FREE hand blender/frother. Working assumption: the 30% is the $70 → $49 sale (customer pays $49 for the jar, gifts $0). Owner to correct if the 30% should stack on top of $49 (= $34.30).
 - Planned build: gifts as separate draft products with tracked stock; two inactive automatic Buy X Get Y discounts (one per gift, qty 1, 100% off, requires Formul8 in cart) so the owner can review before activating. Verify limits against Shopify docs once connected.
 - Free gifts: (1) shaker bottle, (2) hand blender/frother. Still to confirm: do they already exist in Shopify? Need name, photo, normal price ("value") for each.
+- **Ingredients/Supplement Facts: not available yet (MVP launch).** Never invent or imply ingredients, amounts or benefits. Use only what is visible on the jar (name, "Dietary Supplement", 30 servings, tagline "Your gut. Your health. Your formula."). Product page keeps a clearly marked placeholder for the Supplement Facts panel; product stays DRAFT until the owner supplies it (supplements need a compliant Supplement Facts label before sale).
 
 ## Inspiration (owner-provided)
 - Competitor landing page the owner likes: `https://gruns.co/pages/gruns-prime-time-sale` (Grüns, supplement gummies; strip the ad-tracking query string). Not yet reviewed in detail: page was not reachable from the session.
