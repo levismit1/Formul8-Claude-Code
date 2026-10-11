@@ -65,5 +65,5 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 - `CLAUDE.md` – this file
 - `PROGRESS.md` – audit log
 - `.mcp.json` – project MCP servers (Shopify Dev MCP)
-- `content/` – draft copy for owner review (`product-copy.md`, `listicle-outline.md`, `refund-policy.md`)
+- `content/` – draft copy for owner review (`product-copy.md`, `listicle-outline.md`, `refund-policy.md`, `refund-policy-review.md`)
 - `theme/` – local DRAFT Shopify theme. Push only with `shopify theme push --unpublished`, never `--live`

@@ -32,9 +32,11 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 26 | 2026-10-11 | Review | Independent 3-lens review workflow (claims/compliance, Shopify validity, UX/accessibility), 15 agents, each finding adversarially verified: 11 confirmed, 1 refuted | theme/, content/ | Findings recorded; see #27 | n/a |
 | 27 | 2026-10-11 | File | Fixed confirmed findings: gift prices to `text` settings (Shopify rejects 2-decimal `number`), theme_info docs/support URLs, homepage subheading to jar-only facts, "risk-free" -> exact guarantee wording, "TODAY" removed, hard-coded stars removed, conditional hero sources + image dimensions, refund-policy link only if policy exists, FAQ button promise conditional on offer link, focus ring, FAQ tap targets, FDA text contrast/size (opacity removed), sticky-bar padding only on listicle, scroll padding, screen-reader text for struck prices, out-of-stock state for gift pill | theme/ | `@shopify/theme-check-node` 3.30.1: NO OFFENSES (also confirmed it catches planted errors); liquidjs render OK; Playwright 1440/390 OK; not on Shopify | revert commit |
 | 28 | 2026-10-11 | File | Saved owner-supplied refund policy verbatim as `content/refund-policy.md` (placeholders for support email + website URL; owner has no business email yet) | content/ | OK; not published to Shopify | delete file |
+| 29 | 2026-10-11 | Review | 3-lens read-only review of the owner's refund policy vs site promises (3 agents) | content/refund-policy.md | Findings consolidated into `content/refund-policy-review.md`; owner policy text NOT edited | n/a |
+| 30 | 2026-10-11 | File | Created `content/refund-policy-review.md` (9 owner decisions, proposed site changes, email checklist, Shopify paste steps, refund checklist) | content/ | OK | delete file |
 
 ## Status
-- [~] Refund policy: owner text saved in `content/refund-policy.md`; review in progress; waiting on business email
+- [~] Refund policy: owner text saved in `content/refund-policy.md`; review done (`content/refund-policy-review.md`); waiting on owner decisions + business email
 - [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` + `formul8nutrition.com` + `www.formul8nutrition.com` in network settings, (b) add `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN` to the environment
 - [~] Product (draft) – copy drafted in `content/product-copy.md`; not created in Shopify
 - [ ] Bundle + discount + gifts (draft)
