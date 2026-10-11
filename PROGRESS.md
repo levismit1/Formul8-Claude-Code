@@ -12,9 +12,10 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 6 | 2026-10-09 | File | Scaffolded local draft theme: `layout/theme.liquid`, `sections/{hero,header,footer}.liquid`, `sections/*-group.json`, `templates/index.json`, `config/settings_*.json`, `locales/en.default.json`, `assets/theme.css` | theme/ | JSON valid; local Playwright preview checked at 1440px and 390px; not pushed to Shopify | delete `theme/` |
 | 7 | 2026-10-09 | File | Green palette set; mid green darkened to `#4A6649` for WCAG AA (5.48:1 on cream) | theme/config/settings_schema.json | OK | revert commit |
 | 8 | 2026-10-09 | Env check | Tested connectivity: npm registry OK (200); `shopify.dev` blocked by network policy (403); `shopify-dev-mcp` timed out on connect; `SHOPIFY_STORE` / `SHOPIFY_ADMIN_TOKEN` not set | local environment | Blocked until owner updates environment settings | n/a |
+| 9 | 2026-10-11 | HTTP GET (read-only) | Tried to fetch `https://formul8nutrition.com` and `www.` to identify platform and `.myshopify.com` handle | public site | Blocked by network policy (proxy 403); nothing retrieved | n/a |
 
 ## Status
-- [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` in network settings, (b) add `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN` to the environment
+- [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` + `formul8nutrition.com` + `www.formul8nutrition.com` in network settings, (b) add `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN` to the environment
 - [ ] Product (draft)
 - [ ] Bundle + discount + gifts (draft)
 - [x] Homepage hero + green scheme (local draft theme, not yet on Shopify)

@@ -13,6 +13,9 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 8. Save new learnings about the store schema (metafields, collections, theme layout) to Auto Memory.
 9. Supplement marketing: avoid disease/medical claims; flag anything needing compliance review.
 
+## Store
+- Public domain: `formul8nutrition.com` (provided by owner). The `.myshopify.com` handle is still needed for API access; keep it in `SHOPIFY_STORE`, not in git.
+
 ## Project goals
 1. Launch product "Formul8 Nutrition"
 2. Bundle: 30% discount + 2 free gifts
