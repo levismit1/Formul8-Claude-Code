@@ -34,6 +34,7 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 28 | 2026-10-11 | File | Saved owner-supplied refund policy verbatim as `content/refund-policy.md` (placeholders for support email + website URL; owner has no business email yet) | content/ | OK; not published to Shopify | delete file |
 | 29 | 2026-10-11 | Review | 3-lens read-only review of the owner's refund policy vs site promises (3 agents) | content/refund-policy.md | Findings consolidated into `content/refund-policy-review.md`; owner policy text NOT edited | n/a |
 | 30 | 2026-10-11 | File | Created `content/refund-policy-review.md` (9 owner decisions, proposed site changes, email checklist, Shopify paste steps, refund checklist) | content/ | OK | delete file |
+| 31 | 2026-10-11 | Env check | Re-tested session: `SHOPIFY_STORE`/`SHOPIFY_ADMIN_TOKEN` not set; shopify.dev, formul8nutrition.com, gruns.co, admin.shopify.com all unreachable (network policy); `shopify-dev-mcp` still not connecting | local environment | Still blocked on owner's environment settings | n/a |
 
 ## Status
 - [~] Refund policy: owner text saved in `content/refund-policy.md`; review done (`content/refund-policy-review.md`); waiting on owner decisions + business email
