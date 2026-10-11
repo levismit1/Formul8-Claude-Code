@@ -30,13 +30,13 @@ a { color: inherit; }
   .site-header { flex-direction: column; gap: .5rem; }
 }
 
-/* ---- Urgent / stock messaging (red is reserved for this) ---- */
+/* ---- In-stock messaging (green) ---- */
 .announce { display: flex; justify-content: center; align-items: center; gap: .6rem; flex-wrap: wrap;
   padding: .55rem 1rem; background: #fff; color: var(--color-forest); font-size: .95rem; text-align: center; }
 .stock-pill { display: inline-block; padding: .15rem .7rem; border-radius: 999px;
-  background: var(--color-urgent); color: #fff; font-weight: 700; font-size: .85rem; letter-spacing: .03em; }
+  background: var(--color-instock); color: #fff; font-weight: 700; font-size: .85rem; letter-spacing: .03em; }
 .stock-pill--lg { font-size: 1rem; padding: .3rem 1rem; }
-.stock-text { color: var(--color-urgent); font-weight: 700; }
+.stock-text { color: var(--color-instock); font-weight: 700; }
 
 /* ---- Free gifts ---- */
 .gifts { max-width: 70rem; margin: 0 auto; padding: 3rem 1.5rem; text-align: center; }

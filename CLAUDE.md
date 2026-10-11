@@ -22,7 +22,7 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 - **Offer (owner-confirmed):** 30% off + 1 jar of Formul8 Nutrition + 1 FREE shaker bottle + 1 FREE hand blender/frother. Working assumption: the 30% is the $70 → $49 sale (customer pays $49 for the jar, gifts $0). Owner to correct if the 30% should stack on top of $49 (= $34.30).
 - Planned build: gifts as separate draft products with tracked stock; two inactive automatic Buy X Get Y discounts (one per gift, qty 1, 100% off, requires Formul8 in cart) so the owner can review before activating. Verify limits against Shopify docs once connected.
 - Free gifts: (1) Formul8 shaker bottle, normal price **$14.99**; (2) Formul8 hand blender/frother, normal price **$24.99** (= $39.98 of free gifts; $109.98 total value with the $70 jar). Photo: `theme/assets/formul8-gifts.jpg`. Still to confirm: do they already exist as products in Shopify?
-- **Stock:** owner says only **3** gift sets are left. Show "Only 3 left" in RED (`--color-urgent` `#B71C1C`). Scarcity must be TRUE: set the gift inventory to 3 in Shopify, update the theme setting `gifts_left` (Theme settings → Offer & stock) to match, and hide the message at 0. Never show fake or stale scarcity or fake countdowns. Assumption: "3" = 3 free-gift sets (owner to confirm).
+- **Stock:** owner has 3 gift sets in stock. Per owner (changed from the earlier red "Only 3 left"), the site shows a GREEN "In stock" badge (`--color-instock` `#2E6B34`) with no count. It must be TRUE: set gift inventory to 3 in Shopify; the theme setting `gifts_left` (Theme settings → Offer & stock) controls the badge and hides it at 0. If the owner later wants scarcity wording (e.g. "Only 3 left"), it must match real inventory; never show fake or stale scarcity or fake countdowns.
 - **Ingredients/Supplement Facts: not available yet (MVP launch).** Never invent or imply ingredients, amounts or benefits. Use only what is visible on the jar (name, "Dietary Supplement", 30 servings, tagline "Your gut. Your health. Your formula."). Product page keeps a clearly marked placeholder for the Supplement Facts panel; product stays DRAFT until the owner supplies it (supplements need a compliant Supplement Facts label before sale).
 
 ## Inspiration (owner-provided)
@@ -38,7 +38,7 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 ## Design
 - Green colour scheme sampled from the jar: forest `#2E4A37`, mid green `#4A6649`, sage `#B5C4A8`, cream `#F5ECE5`, rose-gold `#C99A8B` (small highlights only). Defined in `theme/config/settings_schema.json`; use the CSS variables in `theme/assets/theme.css`, never hard-coded hex.
 - Homepage hero = the owner's jar banner (`theme/assets/formul8-hero.jpg`, WebP + mobile crop alongside). The banner already holds the logo and tagline, so don't overlay text on the jar.
-- Red `#B71C1C` is reserved for stock/urgency messaging only (red text on cream/white, or white text on a red pill). Never red text on the sage footer (fails contrast).
+- Green `#2E6B34` is the "In stock" badge colour (white text on a green pill, or green text on cream/white; 6.42:1 and 5.51:1). No red is used on the site.
 - Keep text/background contrast at WCAG AA (4.5:1).
 - Footer carries the FDA disclaimer; keep it.
 

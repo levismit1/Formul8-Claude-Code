@@ -1,6 +1,6 @@
 {%- comment -%}
   Free-gift showcase. Prices below are the gifts' normal prices (owner-confirmed).
-  The red "Only X left" message reads the theme setting `gifts_left` and hides at 0/blank.
+  The green "In stock" badge shows only while the theme setting `gifts_left` is above 0 (hidden at 0/blank).
   It must always match real inventory.
 {%- endcomment -%}
 {%- assign left = settings.gifts_left | plus: 0 -%}
@@ -10,7 +10,7 @@
     <h2>{{ section.settings.heading }}</h2>
     <p>Yours free when you get Formul8 Nutrition. That is ${{ total | round: 2 }} of free gifts.</p>
     {%- if left > 0 -%}
-      <p class="stock-pill stock-pill--lg" role="status">Only {{ left }} left in stock!</p>
+      <p class="stock-pill stock-pill--lg" role="status">In stock</p>
     {%- endif -%}
   </div>
   <picture class="gifts__media">
@@ -30,7 +30,7 @@
     </li>
   </ul>
   {%- if left > 0 -%}
-    <p class="gifts__note stock-text">Only {{ left }} free-gift sets left. When they are gone, they are gone.</p>
+    <p class="gifts__note stock-text">Free gift sets are in stock.</p>
   {%- endif -%}
   <p class="gifts__cta"><a class="button" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
 </section>

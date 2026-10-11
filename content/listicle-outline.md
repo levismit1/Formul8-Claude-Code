@@ -14,7 +14,7 @@
 
 ## Structure (top to bottom)
 
-1. **Offer bar (sticky top):** red pill "Only 3 left" + "FREE shaker bottle + hand blender/frother with your Formul8 jar" (built in the draft theme as the announcement bar)
+1. **Offer bar (sticky top):** green pill "In stock" + "FREE shaker bottle + hand blender/frother with your Formul8 jar" (built in the draft theme as the announcement bar)
 2. **Hero:** jar banner image (already contains logo + tagline). Headline below it: "5 Reasons to Try Formul8 Nutrition". Sub: "Your gut. Your health. Your formula." CTA button: "Get 30% Off + Free Gifts".
 3. **Intro (2 short lines):** what the product is (a 30-serving dietary supplement) and that a limited offer is on. No claims.
 4. **The 5 reasons** (numbered cards, each with a heading, 1–2 lines, optional image):
@@ -23,12 +23,12 @@
    3. **30% off today.** Regular $70, now $49. Show the crossed-out price.
    4. **A free shaker bottle.** $14.99 value, free. Photo: `formul8-gifts.jpg`.
    5. **A free hand blender/frother.** $24.99 value, free. Same gifts photo.
-   - Under reasons 4–5, show a RED stock line: "Only 3 free-gift sets left." (true count only; hide at 0)
-5. **Offer recap box:** "What you get: 1 jar ($70 value) + free shaker ($14.99) + free frother ($24.99) = $109.98 of value for $49" with a price breakdown, the red stock line, and the main CTA.
+   - Under reasons 4–5, show a GREEN stock line: "Free gift sets are in stock." (only while true; hide at 0)
+5. **Offer recap box:** "What you get: 1 jar ($70 value) + free shaker ($14.99) + free frother ($24.99) = $109.98 of value for $49" with a price breakdown, the green "In stock" line, and the main CTA.
 6. **Social proof:** [PLACEHOLDER – add real customer reviews or ratings only once they exist; never invent any]
 7. **Guarantee:** [PLACEHOLDER – only if the owner offers one]
 8. **FAQ (4–5 items):** What's in a serving? [needs Supplement Facts] · How do the free gifts work? (added automatically with the jar) · Shipping? [owner] · Returns? [owner] · How many servings? (30)
-9. **Final CTA + urgency line:** red "Only 3 left" (real inventory). Add a countdown only if the offer really ends on a date.
+9. **Final CTA + urgency line:** green "In stock" (only while true). Add a countdown only if the offer really ends on a date.
 10. **Footer:** FDA disclaimer (already in the theme).
 
 ## Conversion elements to include

@@ -40,9 +40,9 @@
       },
       {
         "type": "color",
-        "id": "color_urgent",
-        "label": "Urgent red (stock warnings only)",
-        "default": "#B71C1C"
+        "id": "color_instock",
+        "label": "In-stock green (stock badge)",
+        "default": "#2E6B34"
       }
     ]
   },
@@ -51,14 +51,14 @@
     "settings": [
       {
         "type": "header",
-        "content": "Free-gift stock message"
+        "content": "Free-gift \"In stock\" badge"
       },
       {
         "type": "number",
         "id": "gifts_left",
-        "label": "Free-gift sets left in stock",
+        "label": "Free-gift sets in stock",
         "default": 3,
-        "info": "Must match real inventory. Set to 0 or clear to hide every 'Only X left' message."
+        "info": "Must match real inventory. The green 'In stock' badge shows only while this is above 0. Set to 0 or clear to hide it."
       }
     ]
   }
