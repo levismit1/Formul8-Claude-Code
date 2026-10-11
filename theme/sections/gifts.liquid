@@ -14,19 +14,19 @@
     {%- endif -%}
   </div>
   <picture class="gifts__media">
-    <source media="(max-width: 749px)" srcset="{{ 'formul8-gifts-mobile.webp' | asset_url }}" type="image/webp">
-    <source srcset="{{ 'formul8-gifts.webp' | asset_url }}" type="image/webp">
+    <source media="(max-width: 749px)" srcset="{{ 'formul8-gifts-mobile.webp' | asset_url }}" width="880" height="857" type="image/webp">
+    <source srcset="{{ 'formul8-gifts.webp' | asset_url }}" width="2000" height="857" type="image/webp">
     <img class="gifts__img" src="{{ 'formul8-gifts.jpg' | asset_url }}" width="2000" height="857"
          alt="{{ section.settings.alt | escape }}" loading="lazy">
   </picture>
   <ul class="gifts__cards">
     <li class="gift-card">
       <h3>{{ settings.shaker_name }}</h3>
-      <p><s>${{ settings.shaker_price }}</s> <strong>FREE</strong></p>
+      <p><s><span class="vh">Normally </span>${{ settings.shaker_price }}</s> <strong>FREE</strong></p>
     </li>
     <li class="gift-card">
       <h3>{{ settings.frother_name }}</h3>
-      <p><s>${{ settings.frother_price }}</s> <strong>FREE</strong></p>
+      <p><s><span class="vh">Normally </span>${{ settings.frother_price }}</s> <strong>FREE</strong></p>
     </li>
   </ul>
   {%- if left > 0 -%}

@@ -11,7 +11,7 @@
 4. Three check-mark proof bullets
 5. One-line objection killer
 6. Big CTA with a small badge on top and the offer inside the button
-7. Risk reversal directly under the CTA ("Try it risk-free for 30 days")
+7. Risk reversal directly under the CTA (a guarantee line)
 8. "Your free gifts" tiles, each with a "FREE $X" value tag
 9. Hero image showing product and gifts, plus a sale banner with REAL dates
 
@@ -23,8 +23,8 @@
 | Two-tone headline | "5 Reasons to Try Formul8 Nutrition" / "Your gut. Your health. Your formula." | Built |
 | 3 proof ticks | 30 servings in every jar · FREE shaker + frother ($39.98 value) · 30-day money-back guarantee | Built (all true) |
 | Objection-killer line | Skipped: we don't know if Formul8 is a powder, so "no blender" style claims are not made | Skipped |
-| CTA + badge | "30% OFF TODAY" badge + "Get 30% Off + Free Gifts" | Built |
-| Guarantee under CTA | "Try it risk-free for 30 days" + 30-day money-back guarantee | Built |
+| CTA + badge | "30% OFF" badge + "Get 30% Off + Free Gifts" (no "today": no real end date) | Built |
+| Guarantee under CTA | "Backed by our 30-day money-back guarantee" (exact owner wording; "risk-free" deliberately NOT used, terms undecided) | Built |
 | Free gift tiles | FREE $14.99 shaker, FREE $24.99 frother | Built |
 | Dated sale banner | Optional "Offer ends ..." line, hidden until a REAL date is entered | Hidden |
 | Their claims (ingredients, fibre, clinical testing, 4.8 stars, 100,000 reviews, 2B sold) | NOT copied. We have no such facts. | Never |
@@ -49,4 +49,7 @@ Set the link in Theme settings -> Offer & stock -> "Offer button link" once the 
 - FAQ "What is in Formul8 Nutrition?" and "Shipping" answers (editable in the theme editor)
 - Refund policy page text must match the 30-day money-back promise
 - Real reviews/ratings and a real offer end date, only if they exist
+- Theme settings -> Offer & stock -> "Offer button link" (the cart link that adds jar + both gifts) is REQUIRED before launch
+- Create the store refund policy (Settings -> Policies); the guarantee block links to it only once it exists
+- Keep "Free gifts in stock" honest: update the gift stock number, or pause the offer when gifts run out (the page then shows "Free gifts currently out of stock")
 - Supplement Facts on the product page and label

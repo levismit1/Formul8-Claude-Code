@@ -1,5 +1,5 @@
 <div class="lp-sticky" role="complementary" aria-label="Offer">
-  <span class="lp-sticky__price"><s>${{ settings.jar_regular_price }}</s> <strong>${{ settings.jar_sale_price }}</strong></span>
+  <span class="lp-sticky__price"><s><span class="vh">Was </span>${{ settings.jar_regular_price }}</s> <strong><span class="vh">Now </span>${{ settings.jar_sale_price }}</strong></span>
   <a class="button" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
 </div>
 {% schema %}

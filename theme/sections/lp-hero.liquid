@@ -9,8 +9,8 @@
 <section class="lp-hero">
   <div class="lp-hero__copy">
     {%- if section.settings.rating != blank and section.settings.review_count != blank -%}
-      <p class="lp-proof"><span class="lp-proof__stars" aria-hidden="true">★★★★★</span>
-        <strong>{{ section.settings.rating }} stars</strong> · {{ section.settings.review_count }} reviews</p>
+      <p class="lp-proof"><span class="lp-proof__stars" aria-hidden="true">★</span>
+        <strong>{{ section.settings.rating }}</strong> average rating · {{ section.settings.review_count }} reviews</p>
     {%- endif -%}
     <h1 class="lp-title">
       <span class="lp-title__a">{{ section.settings.headline_1 }}</span>
@@ -25,24 +25,24 @@
       {%- if section.settings.badge != blank -%}<span class="lp-cta__badge">{{ section.settings.badge }}</span>{%- endif -%}
       <a class="button button--lg" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
     </div>
-    <p class="guarantee-line guarantee-line--center">{% render 'icon-check' %} Try it risk-free for {{ settings.guarantee_days }} days</p>
+    <p class="guarantee-line guarantee-line--center">{% render 'icon-check' %} Backed by our {{ settings.guarantee_days }}-day money-back guarantee</p>
     {%- if section.settings.offer_end != blank -%}
       <p class="lp-ends">Offer ends {{ section.settings.offer_end }}</p>
     {%- endif -%}
-    {%- if left > 0 -%}<p class="lp-stock"><span class="stock-pill">In stock</span></p>{%- endif -%}
+    {%- if left > 0 -%}<p class="lp-stock"><span class="stock-pill">Free gifts in stock</span></p>{%- else -%}<p class="lp-stock"><span class="stock-pill stock-pill--out">Free gifts currently out of stock</span></p>{%- endif -%}
   </div>
   <div class="lp-hero__media">
     <picture>
-      <source srcset="{{ 'formul8-hero-mobile.webp' | asset_url }}" type="image/webp">
-      <img src="{{ 'formul8-hero.jpg' | asset_url }}" width="880" height="857"
+      <source srcset="{{ 'formul8-hero-mobile.webp' | asset_url }}" width="880" height="857" type="image/webp">
+      <img src="{{ 'formul8-hero.jpg' | asset_url }}" width="2000" height="857"
            alt="{{ section.settings.alt | escape }}" loading="eager" fetchpriority="high">
     </picture>
   </div>
   <div class="lp-gifts">
     <p class="lp-gifts__title">Your free gifts</p>
     <ul class="lp-gifts__tiles">
-      <li class="lp-tile"><span class="lp-tile__tag">FREE <s>${{ settings.shaker_price }}</s></span><span class="lp-tile__name">{{ settings.shaker_name }}</span></li>
-      <li class="lp-tile"><span class="lp-tile__tag">FREE <s>${{ settings.frother_price }}</s></span><span class="lp-tile__name">{{ settings.frother_name }}</span></li>
+      <li class="lp-tile"><span class="lp-tile__tag">FREE <s><span class="vh">Normally </span>${{ settings.shaker_price }}</s></span><span class="lp-tile__name">{{ settings.shaker_name }}</span></li>
+      <li class="lp-tile"><span class="lp-tile__tag">FREE <s><span class="vh">Normally </span>${{ settings.frother_price }}</s></span><span class="lp-tile__name">{{ settings.frother_name }}</span></li>
     </ul>
   </div>
 </section>
@@ -58,7 +58,7 @@
     { "type": "text", "id": "headline_2", "label": "Headline line 2 (green)", "default": "Your gut. Your health. Your formula." },
     { "type": "header", "content": "Button" },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Get 30% Off + Free Gifts" },
-    { "type": "text", "id": "badge", "label": "Small badge above button", "default": "30% OFF TODAY" },
+    { "type": "text", "id": "badge", "label": "Small badge above button", "default": "30% OFF" },
     { "type": "text", "id": "offer_end", "label": "Offer end date (REAL date only; empty hides)", "info": "Example: October 31" },
     { "type": "text", "id": "alt", "label": "Image description (alt text)", "default": "Formul8 Nutrition dietary supplement jar, 30 servings, in dark green packaging" }
   ],

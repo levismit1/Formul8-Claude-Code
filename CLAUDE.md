@@ -48,7 +48,18 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 ## Landing-page rules
 - Never invent or copy reviews, ratings, review counts, "clinically tested", ingredient or nutrient claims, or "as seen in" logos. Reviews/ratings sections stay hidden until the owner supplies real ones.
 - Countdowns/"offer ends" only with a real end date.
-- Verify theme Liquid by rendering it with `liquidjs` (scratchpad `render/render.js`) and screenshotting with Playwright at 1440px and 390px.
+- Verify the theme with (1) Shopify's real checker: `@shopify/theme-check-node` (`themeCheckRun(themeDir)`; must report NO OFFENSES), (2) rendering the Liquid with `liquidjs` and screenshotting with Playwright at 1440px and 390px.
+- Settings `number` type allows only ONE decimal: dollar-and-cents values (e.g. 14.99) must be `text` settings.
+- Guarantee wording: use only "30-day money-back guarantee". Never "risk-free", "no questions asked", etc. until the refund policy says so.
+- Do not describe the offer as time-limited ("today", "ends soon") without a real end date.
+
+## Before publishing checklist (owner)
+1. Supplement Facts + ingredients + directions on label and product page
+2. Refund policy written to match the 30-day money-back guarantee
+3. Offer button link set (cart link adding jar + both gifts) and the 2 gift discounts created and tested
+4. Gift stock in Shopify = number in theme settings; pause offer at 0
+5. Real shipping terms; FAQ answers edited (ingredients, shipping)
+6. Real reviews/ratings only if they exist; real offer end date only if one exists
 
 ## Layout
 - `CLAUDE.md` – this file

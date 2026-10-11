@@ -20,7 +20,7 @@
   </style>
   {{ 'theme.css' | asset_url | stylesheet_tag }}
 </head>
-<body>
+<body class="template-{{ template.suffix | default: template.name }}">
   {% sections 'header-group' %}
   <main id="main" role="main">{{ content_for_layout }}</main>
   {% sections 'footer-group' %}

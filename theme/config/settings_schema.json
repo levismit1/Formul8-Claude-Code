@@ -3,7 +3,9 @@
     "name": "theme_info",
     "theme_name": "Formul8 Green",
     "theme_version": "0.1.0",
-    "theme_author": "Formul8 Nutrition"
+    "theme_author": "Formul8 Nutrition",
+    "theme_documentation_url": "https://formul8nutrition.com",
+    "theme_support_url": "https://formul8nutrition.com"
   },
   {
     "name": "Colours",
@@ -83,10 +85,10 @@
         "default": "Formul8 Shaker Bottle"
       },
       {
-        "type": "number",
+        "type": "text",
         "id": "shaker_price",
-        "label": "Free gift 1 normal price ($)",
-        "default": 14.99
+        "label": "Free gift 1 normal price ($) (dollars and cents, no $ sign)",
+        "default": "14.99"
       },
       {
         "type": "text",
@@ -95,15 +97,16 @@
         "default": "Formul8 Hand Blender / Frother"
       },
       {
-        "type": "number",
+        "type": "text",
         "id": "frother_price",
-        "label": "Free gift 2 normal price ($)",
-        "default": 24.99
+        "label": "Free gift 2 normal price ($) (dollars and cents, no $ sign)",
+        "default": "24.99"
       },
       {
         "type": "url",
         "id": "offer_link",
-        "label": "Offer button link (product page or cart link that adds the jar + both gifts)"
+        "label": "Offer button link (product page or cart link that adds the jar + both gifts)",
+        "info": "REQUIRED before launch. Leave empty only while building: buttons then go to the all-products page and the FAQ will not promise an automatic add."
       },
       {
         "type": "text",
