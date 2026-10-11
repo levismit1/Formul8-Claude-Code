@@ -3,7 +3,14 @@
     "hero": {
       "type": "hero",
       "settings": {}
+    },
+    "gifts": {
+      "type": "gifts",
+      "settings": {}
     }
   },
-  "order": ["hero"]
+  "order": [
+    "hero",
+    "gifts"
+  ]
 }

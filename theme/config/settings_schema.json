@@ -1,13 +1,65 @@
 [
-  { "name": "theme_info", "theme_name": "Formul8 Green", "theme_version": "0.1.0", "theme_author": "Formul8 Nutrition" },
+  {
+    "name": "theme_info",
+    "theme_name": "Formul8 Green",
+    "theme_version": "0.1.0",
+    "theme_author": "Formul8 Nutrition"
+  },
   {
     "name": "Colours",
     "settings": [
-      { "type": "color", "id": "color_forest", "label": "Forest green (header, buttons, text)", "default": "#2E4A37" },
-      { "type": "color", "id": "color_green", "label": "Mid green (hover, accents)", "default": "#4A6649" },
-      { "type": "color", "id": "color_sage", "label": "Sage (soft backgrounds)", "default": "#B5C4A8" },
-      { "type": "color", "id": "color_cream", "label": "Cream (page background)", "default": "#F5ECE5" },
-      { "type": "color", "id": "color_rose", "label": "Rose-gold (small highlights)", "default": "#C99A8B" }
+      {
+        "type": "color",
+        "id": "color_forest",
+        "label": "Forest green (header, buttons, text)",
+        "default": "#2E4A37"
+      },
+      {
+        "type": "color",
+        "id": "color_green",
+        "label": "Mid green (hover, accents)",
+        "default": "#4A6649"
+      },
+      {
+        "type": "color",
+        "id": "color_sage",
+        "label": "Sage (soft backgrounds)",
+        "default": "#B5C4A8"
+      },
+      {
+        "type": "color",
+        "id": "color_cream",
+        "label": "Cream (page background)",
+        "default": "#F5ECE5"
+      },
+      {
+        "type": "color",
+        "id": "color_rose",
+        "label": "Rose-gold (small highlights)",
+        "default": "#C99A8B"
+      },
+      {
+        "type": "color",
+        "id": "color_urgent",
+        "label": "Urgent red (stock warnings only)",
+        "default": "#B71C1C"
+      }
+    ]
+  },
+  {
+    "name": "Offer & stock",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Free-gift stock message"
+      },
+      {
+        "type": "number",
+        "id": "gifts_left",
+        "label": "Free-gift sets left in stock",
+        "default": 3,
+        "info": "Must match real inventory. Set to 0 or clear to hide every 'Only X left' message."
+      }
     ]
   }
 ]

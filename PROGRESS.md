@@ -22,6 +22,9 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 16 | 2026-10-11 | File | Recorded that no ingredients list exists yet (MVP) and the no-invented-claims rule in `CLAUDE.md` | CLAUDE.md | OK | revert commit |
 | 17 | 2026-10-11 | File | Created `content/product-copy.md` (draft product copy, SEO fields, placeholders for ingredients/directions/shipping) | content/ | OK; title 50 chars, meta 138 chars; not sent to Shopify | delete file |
 | 18 | 2026-10-11 | File | Created `content/listicle-outline.md` (5-reasons listicle structure, no claims) | content/ | OK; not built or sent to Shopify | delete file |
+| 19 | 2026-10-11 | File | Saved gifts photo as `theme/assets/formul8-gifts.jpg` + `.webp` (41 KB) + `-mobile.webp` (30 KB) | theme/assets | OK | delete files |
+| 20 | 2026-10-11 | File | Added red urgent colour `#B71C1C` (5.64:1 on cream, 6.57:1 white-on-red), theme setting `gifts_left` (default 3), new `sections/gifts.liquid`, announcement bar in `sections/header.liquid`, `templates/index.json` now hero + gifts, CSS | theme/ | JSON valid; Playwright preview 1440px and 390px; fixed pill text colour bug found in preview; not pushed to Shopify | revert commit |
+| 21 | 2026-10-11 | File | Updated `content/product-copy.md`, `content/listicle-outline.md`, `CLAUDE.md` with gift prices ($14.99/$24.99), red stock message, honest-scarcity rule | content/, CLAUDE.md | OK | revert commit |
 
 ## Status
 - [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` + `formul8nutrition.com` + `www.formul8nutrition.com` in network settings, (b) add `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN` to the environment

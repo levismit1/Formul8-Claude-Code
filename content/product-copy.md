@@ -14,7 +14,7 @@
 | Vendor | Formul8 Nutrition |
 | Product type | Dietary Supplement |
 | Tracks inventory | Yes – quantity [OWNER TO SUPPLY] |
-| Image | `theme/assets/formul8-hero.jpg` (jar banner); alt text below |
+| Image | `theme/assets/formul8-hero.jpg` (jar banner); gifts photo `theme/assets/formul8-gifts.jpg`; alt text below |
 | Image alt text | Formul8 Nutrition dietary supplement jar, 30 servings, in dark green packaging |
 
 ## Product description (HTML-ready, plain text shown)
@@ -25,8 +25,11 @@ Formul8 Nutrition is a dietary supplement in a 30-serving jar: one jar, one mont
 
 **Right now: 30% off, plus two free gifts.**
 - Regular price $70 – today $49
-- FREE shaker bottle ([$X] value)
-- FREE hand blender/frother ([$X] value)
+- FREE shaker bottle ($14.99 value)
+- FREE hand blender/frother ($24.99 value)
+- That is $39.98 of free gifts. Total value $109.98 for $49.
+
+**Only 3 left in stock!** *(show in RED, `#B71C1C`; number must match real gift inventory; hide at 0)*
 
 Gifts are added automatically when Formul8 Nutrition is in your cart. [Offer end date / while supplies last – OWNER TO CONFIRM]
 
@@ -47,6 +50,6 @@ Gifts are added automatically when Formul8 Nutrition is in your cart. [Offer end
 
 ## Open items before this can go live
 1. Supplement Facts panel + ingredient list + directions + warnings (from the manufacturer/label).
-2. Stock quantities for the jar, shaker and frother.
-3. Value of each gift, offer end date, shipping and return policy, any guarantee.
+2. Stock quantities: gifts = 3 (set in Shopify inventory so the "Only 3 left" message is true); jar quantity still needed.
+3. Offer end date, shipping and return policy, any guarantee. (Gift values confirmed: shaker $14.99, frother $24.99.)
 4. Compliance check of all wording by whoever reviews your label.
