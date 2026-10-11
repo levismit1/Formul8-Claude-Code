@@ -15,6 +15,9 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 9 | 2026-10-11 | HTTP GET (read-only) | Tried to fetch `https://formul8nutrition.com` and `www.` to identify platform and `.myshopify.com` handle | public site | Blocked by network policy (proxy 403); nothing retrieved | n/a |
 | 10 | 2026-10-11 | File | Recorded owner's pricing ($70 regular, $49 sale) in `CLAUDE.md` | CLAUDE.md | OK | revert commit |
 | 11 | 2026-10-11 | File | Recorded free gifts (shaker bottle, hand blender/frother) in `CLAUDE.md` | CLAUDE.md | OK | revert commit |
+| 12 | 2026-10-11 | HTTP GET (read-only) | WebFetch `gruns.co/pages/gruns-prime-time-sale` for layout analysis | competitor site | Failed: host not resolvable from session (network policy); nothing retrieved | n/a |
+| 13 | 2026-10-11 | Web search | Searched for Grüns landing-page structure | public web | Only promo/deal-site snippets; no layout or conversion data found | n/a |
+| 14 | 2026-10-11 | File | Saved Grüns reference in `CLAUDE.md` | CLAUDE.md | OK | revert commit |
 
 ## Status
 - [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` + `formul8nutrition.com` + `www.formul8nutrition.com` in network settings, (b) add `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN` to the environment

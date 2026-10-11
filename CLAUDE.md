@@ -21,6 +21,9 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 - $70 → $49 is exactly 30% off. Open question: is the bundle's 30% discount the same 30% or applied on top?
 - Free gifts in the bundle: (1) shaker bottle, (2) hand blender/frother. Gift products to be created as DRAFT at $0 / or added as existing products — confirm with owner whether they already exist in Shopify.
 
+## Inspiration (owner-provided)
+- Competitor landing page the owner likes: `https://gruns.co/pages/gruns-prime-time-sale` (Grüns, supplement gummies; strip the ad-tracking query string). Not yet reviewed in detail: page was not reachable from the session.
+
 ## Project goals
 1. Launch product "Formul8 Nutrition"
 2. Bundle: 30% discount + 2 free gifts
