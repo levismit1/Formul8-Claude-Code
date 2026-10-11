@@ -59,6 +59,57 @@
         "label": "Free-gift sets in stock",
         "default": 3,
         "info": "Must match real inventory. The green 'In stock' badge shows only while this is above 0. Set to 0 or clear to hide it."
+      },
+      {
+        "type": "header",
+        "content": "Offer facts (used on every page)"
+      },
+      {
+        "type": "number",
+        "id": "jar_regular_price",
+        "label": "Jar regular price ($)",
+        "default": 70
+      },
+      {
+        "type": "number",
+        "id": "jar_sale_price",
+        "label": "Jar sale price ($)",
+        "default": 49
+      },
+      {
+        "type": "text",
+        "id": "shaker_name",
+        "label": "Free gift 1 name",
+        "default": "Formul8 Shaker Bottle"
+      },
+      {
+        "type": "number",
+        "id": "shaker_price",
+        "label": "Free gift 1 normal price ($)",
+        "default": 14.99
+      },
+      {
+        "type": "text",
+        "id": "frother_name",
+        "label": "Free gift 2 name",
+        "default": "Formul8 Hand Blender / Frother"
+      },
+      {
+        "type": "number",
+        "id": "frother_price",
+        "label": "Free gift 2 normal price ($)",
+        "default": 24.99
+      },
+      {
+        "type": "url",
+        "id": "offer_link",
+        "label": "Offer button link (product page or cart link that adds the jar + both gifts)"
+      },
+      {
+        "type": "text",
+        "id": "guarantee_days",
+        "label": "Money-back guarantee (days)",
+        "default": "30"
       }
     ]
   }

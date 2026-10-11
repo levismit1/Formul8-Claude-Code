@@ -21,7 +21,7 @@
 
 **Your gut. Your health. Your formula.**
 
-Formul8 Nutrition is a dietary supplement in a 30-serving jar: one jar, one month of daily servings.
+Formul8 Nutrition is a dietary supplement. Each jar contains 30 servings.
 
 **Right now: 30% off, plus two free gifts.**
 - Regular price $70 – today $49
@@ -31,7 +31,9 @@ Formul8 Nutrition is a dietary supplement in a 30-serving jar: one jar, one mont
 
 **In stock** *(show in GREEN, `#2E6B34`; only while gift inventory is above 0; hide at 0)*
 
-Gifts are added automatically when Formul8 Nutrition is in your cart. [Offer end date / while supplies last – OWNER TO CONFIRM]
+Use the button on the offer page: it adds your jar and both free gifts to your cart, and the gifts show as FREE at checkout. Gifts are limited by stock. [Offer end date – only if real; OWNER TO CONFIRM]
+
+**30-day money-back guarantee.** Full details in our refund policy. [OWNER: write the refund policy so it matches this promise]
 
 **How to use:** [OWNER TO SUPPLY – directions from the label]
 

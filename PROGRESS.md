@@ -26,12 +26,15 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 20 | 2026-10-11 | File | Added red urgent colour `#B71C1C` (5.64:1 on cream, 6.57:1 white-on-red), theme setting `gifts_left` (default 3), new `sections/gifts.liquid`, announcement bar in `sections/header.liquid`, `templates/index.json` now hero + gifts, CSS | theme/ | JSON valid; Playwright preview 1440px and 390px; fixed pill text colour bug found in preview; not pushed to Shopify | revert commit |
 | 21 | 2026-10-11 | File | Updated `content/product-copy.md`, `content/listicle-outline.md`, `CLAUDE.md` with gift prices ($14.99/$24.99), red stock message, honest-scarcity rule | content/, CLAUDE.md | OK | revert commit |
 | 22 | 2026-10-11 | File | Replaced red "Only 3 left" with green "In stock" badge (`color_instock` `#2E6B34`; white-on-green 6.42:1, green-on-cream 5.51:1); removed `color_urgent`; `sections/header.liquid`, `sections/gifts.liquid`, `assets/theme.css`, `layout/theme.liquid`, `config/settings_schema.json`; updated `content/*.md` and `CLAUDE.md` | theme/, content/, CLAUDE.md | JSON valid; no leftover red/scarcity refs; Playwright preview at 1440px and 390px; not pushed to Shopify | revert commit |
+| 23 | 2026-10-11 | Analysis | Reviewed owner's Grüns screenshot (`images/3.jpg`) and documented structure takeaways | content/listicle-outline.md | OK | n/a |
+| 24 | 2026-10-11 | File | Built listicle template `theme/templates/page.listicle.json` + sections `lp-hero`, `lp-reasons`, `lp-reviews` (hidden w/o real reviews), `lp-recap`, `lp-guarantee`, `lp-faq`, `lp-sticky-cta`; snippets `icon-check`, `icon-shield`; logo-only header on listicle; shared offer settings (prices, gift names, guarantee days, offer link) in `config/settings_schema.json`; gifts section reads shared settings; homepage hero gets guarantee line; CSS | theme/ | Rendered real Liquid with liquidjs (no errors); Playwright 1440px + 390px, no horizontal scroll; sticky bar verified in viewport; phone order fixed (copy before image); not pushed to Shopify | revert commit |
+| 25 | 2026-10-11 | File | Recorded 30-day money-back guarantee, cart-link button approach, landing-page claim rules; fixed copy that wrongly said gifts are "added automatically"; removed "one month of daily servings" wording (directions unknown) | CLAUDE.md, content/ | OK | revert commit |
 
 ## Status
 - [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` + `formul8nutrition.com` + `www.formul8nutrition.com` in network settings, (b) add `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN` to the environment
 - [~] Product (draft) – copy drafted in `content/product-copy.md`; not created in Shopify
 - [ ] Bundle + discount + gifts (draft)
 - [x] Homepage hero + green scheme (local draft theme, not yet on Shopify)
-- [~] Listicle landing page (draft theme) – outline in `content/listicle-outline.md`; not built
+- [x] Listicle landing page built in LOCAL draft theme (`page.listicle`); not on Shopify
 - [ ] Sales analysis
 - [ ] SEO audit + changes

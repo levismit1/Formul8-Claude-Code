@@ -25,8 +25,11 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 - **Stock:** owner has 3 gift sets in stock. Per owner (changed from the earlier red "Only 3 left"), the site shows a GREEN "In stock" badge (`--color-instock` `#2E6B34`) with no count. It must be TRUE: set gift inventory to 3 in Shopify; the theme setting `gifts_left` (Theme settings → Offer & stock) controls the badge and hides it at 0. If the owner later wants scarcity wording (e.g. "Only 3 left"), it must match real inventory; never show fake or stale scarcity or fake countdowns.
 - **Ingredients/Supplement Facts: not available yet (MVP launch).** Never invent or imply ingredients, amounts or benefits. Use only what is visible on the jar (name, "Dietary Supplement", 30 servings, tagline "Your gut. Your health. Your formula."). Product page keeps a clearly marked placeholder for the Supplement Facts panel; product stays DRAFT until the owner supplies it (supplements need a compliant Supplement Facts label before sale).
 
+- **Guarantee (owner-confirmed): 30-day money-back guarantee.** Use exactly that wording. Terms (from delivery? opened jars? return shipping?) are not decided; they belong on the store's refund policy page, which must match the promise. Do not add terms elsewhere.
+- **Offer button:** a cart link that adds the jar + both gifts together (a discount alone does not add items). Set it in Theme settings -> Offer & stock -> "Offer button link" once products exist.
+
 ## Inspiration (owner-provided)
-- Competitor landing page the owner likes: `https://gruns.co/pages/gruns-prime-time-sale` (Grüns, supplement gummies; strip the ad-tracking query string). Not yet reviewed in detail: page was not reachable from the session.
+- Competitor landing page the owner likes: `https://gruns.co/pages/gruns-prime-time-sale` (Grüns, supplement gummies; strip the ad-tracking query string). Owner supplied a screenshot (`images/3.jpg`; analysed in `content/listicle-outline.md`). Copy the STRUCTURE only, never their claims, reviews, stats or imagery.
 
 ## Project goals
 1. Launch product "Formul8 Nutrition"
@@ -41,6 +44,11 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 - Green `#2E6B34` is the "In stock" badge colour (white text on a green pill, or green text on cream/white; 6.42:1 and 5.51:1). No red is used on the site.
 - Keep text/background contrast at WCAG AA (4.5:1).
 - Footer carries the FDA disclaimer; keep it.
+
+## Landing-page rules
+- Never invent or copy reviews, ratings, review counts, "clinically tested", ingredient or nutrient claims, or "as seen in" logos. Reviews/ratings sections stay hidden until the owner supplies real ones.
+- Countdowns/"offer ends" only with a real end date.
+- Verify theme Liquid by rendering it with `liquidjs` (scratchpad `render/render.js`) and screenshotting with Playwright at 1440px and 390px.
 
 ## Layout
 - `CLAUDE.md` – this file

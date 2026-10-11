@@ -20,6 +20,7 @@
     {%- if section.settings.button_label != blank -%}
       <a class="button" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
     {%- endif -%}
+    <p class="guarantee-line">{% render 'icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
   </div>
 </section>
 {% schema %}

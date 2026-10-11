@@ -4,7 +4,7 @@
   It must always match real inventory.
 {%- endcomment -%}
 {%- assign left = settings.gifts_left | plus: 0 -%}
-{%- assign total = section.settings.shaker_price | plus: section.settings.frother_price -%}
+{%- assign total = settings.shaker_price | plus: settings.frother_price -%}
 <section class="gifts">
   <div class="gifts__head">
     <h2>{{ section.settings.heading }}</h2>
@@ -21,18 +21,18 @@
   </picture>
   <ul class="gifts__cards">
     <li class="gift-card">
-      <h3>{{ section.settings.shaker_name }}</h3>
-      <p><s>${{ section.settings.shaker_price }}</s> <strong>FREE</strong></p>
+      <h3>{{ settings.shaker_name }}</h3>
+      <p><s>${{ settings.shaker_price }}</s> <strong>FREE</strong></p>
     </li>
     <li class="gift-card">
-      <h3>{{ section.settings.frother_name }}</h3>
-      <p><s>${{ section.settings.frother_price }}</s> <strong>FREE</strong></p>
+      <h3>{{ settings.frother_name }}</h3>
+      <p><s>${{ settings.frother_price }}</s> <strong>FREE</strong></p>
     </li>
   </ul>
   {%- if left > 0 -%}
     <p class="gifts__note stock-text">Free gift sets are in stock.</p>
   {%- endif -%}
-  <p class="gifts__cta"><a class="button" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
+  <p class="gifts__cta"><a class="button" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
 </section>
 {% schema %}
 {
@@ -40,12 +40,7 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Get 2 free gifts with your jar" },
     { "type": "text", "id": "alt", "label": "Image description (alt text)", "default": "Formul8 Nutrition green shaker bottle and hand blender/frother" },
-    { "type": "text", "id": "shaker_name", "label": "Shaker name", "default": "Formul8 Shaker Bottle" },
-    { "type": "number", "id": "shaker_price", "label": "Shaker normal price ($)", "default": 14.99 },
-    { "type": "text", "id": "frother_name", "label": "Frother name", "default": "Formul8 Hand Blender / Frother" },
-    { "type": "number", "id": "frother_price", "label": "Frother normal price ($)", "default": 24.99 },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Claim 30% off + free gifts" },
-    { "type": "url", "id": "button_link", "label": "Button link" }
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Claim 30% off + free gifts" }
   ],
   "presets": [{ "name": "Free gifts" }]
 }

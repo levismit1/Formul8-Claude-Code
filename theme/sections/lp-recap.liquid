@@ -1,0 +1,30 @@
+{%- assign total_gifts = settings.shaker_price | plus: settings.frother_price -%}
+{%- assign total_value = settings.jar_regular_price | plus: total_gifts -%}
+{%- assign left = settings.gifts_left | plus: 0 -%}
+<section class="lp-recap">
+  <div class="recap">
+    <h2>{{ section.settings.heading }}</h2>
+    <table class="recap__table">
+      <tbody>
+        <tr><th scope="row">Formul8 Nutrition (30 servings)</th><td>${{ settings.jar_regular_price }}</td></tr>
+        <tr><th scope="row">{{ settings.shaker_name }}</th><td><s>${{ settings.shaker_price }}</s> FREE</td></tr>
+        <tr><th scope="row">{{ settings.frother_name }}</th><td><s>${{ settings.frother_price }}</s> FREE</td></tr>
+        <tr class="recap__value"><th scope="row">Total value</th><td>${{ total_value | round: 2 }}</td></tr>
+        <tr class="recap__price"><th scope="row">Your price today</th><td>${{ settings.jar_sale_price }}</td></tr>
+      </tbody>
+    </table>
+    {%- if left > 0 -%}<p class="lp-stock"><span class="stock-pill">In stock</span></p>{%- endif -%}
+    <p class="lp-center"><a class="button button--lg" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
+    <p class="guarantee-line guarantee-line--center">{% render 'icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "LP: Offer recap",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What you get today" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Get 30% Off + Free Gifts" }
+  ],
+  "presets": [{ "name": "LP: Offer recap" }]
+}
+{% endschema %}

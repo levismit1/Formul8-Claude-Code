@@ -52,3 +52,87 @@ a { color: inherit; }
 .gift-card s { opacity: .65; margin-right: .35rem; }
 .gifts__note { margin: 0 0 1.5rem; }
 @media (max-width: 749px) { .gifts__cards { grid-template-columns: 1fr; } }
+
+/* ---- Guarantee line (homepage + listicle) ---- */
+.guarantee-line { display: flex; align-items: center; justify-content: center; gap: .4rem; margin: .9rem 0 0;
+  font-size: 1rem; color: var(--color-green); }
+.guarantee-line .icon { color: var(--color-green); flex: none; }
+
+/* ---- Listicle landing page ---- */
+.site-header--logo-only { justify-content: center; }
+.lp-hero { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem 1rem; display: grid; gap: 1.5rem 3rem;
+  grid-template-columns: 1.1fr .9fr; grid-template-areas: "copy media" "gifts media"; align-items: start; }
+.lp-hero__copy { grid-area: copy; }
+.lp-hero__media { grid-area: media; }
+.lp-hero__media img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.lp-gifts { grid-area: gifts; }
+.lp-proof { margin: 0 0 1rem; font-size: 1.05rem; }
+.lp-proof__stars { color: #B7791F; letter-spacing: .1em; margin-right: .3rem; }
+.lp-title { margin: 0 0 1.25rem; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.08; font-weight: 700; }
+.lp-title__a { display: block; color: var(--color-forest); }
+.lp-title__b { display: block; color: var(--color-green); font-weight: 600; font-size: .62em; margin-top: .5rem; line-height: 1.2; }
+.lp-ticks { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: .7rem; font-size: 1.1rem; }
+.lp-ticks li { display: flex; gap: .6rem; align-items: flex-start; }
+.lp-ticks .icon { color: var(--color-green); flex: none; margin-top: .1rem; }
+.lp-cta { position: relative; display: inline-block; margin-top: .75rem; }
+.lp-cta__badge { position: absolute; top: -.9rem; left: 1.25rem; z-index: 1; background: var(--color-sage); color: var(--color-forest);
+  font-weight: 700; font-size: .8rem; letter-spacing: .04em; padding: .2rem .8rem; border-radius: 999px; border: 2px solid var(--color-forest); }
+.button--lg { font-size: 1.2rem; padding: 1.1rem 2.5rem; }
+.guarantee-line--center { justify-content: flex-start; }
+.lp-ends { margin: .5rem 0 0; font-weight: 600; }
+.lp-stock { margin: .75rem 0 0; }
+.lp-gifts__title { margin: 0 0 .6rem; font-weight: 700; color: var(--color-forest); }
+.lp-gifts__tiles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+.lp-tile { background: #fff; border: 2px solid var(--color-sage); border-radius: 12px; padding: .9rem .75rem; text-align: center; display: grid; gap: .35rem; }
+.lp-tile__tag { justify-self: center; background: var(--color-forest); color: var(--color-cream); font-size: .8rem; font-weight: 700;
+  padding: .15rem .65rem; border-radius: 6px; letter-spacing: .04em; }
+.lp-tile__name { font-weight: 600; }
+
+.lp-reasons, .lp-recap, .lp-guarantee, .lp-faq, .lp-reviews { max-width: 60rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.lp-reasons h2, .lp-recap h2, .lp-guarantee h2, .lp-faq h2, .lp-reviews h2 { margin: 0 0 1.25rem; text-align: center;
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 600; }
+.lp-reasons__list { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 1rem; }
+.reason { display: flex; gap: 1rem; align-items: flex-start; background: #fff; border: 1px solid var(--color-sage); border-radius: 12px; padding: 1.1rem 1.25rem; }
+.reason__n { flex: none; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--color-forest); color: var(--color-cream);
+  display: grid; place-items: center; font-weight: 700; font-size: 1.15rem; }
+.reason h3 { margin: 0 0 .2rem; font-size: 1.2rem; }
+.reason p { margin: 0; }
+.lp-reasons__media img { display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.5rem; }
+.lp-center { text-align: center; margin: 1.5rem 0 0; }
+
+.recap { background: #fff; border: 2px solid var(--color-forest); border-radius: 16px; padding: 2rem 1.5rem; max-width: 36rem; margin: 0 auto; }
+.recap__table { width: 100%; border-collapse: collapse; font-size: 1.05rem; }
+.recap__table th { text-align: left; font-weight: 500; }
+.recap__table td { text-align: right; white-space: nowrap; }
+.recap__table th, .recap__table td { padding: .6rem 0; border-bottom: 1px solid var(--color-sage); }
+.recap__value th, .recap__value td { font-weight: 700; }
+.recap__price th, .recap__price td { font-size: 1.6rem; font-weight: 700; border-bottom: 0; padding-top: 1rem; }
+.recap .lp-stock, .recap .guarantee-line { text-align: center; justify-content: center; }
+.recap .lp-stock { margin: 1rem 0 0; }
+
+.lp-guarantee { text-align: center; }
+.lp-guarantee__icon { color: var(--color-green); display: inline-block; }
+.lp-guarantee p { max-width: 40rem; margin: 0 auto .75rem; }
+
+.lp-faq details { background: #fff; border: 1px solid var(--color-sage); border-radius: 10px; padding: .9rem 1.1rem; margin-bottom: .6rem; }
+.lp-faq summary { cursor: pointer; font-weight: 600; }
+.lp-faq details p { margin: .6rem 0 0; }
+
+.lp-reviews__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+.review { background: #fff; border: 1px solid var(--color-sage); border-radius: 12px; padding: 1.1rem 1.25rem; }
+.review__text { margin: 0 0 .4rem; font-size: 1.1rem; }
+.review__who { margin: 0; font-weight: 600; color: var(--color-green); }
+
+.lp-sticky { display: none; }
+@media (max-width: 749px) {
+  .lp-hero { grid-template-columns: 1fr; grid-template-areas: "copy" "media" "gifts"; padding-top: 1.25rem; }
+  .lp-cta { display: block; }
+  .lp-cta .button { display: block; text-align: center; }
+  .guarantee-line--center { justify-content: center; }
+  .lp-hero .lp-stock { text-align: center; }
+  .lp-sticky { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; align-items: center; justify-content: space-between; gap: .75rem;
+    padding: .65rem 1rem; background: #fff; border-top: 2px solid var(--color-forest); box-shadow: 0 -4px 12px rgba(0,0,0,.08); }
+  .lp-sticky__price { font-size: 1.1rem; white-space: nowrap; }
+  .lp-sticky .button { padding: .75rem 1.25rem; font-size: .95rem; }
+  body { padding-bottom: 4.5rem; }
+}

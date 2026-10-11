@@ -1,0 +1,11 @@
+<div class="lp-sticky" role="complementary" aria-label="Offer">
+  <span class="lp-sticky__price"><s>${{ settings.jar_regular_price }}</s> <strong>${{ settings.jar_sale_price }}</strong></span>
+  <a class="button" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+</div>
+{% schema %}
+{
+  "name": "LP: Sticky mobile button",
+  "settings": [{ "type": "text", "id": "button_label", "label": "Button label", "default": "Get 30% Off + Free Gifts" }],
+  "presets": [{ "name": "LP: Sticky mobile button" }]
+}
+{% endschema %}
