@@ -18,8 +18,10 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 
 ## Product facts (from owner)
 - Formul8 Nutrition, 30 servings. Regular price **$70**, sale price **$49** (Shopify: price `49.00`, compare-at `70.00`).
-- $70 → $49 is exactly 30% off. Open question: is the bundle's 30% discount the same 30% or applied on top?
-- Free gifts in the bundle: (1) shaker bottle, (2) hand blender/frother. Gift products to be created as DRAFT at $0 / or added as existing products — confirm with owner whether they already exist in Shopify.
+- $70 → $49 is exactly 30% off.
+- **Offer (owner-confirmed):** 30% off + 1 jar of Formul8 Nutrition + 1 FREE shaker bottle + 1 FREE hand blender/frother. Working assumption: the 30% is the $70 → $49 sale (customer pays $49 for the jar, gifts $0). Owner to correct if the 30% should stack on top of $49 (= $34.30).
+- Planned build: gifts as separate draft products with tracked stock; two inactive automatic Buy X Get Y discounts (one per gift, qty 1, 100% off, requires Formul8 in cart) so the owner can review before activating. Verify limits against Shopify docs once connected.
+- Free gifts: (1) shaker bottle, (2) hand blender/frother. Still to confirm: do they already exist in Shopify? Need name, photo, normal price ("value") for each.
 
 ## Inspiration (owner-provided)
 - Competitor landing page the owner likes: `https://gruns.co/pages/gruns-prime-time-sale` (Grüns, supplement gummies; strip the ad-tracking query string). Not yet reviewed in detail: page was not reachable from the session.
