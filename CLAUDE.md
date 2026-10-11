@@ -19,6 +19,7 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 ## Product facts (from owner)
 - Formul8 Nutrition, 30 servings. Regular price **$70**, sale price **$49** (Shopify: price `49.00`, compare-at `70.00`).
 - $70 → $49 is exactly 30% off. Open question: is the bundle's 30% discount the same 30% or applied on top?
+- Free gifts in the bundle: (1) shaker bottle, (2) hand blender/frother. Gift products to be created as DRAFT at $0 / or added as existing products — confirm with owner whether they already exist in Shopify.
 
 ## Project goals
 1. Launch product "Formul8 Nutrition"
