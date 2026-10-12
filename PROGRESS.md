@@ -39,6 +39,7 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 33 | 2026-10-12 | Env check | After owner updated environment settings: shopify.dev reachable (302), gruns.co reachable (200), admin.shopify.com 403 (login required, expected); `formul8nutrition.com` and `www.` return 502 from the gateway (allow-list passes; no site answered); `SHOPIFY_STORE`/`SHOPIFY_CLIENT_ID`/`SHOPIFY_CLIENT_SECRET` NOT set in this session (new session needed); `shopify-dev-mcp` still not connecting | local environment | Network fixed; variables need a new session | n/a |
 | 34 | 2026-10-12 | HTTP GET (read-only) | Fetched the owner's reference page `gruns.co/pages/gruns-prime-time-sale` (HTML, 1.3 MB) and analysed headings/section order | competitor site | OK | n/a |
 | 35 | 2026-10-12 | File | Appended full-page reference structure and proposed changes to `content/listicle-outline.md` (no claims copied) | content/ | OK | revert commit |
+| 36 | 2026-10-12 | File | Recorded owner-confirmed brand status (brand-new, not launched, domain not live, no products in Shopify yet) and reference-price caution in `CLAUDE.md` | CLAUDE.md | OK | revert commit |
 
 ## Status
 - [~] Refund policy: owner text saved in `content/refund-policy.md`; review done (`content/refund-policy-review.md`); waiting on owner decisions + business email
