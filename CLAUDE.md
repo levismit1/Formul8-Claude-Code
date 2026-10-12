@@ -15,6 +15,8 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 
 ## Store
 - Public domain: `formul8nutrition.com` (provided by owner). The `.myshopify.com` handle is still needed for API access; keep it in `SHOPIFY_STORE`, not in git.
+- Owner is creating the app in Shopify's Dev Dashboard (form asks for App URL + redirect URLs). Use App URL `https://shopify.dev/apps/default-app-home`; redirect URL blank or `https://formul8nutrition.com/` (unused; no OAuth login). Credentials are then `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` (env/secrets, never git): exchange for a short-lived Admin API token with the client-credentials grant (`POST https://<store>.myshopify.com/admin/oauth/access_token`, `grant_type=client_credentials`); verify this works on first connection. If the owner instead has a legacy custom app, use `SHOPIFY_ADMIN_TOKEN`.
+- Scopes requested: `write_products,write_inventory,write_discounts,write_themes,write_content,write_legal_policies,read_orders,read_reports`.
 
 ## Product facts (from owner)
 - Formul8 Nutrition, 30 servings. Regular price **$70**, sale price **$49** (Shopify: price `49.00`, compare-at `70.00`).

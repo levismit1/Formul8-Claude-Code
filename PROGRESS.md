@@ -35,10 +35,11 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 29 | 2026-10-11 | Review | 3-lens read-only review of the owner's refund policy vs site promises (3 agents) | content/refund-policy.md | Findings consolidated into `content/refund-policy-review.md`; owner policy text NOT edited | n/a |
 | 30 | 2026-10-11 | File | Created `content/refund-policy-review.md` (9 owner decisions, proposed site changes, email checklist, Shopify paste steps, refund checklist) | content/ | OK | delete file |
 | 31 | 2026-10-11 | Env check | Re-tested session: `SHOPIFY_STORE`/`SHOPIFY_ADMIN_TOKEN` not set; shopify.dev, formul8nutrition.com, gruns.co, admin.shopify.com all unreachable (network policy); `shopify-dev-mcp` still not connecting | local environment | Still blocked on owner's environment settings | n/a |
+| 32 | 2026-10-12 | File | Documented Dev Dashboard app settings (App URL, redirect URL unused), client-credentials secrets, requested scopes | CLAUDE.md | OK | revert commit |
 
 ## Status
 - [~] Refund policy: owner text saved in `content/refund-policy.md`; review done (`content/refund-policy-review.md`); waiting on owner decisions + business email
-- [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` + `formul8nutrition.com` + `www.formul8nutrition.com` in network settings, (b) add `SHOPIFY_STORE` and `SHOPIFY_ADMIN_TOKEN` to the environment
+- [ ] Store connection (custom app token) – waiting on owner: (a) allow `shopify.dev` + `*.myshopify.com` + `formul8nutrition.com` + `www.formul8nutrition.com` in network settings, (b) add `SHOPIFY_STORE` + `SHOPIFY_CLIENT_ID` + `SHOPIFY_CLIENT_SECRET` (or `SHOPIFY_ADMIN_TOKEN` for a legacy app) to the environment
 - [~] Product (draft) – copy drafted in `content/product-copy.md`; not created in Shopify
 - [ ] Bundle + discount + gifts (draft)
 - [x] Homepage hero + green scheme (local draft theme, not yet on Shopify)
