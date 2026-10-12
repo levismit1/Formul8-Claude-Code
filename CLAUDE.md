@@ -12,6 +12,7 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 7. **Never publish, delete, or send anything customer-facing without explicit approval.**
 8. Save new learnings about the store schema (metafields, collections, theme layout) to Auto Memory.
 9. Supplement marketing: avoid disease/medical claims; flag anything needing compliance review.
+10. **Credential safety:** before sending ANY credential, confirm the destination host is the owner-confirmed store domain. Never send credentials to a host reached by following a redirect, and never `curl -L` with secrets. If `SHOPIFY_STORE` is the placeholder `your-store.myshopify.com` (or any redirect/non-matching host), STOP and ask the owner for the real address; never retry with a guessed host. Show the owner the exact host before the first authenticated call.
 
 ## Store
 - Public domain: `formul8nutrition.com` (provided by owner). The `.myshopify.com` handle is still needed for API access; keep it in `SHOPIFY_STORE`, not in git.
