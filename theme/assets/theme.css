@@ -166,9 +166,18 @@ a { color: inherit; }
 .waitlist__row input:focus-visible { outline: 3px solid var(--color-forest); outline-offset: 2px; }
 .waitlist__row .button { cursor: pointer; font: inherit; font-weight: 600; letter-spacing: .04em; min-height: 48px; padding: .75rem 1.5rem; }
 .waitlist .waitlist__consent { font-size: .9rem; color: var(--color-green); margin: .75rem 0 0; text-align: left; }
-.waitlist .waitlist__ok { display: flex; justify-content: center; align-items: center; gap: .5rem; font-weight: 700; color: var(--color-instock); font-size: 1.05rem; margin: .5rem 0; text-align: center; }
-.waitlist__ok .icon { color: var(--color-instock); }
+.waitlist .waitlist__ok { display: block; font-weight: 700; color: var(--color-instock); font-size: 1.05rem; margin: .5rem 0; text-align: center; }
+.waitlist__ok .icon { color: var(--color-instock); vertical-align: -.3em; margin-right: .45rem; }
 .waitlist__err { text-align: left; margin: 0 0 .75rem; padding: .6rem .9rem; border: 2px solid var(--color-forest); border-radius: 10px; background: var(--color-cream); font-weight: 600; }
 .waitlist__err ul { margin: 0; padding-left: 1.1rem; }
 .waitlist .waitlist__note { margin: 1.75rem 0 0; text-align: center; font-size: .95rem; }
 @media (max-width: 549px) { .waitlist__row { flex-direction: column; } .waitlist__row .button { width: 100%; } }
+
+.waitlist h1 { text-wrap: balance; }
+.waitlist__row input::placeholder, .pw-entry input::placeholder { color: var(--color-green); opacity: 1; }
+.pw-entry { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem 3rem; text-align: center; }
+.pw-entry summary { cursor: pointer; display: inline-block; padding: .6rem .9rem; min-height: 44px; font-weight: 600; text-decoration: underline; }
+.pw-entry__form { text-align: left; max-width: 26rem; margin: .75rem auto 0; }
+.pw-entry__form label { display: block; font-weight: 600; margin: 0 0 .4rem; }
+.pw-entry .waitlist__row input { flex: 1; min-width: 0; font: inherit; padding: .85rem 1rem; border: 2px solid var(--color-forest); border-radius: 10px; background: #fff; color: var(--color-forest); min-height: 48px; }
+.pw-entry .waitlist__row .button { cursor: pointer; font: inherit; font-weight: 600; min-height: 48px; padding: .75rem 1.5rem; }

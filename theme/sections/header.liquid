@@ -1,6 +1,6 @@
 {%- assign logo_only = false -%}
-{%- if template.suffix == 'listicle' or settings.site_mode != 'selling' -%}{%- assign logo_only = true -%}{%- endif -%}
-{%- if settings.site_mode == 'selling' and settings.gifts_in_stock -%}
+{%- if template.suffix == 'listicle' or settings.site_mode != 'selling' or template.name == 'password' -%}{%- assign logo_only = true -%}{%- endif -%}
+{%- if settings.site_mode == 'selling' and settings.gifts_in_stock and template.name != 'password' -%}
 <div class="announce" role="status">
   <span class="stock-pill">In stock</span>
   <span>FREE shaker bottle + hand blender/frother with your Formul8 jar</span>

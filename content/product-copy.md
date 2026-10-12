@@ -3,6 +3,7 @@
 > DRAFT for owner review. Nothing here has been sent to Shopify.
 > Rule: only facts visible on the jar are used. Anything in [BRACKETS] is a placeholder the owner must fill in.
 > Do not publish until the Supplement Facts panel and a compliant label exist.
+> The product is IN DEVELOPMENT (owner copy): this sales copy (price, offer, "In stock", buy instructions) must NOT go live until the owner says the formula is final and the product is ready to ship.
 
 ## Product settings (to create as DRAFT)
 | Field | Value |

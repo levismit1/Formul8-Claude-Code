@@ -3,14 +3,14 @@
   Do not add benefit claims, amounts, strains or flavour. Keep the in-development line.
   Sign-ups are Shopify customers tagged "newsletter" (email-marketing subscription) and "waitlist".
 {%- endcomment -%}
-{%- if settings.site_mode != 'selling' -%}
+{%- if settings.site_mode != 'selling' or template.name == 'password' -%}
 <section class="waitlist">
   <h1>{{ section.settings.headline }}</h1>
   <p class="waitlist__lead"><strong>{{ section.settings.lead }}</strong></p>
   <p>{{ section.settings.intro }}</p>
 
   <h2>{{ section.settings.ingredients_heading }}</h2>
-  <ul class="waitlist__ingredients">
+  <ul class="waitlist__ingredients" role="list">
     {%- for block in section.blocks -%}
       <li {{ block.shopify_attributes }}><strong>{{ block.settings.name }}</strong> &mdash; {{ block.settings.text }}</li>
     {%- endfor -%}
@@ -20,27 +20,27 @@
   <p>{{ section.settings.routine_text }}</p>
 
   <div class="waitlist__join">
-    <h2>{{ section.settings.join_heading }}</h2>
-    <p>{{ section.settings.join_text }}</p>
     {%- form 'customer', id: 'waitlist-form', class: 'waitlist__form' -%}
       <input type="hidden" name="contact[tags]" value="newsletter,waitlist">
       {%- if form.posted_successfully? -%}
-        <p class="waitlist__ok" role="status">{% render 'icon-check' %} Thanks! You're on the waitlist.</p>
+        <p class="waitlist__ok" role="status" tabindex="-1" autofocus>{% render 'icon-check' %}<span>Thanks! You're on the waitlist.</span></p>
       {%- else -%}
+        <h2>{{ section.settings.join_heading }}</h2>
+        <p>{{ section.settings.join_text }}</p>
         {%- if form.errors -%}
-          <div class="waitlist__err" role="alert">{{ form.errors | default_errors }}</div>
+          <div class="waitlist__err" id="waitlist-error" role="alert" tabindex="-1" autofocus>{{ form.errors | default_errors }}</div>
         {%- endif -%}
         <label for="waitlist-email">Email address</label>
         <div class="waitlist__row">
-          <input id="waitlist-email" type="email" name="contact[email]" autocomplete="email" required placeholder="you@example.com" value="{{ form.email }}">
+          <input id="waitlist-email" type="email" name="contact[email]" autocomplete="email" required placeholder="you@example.com" value="{{ form.email }}"{% if form.errors %} aria-invalid="true" aria-describedby="waitlist-error waitlist-consent"{% else %} aria-describedby="waitlist-consent"{% endif %}>
           <button type="submit" class="button">{{ section.settings.button_label }}</button>
         </div>
-        <p class="waitlist__consent">By joining you agree to receive product updates and launch offers by email. Unsubscribe any time.{% if shop.privacy_policy.url != blank %} <a href="{{ shop.privacy_policy.url }}">Privacy policy</a>{% endif %}</p>
+        <p class="waitlist__consent" id="waitlist-consent">By joining you agree to receive product development updates, early access news and launch offers by email. Unsubscribe any time.{% if shop.privacy_policy.url != blank %} <a href="{{ shop.privacy_policy.url }}">Privacy policy</a>{% endif %}</p>
       {%- endif -%}
     {%- endform -%}
   </div>
 
-  <p class="waitlist__note"><em>{{ section.settings.disclaimer }}</em></p>
+  <p class="waitlist__note"><em>{{ section.settings.disclaimer | default: 'Product in development. Ingredients, quantities, flavor, and final product specifications are subject to change.' }}</em></p>
 </section>
 {%- endif -%}
 {% schema %}
@@ -63,6 +63,6 @@
       { "type": "text", "id": "name", "label": "Name" },
       { "type": "textarea", "id": "text", "label": "Description (owner wording only)" } ] }
   ],
-  "presets": [{ "name": "Waitlist (coming soon)" }]
+  "presets": [{ "name": "Waitlist (coming soon)", "blocks": [{"type": "ingredient", "settings": {"name": "Prebiotic Fiber", "text": "Designed to nourish beneficial bacteria and support digestive wellness."}}, {"type": "ingredient", "settings": {"name": "L-Glutamine", "text": "An amino acid that plays an important role in normal intestinal function."}}, {"type": "ingredient", "settings": {"name": "Green Banana Resistant Starch", "text": "A source of fermentable carbohydrates that may support the gut microbiome."}}, {"type": "ingredient", "settings": {"name": "Probiotics", "text": "Selected beneficial microorganisms being considered to support gut microbiome balance."}}, {"type": "ingredient", "settings": {"name": "Ginger Root Extract", "text": "A botanical ingredient traditionally associated with digestive comfort."}}] }]
 }
 {% endschema %}

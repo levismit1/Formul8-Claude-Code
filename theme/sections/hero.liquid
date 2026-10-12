@@ -16,7 +16,7 @@
            alt="{{ section.settings.alt | escape }}" loading="eager" fetchpriority="high">
     {%- endif -%}
   </picture>
-  {%- if settings.site_mode == 'selling' -%}
+  {%- if settings.site_mode == 'selling' and template.name != 'password' -%}
   <div class="hero__content">
     <h1>{{ section.settings.heading }}</h1>
     <p>{{ section.settings.subheading }}</p>
