@@ -53,3 +53,28 @@ Set the link in Theme settings -> Offer & stock -> "Offer button link" once the 
 - Create the store refund policy (Settings -> Policies); the guarantee block links to it only once it exists
 - Keep "Free gifts in stock" honest: update the gift stock number, or pause the offer when gifts run out (the page then shows "Free gifts currently out of stock")
 - Supplement Facts on the product page and label
+
+---
+
+## Full-page structure of the reference page (fetched 2026-10-12 from the owner's Grüns link)
+Structure only. None of their claims, statistics, survey results, testimonials or certifications are copied or implied for Formul8.
+
+| Order | Reference section | What it does for conversion | Formul8 version |
+|---|---|---|---|
+| 1 | Top bar: "Save 61% + free gifts on your first order" and a shipping cut-off line (order by 1 PM ET for same-day shipping) | Offer and delivery promise visible immediately | Offer line: built (announcement bar). Shipping cut-off: only with REAL shipping terms (owner to supply). |
+| 2 | Hero: proof strip, two-tone headline, 3 ticks, one-line objection killer, big CTA, guarantee line, gift tiles | See earlier table | Built |
+| 3 | Four short customer testimonials right after the hero | Social proof early | `lp-reviews` section exists and stays hidden until the owner has REAL reviews; place it directly after the hero when filled |
+| 4 | "Transform your health": four benefit categories | Shows what the product is for | NOT built: needs substantiated benefit claims and a Supplement Facts panel (none yet) |
+| 5 | "Modern living leaves our bodies deficient": problem statistics | Problem framing | NOT built: statistics need real, cited sources |
+| 6 | "Snackable, packable, tested": customer-survey results with a footnote describing the survey | Proof, with the survey sample disclosed | NOT built: no survey exists; never invent one |
+| 7 | "Quality you can trust": testing and certifications | Trust | NOT built until real third-party tests exist |
+| 8 | Offer section with a real deadline, plan cards ("Most popular"), per-option "30-day money-back guarantee" and "free gifts included" lines | Choice plus risk reversal at the decision point | Recap box with the guarantee line: built. Deadline only if real. No plan options or autoship (no subscription). |
+| 9 | Accordions: why this product, ingredients and allergies, science and certifications, directions, benefits | Answers objections without leaving the page | FAQ accordion: built. Add "Ingredients and Supplement Facts" and "Directions" accordions once the label exists. |
+| 10 | Guarantee section ("X% of customers use our guarantee") | Reassurance | Guarantee block built. Do NOT quote a usage percentage unless it is real. |
+| 11 | "Replaces handfuls of health products at a fraction of the cost" comparison | Value framing | NOT built: needs substantiated comparison claims |
+
+### Concrete changes this suggests for our page (need owner approval before I build them)
+1. Move the (hidden-until-real) testimonials block to sit right after the hero.
+2. Add "Ingredients & Supplement Facts" and "Directions" accordions to the FAQ, marked as placeholders until the label exists.
+3. Add a shipping cut-off or delivery line to the top bar only when the owner has real shipping terms.
+4. Keep the "Most popular" idea out: Formul8 has a single offer.
