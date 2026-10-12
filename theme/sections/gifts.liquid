@@ -1,14 +1,13 @@
 {%- comment -%}
   Free-gift showcase. No 'normal price' or 'value' claims: the gifts are not sold separately yet.
-  The green "In stock" badge shows only while the theme setting `gifts_left` is above 0 (hidden at 0/blank).
+  The green "In stock" badge shows only while the theme setting `gifts_in_stock` is ticked.
   It must always match real inventory.
 {%- endcomment -%}
-{%- assign left = settings.gifts_left | plus: 0 -%}
 <section class="gifts">
   <div class="gifts__head">
     <h2>{{ section.settings.heading }}</h2>
     <p>Yours free when you get Formul8 Nutrition.</p>
-    {%- if left > 0 -%}
+    {%- if settings.gifts_in_stock -%}
       <p class="stock-pill stock-pill--lg" role="status">In stock</p>
     {%- endif -%}
   </div>
@@ -28,7 +27,7 @@
       <p><strong>FREE</strong></p>
     </li>
   </ul>
-  {%- if left > 0 -%}
+  {%- if settings.gifts_in_stock -%}
     <p class="gifts__note stock-text">Free gift sets are in stock.</p>
   {%- endif -%}
   <p class="gifts__cta"><a class="button" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>

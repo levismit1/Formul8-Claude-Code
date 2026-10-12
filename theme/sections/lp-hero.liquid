@@ -4,7 +4,6 @@
   Every statement here is a Formul8 fact the owner confirmed. The social-proof strip stays hidden
   until real numbers are entered; the offer-end line stays hidden until a real date is entered.
 {%- endcomment -%}
-{%- assign left = settings.gifts_left | plus: 0 -%}
 <section class="lp-hero">
   <div class="lp-hero__copy">
     {%- if section.settings.rating != blank and section.settings.review_count != blank -%}
@@ -29,7 +28,7 @@
     {%- if section.settings.offer_end != blank -%}
       <p class="lp-ends">Offer ends {{ section.settings.offer_end }}</p>
     {%- endif -%}
-    {%- if left > 0 -%}<p class="lp-stock"><span class="stock-pill">Free gifts in stock</span></p>{%- else -%}<p class="lp-stock"><span class="stock-pill stock-pill--out">Free gifts currently out of stock</span></p>{%- endif -%}
+    {%- if settings.gifts_in_stock -%}<p class="lp-stock"><span class="stock-pill">Free gifts in stock</span></p>{%- else -%}<p class="lp-stock"><span class="stock-pill stock-pill--out">Free gifts currently out of stock</span></p>{%- endif -%}
   </div>
   <div class="lp-hero__media">
     <picture>

@@ -51,7 +51,7 @@ Set the link in Theme settings -> Offer & stock -> "Offer button link" once the 
 - Real reviews/ratings and a real offer end date, only if they exist
 - Theme settings -> Offer & stock -> "Offer button link" (the cart link that adds jar + both gifts) is REQUIRED before launch
 - Create the store refund policy (Settings -> Policies); the guarantee block links to it only once it exists
-- Keep "Free gifts in stock" honest: update the gift stock number, or pause the offer when gifts run out (the page then shows "Free gifts currently out of stock")
+- Keep "Free gifts in stock" honest: untick `gifts_in_stock` in theme settings if a gift runs out (the page then shows "Free gifts currently out of stock")
 - Supplement Facts on the product page and label
 
 ---

@@ -13,7 +13,7 @@
 | Compare-at price | NONE (no strikethrough "was" price: the product has never been sold at $70). Show "Regular price $70 after launch" as plain text instead. |
 | Vendor | Formul8 Nutrition |
 | Product type | Dietary Supplement |
-| Tracks inventory | Yes – quantity [OWNER TO SUPPLY] |
+| Tracks inventory | OFF for now (owner has no stock numbers); turn ON with real counts before launch |
 | Weight | 12.7 oz (owner-confirmed) |
 | Image | `theme/assets/formul8-hero.jpg` (jar banner); gifts photo `theme/assets/formul8-gifts.jpg`; alt text below |
 | Image alt text | Formul8 Nutrition dietary supplement jar, 30 servings, in dark green packaging |
@@ -29,7 +29,7 @@ Formul8 Nutrition is a dietary supplement. Each jar contains 30 servings.
 - FREE shaker bottle with your jar
 - FREE hand blender/frother with your jar
 
-**In stock** *(show in GREEN, `#2E6B34`; only while gift inventory is above 0; hide at 0)*
+**In stock** *(show in GREEN, `#2E6B34`, no count; only while true: controlled by the theme tick box `gifts_in_stock`)*
 
 Use the button on the offer page: it adds your jar and both free gifts to your cart, and the gifts show as FREE at checkout. Gifts are limited by stock. [Offer end date – only if real; OWNER TO CONFIRM]
 
@@ -52,6 +52,6 @@ Use the button on the offer page: it adds your jar and both free gifts to your c
 
 ## Open items before this can go live
 1. Supplement Facts panel + ingredient list + directions + warnings (from the manufacturer/label).
-2. Stock quantities: gifts = 3 per owner (set in Shopify inventory so the green "In stock" badge is true and hides at 0); jar quantity still needed.
+2. Real stock quantities for jar, shaker and frother (owner has none yet): the site says only "In stock", which must be true.
 3. Offer end date, shipping and return policy, any guarantee. (Pricing decision made: launch price $49, "regular price $70 after launch", no gift "value" claims.)
 4. Compliance check of all wording by whoever reviews your label.

@@ -56,11 +56,11 @@
         "content": "Free-gift \"In stock\" badge"
       },
       {
-        "type": "number",
-        "id": "gifts_left",
-        "label": "Free-gift sets in stock",
-        "default": 3,
-        "info": "Must match real inventory. The green 'In stock' badge shows only while this is above 0. Set to 0 or clear to hide it."
+        "type": "checkbox",
+        "id": "gifts_in_stock",
+        "label": "Free gifts are in stock",
+        "default": true,
+        "info": "Turn OFF if the shaker or frother is sold out or you are low. ON shows the green 'In stock' badge. OFF shows 'Free gifts currently out of stock'."
       },
       {
         "type": "header",

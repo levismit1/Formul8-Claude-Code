@@ -1,4 +1,3 @@
-{%- assign left = settings.gifts_left | plus: 0 -%}
 <section class="lp-recap">
   <div class="recap">
     <h2>{{ section.settings.heading }}</h2>
@@ -11,7 +10,7 @@
       </tbody>
     </table>
     <p class="recap__note">Launch price. Regular price ${{ settings.jar_regular_price }} after launch.</p>
-    {%- if left > 0 -%}<p class="lp-stock"><span class="stock-pill">Free gifts in stock</span></p>{%- else -%}<p class="lp-stock"><span class="stock-pill stock-pill--out">Free gifts currently out of stock</span></p>{%- endif -%}
+    {%- if settings.gifts_in_stock -%}<p class="lp-stock"><span class="stock-pill">Free gifts in stock</span></p>{%- else -%}<p class="lp-stock"><span class="stock-pill stock-pill--out">Free gifts currently out of stock</span></p>{%- endif -%}
     <p class="lp-center"><a class="button button--lg" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
     <p class="guarantee-line guarantee-line--center">{% render 'icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
   </div>
