@@ -3,6 +3,7 @@
   The green "In stock" badge shows only while the theme setting `gifts_in_stock` is ticked.
   It must always match real inventory.
 {%- endcomment -%}
+{%- if settings.site_mode == 'selling' -%}
 <section class="gifts">
   <div class="gifts__head">
     <h2>{{ section.settings.heading }}</h2>
@@ -32,6 +33,7 @@
   {%- endif -%}
   <p class="gifts__cta"><a class="button" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
 </section>
+{%- endif -%}
 {% schema %}
 {
   "name": "Free gifts",

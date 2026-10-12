@@ -1,0 +1,68 @@
+{%- comment -%}
+  Coming-soon + waitlist block (owner-supplied wording, content/waitlist-copy.md). Shown only in Waitlist mode.
+  Do not add benefit claims, amounts, strains or flavour. Keep the in-development line.
+  Sign-ups are Shopify customers tagged "newsletter" (email-marketing subscription) and "waitlist".
+{%- endcomment -%}
+{%- if settings.site_mode != 'selling' -%}
+<section class="waitlist">
+  <h1>{{ section.settings.headline }}</h1>
+  <p class="waitlist__lead"><strong>{{ section.settings.lead }}</strong></p>
+  <p>{{ section.settings.intro }}</p>
+
+  <h2>{{ section.settings.ingredients_heading }}</h2>
+  <ul class="waitlist__ingredients">
+    {%- for block in section.blocks -%}
+      <li {{ block.shopify_attributes }}><strong>{{ block.settings.name }}</strong> &mdash; {{ block.settings.text }}</li>
+    {%- endfor -%}
+  </ul>
+
+  <h2>{{ section.settings.routine_heading }}</h2>
+  <p>{{ section.settings.routine_text }}</p>
+
+  <div class="waitlist__join">
+    <h2>{{ section.settings.join_heading }}</h2>
+    <p>{{ section.settings.join_text }}</p>
+    {%- form 'customer', id: 'waitlist-form', class: 'waitlist__form' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter,waitlist">
+      {%- if form.posted_successfully? -%}
+        <p class="waitlist__ok" role="status">{% render 'icon-check' %} Thanks! You're on the waitlist.</p>
+      {%- else -%}
+        {%- if form.errors -%}
+          <div class="waitlist__err" role="alert">{{ form.errors | default_errors }}</div>
+        {%- endif -%}
+        <label for="waitlist-email">Email address</label>
+        <div class="waitlist__row">
+          <input id="waitlist-email" type="email" name="contact[email]" autocomplete="email" required placeholder="you@example.com" value="{{ form.email }}">
+          <button type="submit" class="button">{{ section.settings.button_label }}</button>
+        </div>
+        <p class="waitlist__consent">By joining you agree to receive product updates and launch offers by email. Unsubscribe any time.{% if shop.privacy_policy.url != blank %} <a href="{{ shop.privacy_policy.url }}">Privacy policy</a>{% endif %}</p>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+
+  <p class="waitlist__note"><em>{{ section.settings.disclaimer }}</em></p>
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Waitlist (coming soon)",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Your Gut. Your Health. Your Formula." },
+    { "type": "text", "id": "lead", "label": "Lead line", "default": "Meet the next generation of daily gut wellness." },
+    { "type": "textarea", "id": "intro", "label": "Intro", "default": "Formul8 Nutrition is developing a refreshing, easy-to-mix daily gut health powder designed around digestive support, beneficial gut bacteria, and everyday wellness." },
+    { "type": "text", "id": "ingredients_heading", "label": "Ingredients heading", "default": "What's Inside Our Proposed Formula?" },
+    { "type": "text", "id": "routine_heading", "label": "Routine heading", "default": "Simple Routine. Thoughtful Ingredients." },
+    { "type": "textarea", "id": "routine_text", "label": "Routine text", "default": "We're developing Formul8 to make daily gut wellness convenient, approachable, and enjoyable." },
+    { "type": "text", "id": "join_heading", "label": "Join heading", "default": "Be First to Experience Formul8." },
+    { "type": "textarea", "id": "join_text", "label": "Join text", "default": "Join our exclusive waitlist for product development updates, early access, and launch offers." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "JOIN THE WAITLIST" },
+    { "type": "textarea", "id": "disclaimer", "label": "In-development line (keep it)", "default": "Product in development. Ingredients, quantities, flavor, and final product specifications are subject to change." }
+  ],
+  "blocks": [
+    { "type": "ingredient", "name": "Ingredient", "settings": [
+      { "type": "text", "id": "name", "label": "Name" },
+      { "type": "textarea", "id": "text", "label": "Description (owner wording only)" } ] }
+  ],
+  "presets": [{ "name": "Waitlist (coming soon)" }]
+}
+{% endschema %}

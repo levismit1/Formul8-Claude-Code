@@ -4,6 +4,54 @@
       "type": "hero",
       "settings": {}
     },
+    "waitlist": {
+      "type": "waitlist",
+      "blocks": {
+        "i1": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Prebiotic Fiber",
+            "text": "Designed to nourish beneficial bacteria and support digestive wellness."
+          }
+        },
+        "i2": {
+          "type": "ingredient",
+          "settings": {
+            "name": "L-Glutamine",
+            "text": "An amino acid that plays an important role in normal intestinal function."
+          }
+        },
+        "i3": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Green Banana Resistant Starch",
+            "text": "A source of fermentable carbohydrates that may support the gut microbiome."
+          }
+        },
+        "i4": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Probiotics",
+            "text": "Selected beneficial microorganisms being considered to support gut microbiome balance."
+          }
+        },
+        "i5": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Ginger Root Extract",
+            "text": "A botanical ingredient traditionally associated with digestive comfort."
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5"
+      ],
+      "settings": {}
+    },
     "gifts": {
       "type": "gifts",
       "settings": {}
@@ -11,6 +59,7 @@
   },
   "order": [
     "hero",
+    "waitlist",
     "gifts"
   ]
 }

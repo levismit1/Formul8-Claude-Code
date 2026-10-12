@@ -16,6 +16,7 @@
            alt="{{ section.settings.alt | escape }}" loading="eager" fetchpriority="high">
     {%- endif -%}
   </picture>
+  {%- if settings.site_mode == 'selling' -%}
   <div class="hero__content">
     <h1>{{ section.settings.heading }}</h1>
     <p>{{ section.settings.subheading }}</p>
@@ -24,6 +25,7 @@
     {%- endif -%}
     <p class="guarantee-line">{% render 'icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
   </div>
+  {%- endif -%}
 </section>
 {% schema %}
 {

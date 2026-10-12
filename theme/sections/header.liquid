@@ -1,12 +1,14 @@
-{%- if settings.gifts_in_stock -%}
+{%- assign logo_only = false -%}
+{%- if template.suffix == 'listicle' or settings.site_mode != 'selling' -%}{%- assign logo_only = true -%}{%- endif -%}
+{%- if settings.site_mode == 'selling' and settings.gifts_in_stock -%}
 <div class="announce" role="status">
   <span class="stock-pill">In stock</span>
   <span>FREE shaker bottle + hand blender/frother with your Formul8 jar</span>
 </div>
 {%- endif -%}
-<header class="site-header{% if template.suffix == 'listicle' %} site-header--logo-only{% endif %}">
+<header class="site-header{% if logo_only %} site-header--logo-only{% endif %}">
   <a class="site-header__logo" href="{{ routes.root_url }}">{{ shop.name }}</a>
-  {%- unless template.suffix == 'listicle' -%}
+  {%- unless logo_only -%}
   <nav class="site-header__nav" aria-label="Main">
     {% for link in linklists.main-menu.links %}
       <a href="{{ link.url }}">{{ link.title }}</a>

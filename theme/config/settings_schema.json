@@ -49,6 +49,32 @@
     ]
   },
   {
+    "name": "Site mode",
+    "settings": [
+      {
+        "type": "header",
+        "content": "What visitors see on the homepage"
+      },
+      {
+        "type": "select",
+        "id": "site_mode",
+        "label": "Site mode",
+        "default": "waitlist",
+        "options": [
+          {
+            "value": "waitlist",
+            "label": "Waitlist (coming soon)"
+          },
+          {
+            "value": "selling",
+            "label": "Selling (shows the offer, free gifts and Shop button)"
+          }
+        ],
+        "info": "Keep on Waitlist until the formula, Supplement Facts label, refund policy and shipping are final. Switch to Selling only at launch."
+      }
+    ]
+  },
+  {
     "name": "Offer & stock",
     "settings": [
       {

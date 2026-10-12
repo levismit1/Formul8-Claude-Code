@@ -149,3 +149,26 @@ a { color: inherit; }
 .lp-price { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 700; color: var(--color-forest); }
 .lp-price span { font-size: 1rem; font-weight: 500; color: var(--color-green); }
 .recap__note { text-align: center; margin: .75rem 0 0; color: var(--color-green); }
+
+/* ---- Waitlist (coming soon) ---- */
+.waitlist { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+.waitlist h1 { margin: 0 0 .75rem; font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 700; line-height: 1.1; text-align: center; }
+.waitlist h2 { margin: 2.25rem 0 .75rem; font-size: clamp(1.35rem, 3vw, 1.75rem); font-weight: 600; }
+.waitlist .waitlist__lead { text-align: center; font-size: 1.2rem; color: var(--color-green); margin: 0 0 1rem; }
+.waitlist p { margin: 0 0 1rem; }
+.waitlist__ingredients { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.waitlist__ingredients li { background: #fff; border: 1px solid var(--color-sage); border-radius: 12px; padding: .9rem 1.1rem; }
+.waitlist__join { margin-top: 2.5rem; background: #fff; border: 2px solid var(--color-forest); border-radius: 16px; padding: 1.5rem 1.25rem 1.25rem; text-align: center; }
+.waitlist__join h2 { margin-top: 0; }
+.waitlist__form label { display: block; text-align: left; font-weight: 600; margin: 0 0 .4rem; }
+.waitlist__row { display: flex; gap: .6rem; }
+.waitlist__row input { flex: 1; min-width: 0; font: inherit; padding: .85rem 1rem; border: 2px solid var(--color-forest); border-radius: 10px; background: #fff; color: var(--color-forest); min-height: 48px; }
+.waitlist__row input:focus-visible { outline: 3px solid var(--color-forest); outline-offset: 2px; }
+.waitlist__row .button { cursor: pointer; font: inherit; font-weight: 600; letter-spacing: .04em; min-height: 48px; padding: .75rem 1.5rem; }
+.waitlist .waitlist__consent { font-size: .9rem; color: var(--color-green); margin: .75rem 0 0; text-align: left; }
+.waitlist .waitlist__ok { display: flex; justify-content: center; align-items: center; gap: .5rem; font-weight: 700; color: var(--color-instock); font-size: 1.05rem; margin: .5rem 0; text-align: center; }
+.waitlist__ok .icon { color: var(--color-instock); }
+.waitlist__err { text-align: left; margin: 0 0 .75rem; padding: .6rem .9rem; border: 2px solid var(--color-forest); border-radius: 10px; background: var(--color-cream); font-weight: 600; }
+.waitlist__err ul { margin: 0; padding-left: 1.1rem; }
+.waitlist .waitlist__note { margin: 1.75rem 0 0; text-align: center; font-size: .95rem; }
+@media (max-width: 549px) { .waitlist__row { flex-direction: column; } .waitlist__row .button { width: 100%; } }

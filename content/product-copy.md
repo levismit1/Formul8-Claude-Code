@@ -37,6 +37,15 @@ Use the button on the offer page: it adds your jar and both free gifts to your c
 
 **How to use:** [OWNER TO SUPPLY – directions from the label]
 
+**What's inside our proposed formula** *(owner wording from `content/waitlist-copy.md`; keep the in-development line; no amounts, strains or flavour)*
+- **Prebiotic Fiber** — Designed to nourish beneficial bacteria and support digestive wellness.
+- **L-Glutamine** — An amino acid that plays an important role in normal intestinal function.
+- **Green Banana Resistant Starch** — A source of fermentable carbohydrates that may support the gut microbiome.
+- **Probiotics** — Selected beneficial microorganisms being considered to support gut microbiome balance.
+- **Ginger Root Extract** — A botanical ingredient traditionally associated with digestive comfort.
+
+*Product in development. Ingredients, quantities, flavor, and final product specifications are subject to change.*
+
 **Supplement Facts:** [PLACEHOLDER – insert the Supplement Facts panel and ingredient list from the final label. Do not launch without it.]
 
 **Shipping & returns:** [OWNER TO SUPPLY]
