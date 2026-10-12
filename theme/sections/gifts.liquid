@@ -1,14 +1,13 @@
 {%- comment -%}
-  Free-gift showcase. Prices below are the gifts' normal prices (owner-confirmed).
+  Free-gift showcase. No 'normal price' or 'value' claims: the gifts are not sold separately yet.
   The green "In stock" badge shows only while the theme setting `gifts_left` is above 0 (hidden at 0/blank).
   It must always match real inventory.
 {%- endcomment -%}
 {%- assign left = settings.gifts_left | plus: 0 -%}
-{%- assign total = settings.shaker_price | plus: settings.frother_price -%}
 <section class="gifts">
   <div class="gifts__head">
     <h2>{{ section.settings.heading }}</h2>
-    <p>Yours free when you get Formul8 Nutrition. That is ${{ total | round: 2 }} of free gifts.</p>
+    <p>Yours free when you get Formul8 Nutrition.</p>
     {%- if left > 0 -%}
       <p class="stock-pill stock-pill--lg" role="status">In stock</p>
     {%- endif -%}
@@ -22,11 +21,11 @@
   <ul class="gifts__cards">
     <li class="gift-card">
       <h3>{{ settings.shaker_name }}</h3>
-      <p><s><span class="vh">Normally </span>${{ settings.shaker_price }}</s> <strong>FREE</strong></p>
+      <p><strong>FREE</strong></p>
     </li>
     <li class="gift-card">
       <h3>{{ settings.frother_name }}</h3>
-      <p><s><span class="vh">Normally </span>${{ settings.frother_price }}</s> <strong>FREE</strong></p>
+      <p><strong>FREE</strong></p>
     </li>
   </ul>
   {%- if left > 0 -%}

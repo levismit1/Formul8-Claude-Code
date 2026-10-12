@@ -132,7 +132,9 @@ a { color: inherit; }
   .lp-hero .lp-stock { text-align: center; }
   .lp-sticky { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; align-items: center; justify-content: space-between; gap: .75rem;
     padding: .65rem 1rem; background: #fff; border-top: 2px solid var(--color-forest); box-shadow: 0 -4px 12px rgba(0,0,0,.08); }
-  .lp-sticky__price { font-size: 1.1rem; white-space: nowrap; }
+  .lp-sticky__price { display: grid; line-height: 1.1; white-space: nowrap; }
+  .lp-sticky__price small { font-size: .75rem; color: var(--color-green); }
+  .lp-sticky__price strong { font-size: 1.3rem; }
   .lp-sticky .button { padding: .75rem 1.25rem; font-size: .95rem; }
   body.template-listicle { padding-bottom: 4.5rem; }
   html { scroll-padding-bottom: 5.5rem; }
@@ -142,3 +144,8 @@ a { color: inherit; }
 /* ---- Helpers ---- */
 .vh { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .stock-pill--out { background: #fff; color: var(--color-forest); border: 2px solid var(--color-forest); }
+
+/* ---- Launch price wording ---- */
+.lp-price { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 700; color: var(--color-forest); }
+.lp-price span { font-size: 1rem; font-weight: 500; color: var(--color-green); }
+.recap__note { text-align: center; margin: .75rem 0 0; color: var(--color-green); }

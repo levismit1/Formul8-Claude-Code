@@ -69,13 +69,13 @@
       {
         "type": "number",
         "id": "jar_regular_price",
-        "label": "Jar regular price ($)",
+        "label": "Regular price after launch ($)",
         "default": 70
       },
       {
         "type": "number",
         "id": "jar_sale_price",
-        "label": "Jar sale price ($)",
+        "label": "Launch price ($)",
         "default": 49
       },
       {
@@ -86,21 +86,9 @@
       },
       {
         "type": "text",
-        "id": "shaker_price",
-        "label": "Free gift 1 normal price ($) (dollars and cents, no $ sign)",
-        "default": "14.99"
-      },
-      {
-        "type": "text",
         "id": "frother_name",
         "label": "Free gift 2 name",
         "default": "Formul8 Hand Blender / Frother"
-      },
-      {
-        "type": "text",
-        "id": "frother_price",
-        "label": "Free gift 2 normal price ($) (dollars and cents, no $ sign)",
-        "default": "24.99"
       },
       {
         "type": "url",

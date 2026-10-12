@@ -20,7 +20,7 @@
 | 5 | **Pick ONE start for the 30 days.** | Section 1 says "receiving your order", Section 3 says "delivery". | Use "within 30 days of delivery" in both (needs tracking on every order). |
 | 6 | **What exactly is refunded?** | Section 4 never says: item price, tax, discounts, shipping. Section 5 says original shipping is non-refundable. | Add one sentence: refund = the price you paid for the product (after discounts, plus tax charged on it); original shipping is covered in Section 5. |
 | 7 | **Damaged/defective orders: deadline, photo, replacement vs refund?** | "As soon as possible" is open-ended. A replacement gift may be impossible when gift stock is 0. | Set a reporting window, ask for a photo, say what happens if a gift can't be replaced (refund the item). |
-| 8 | **Are $70, $14.99 and $24.99 real reference prices?** | "Was/Normally/Value" prices must be genuine prices those items are (or will be) offered at; keep records. | Confirm, or drop the strike-throughs and the "$109.98 value" line. |
+| 8 | ~~Are $70, $14.99 and $24.99 real reference prices?~~ **RESOLVED 2026-10-12 (Option A):** launch price $49, "regular price $70 after launch", no strikethrough, no gift value claims. | The owner must actually raise the price to $70 after launch. | Done on the site; keep a record of the launch end date. |
 | 9 | Optional: add a neutral line on payment disputes. | The policy says nothing about card disputes. | "Contact us first so we can fix it. This does not limit your right to dispute a charge with your bank." (reviewer to confirm) |
 
 ## Website changes I can make (need the owner's approval first)

@@ -21,11 +21,11 @@
 | Logo-only header | Header hides the nav on the listicle template | Built |
 | Social proof strip | Hidden until real rating + review count are entered | Hidden (no real data yet) |
 | Two-tone headline | "5 Reasons to Try Formul8 Nutrition" / "Your gut. Your health. Your formula." | Built |
-| 3 proof ticks | 30 servings in every jar · FREE shaker + frother ($39.98 value) · 30-day money-back guarantee | Built (all true) |
+| 3 proof ticks | 30 servings in every jar · FREE shaker + frother with your jar · 30-day money-back guarantee | Built (all true) |
 | Objection-killer line | Skipped: we don't know if Formul8 is a powder, so "no blender" style claims are not made | Skipped |
 | CTA + badge | "30% OFF" badge + "Get 30% Off + Free Gifts" (no "today": no real end date) | Built |
 | Guarantee under CTA | "Backed by our 30-day money-back guarantee" (exact owner wording; "risk-free" deliberately NOT used, terms undecided) | Built |
-| Free gift tiles | FREE $14.99 shaker, FREE $24.99 frother | Built |
+| Free gift tiles | Shaker and frother tiles tagged FREE (no "value" amounts: gifts have never been sold separately) | Built |
 | Dated sale banner | Optional "Offer ends ..." line, hidden until a REAL date is entered | Hidden |
 | Their claims (ingredients, fibre, clinical testing, 4.8 stars, 100,000 reviews, 2B sold) | NOT copied. We have no such facts. | Never |
 
@@ -34,11 +34,11 @@
 2. Hero: headline, 3 ticks, CTA, guarantee line, "In stock", free-gift tiles, jar image (on phones: copy first, then image)
 3. "Why you'll love it": 5 numbered reasons (your formula · 30 servings · 30% off · free shaker · free frother) + gifts photo + CTA
 4. Reviews (renders only if the owner adds REAL reviews)
-5. "What you get today": jar $70 + free shaker $14.99 + free frother $24.99 = $109.98 value, you pay $49
+5. "What you get today": jar $49 launch price + free shaker + free frother = $49 total; note "Launch price. Regular price $70 after launch."
 6. 30-Day Money-Back Guarantee block (links to the refund policy)
 7. FAQ (5 questions)
 8. Footer with FDA disclaimer
-9. Sticky bottom bar on phones ($70 crossed out, $49, button)
+9. Sticky bottom bar on phones ("Launch price $49", button)
 
 ## How the button will work (important)
 A Shopify discount does not add the gifts to the cart. The offer button should be a **cart link** that adds the jar and both gifts together
