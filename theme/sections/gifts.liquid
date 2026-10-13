@@ -7,7 +7,7 @@
 <section class="gifts">
   <div class="gifts__head">
     <h2>{{ section.settings.heading }}</h2>
-    <p>Yours free with your first delivery.</p>
+    <p>Yours free with your first subscription delivery.</p>
     {%- if settings.gifts_in_stock -%}
       <p class="stock-pill stock-pill--lg" role="status">In stock</p>
     {%- endif -%}
@@ -39,7 +39,7 @@
 {
   "name": "Free gifts",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Get 2 free gifts with your first delivery" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Get 2 free gifts with your first subscription delivery" },
     { "type": "text", "id": "alt", "label": "Image description (alt text)", "default": "Formul8 Nutrition green shaker bottle and hand blender/frother" },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Start My Subscription + Free Gifts" }
   ],

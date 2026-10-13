@@ -7,6 +7,7 @@
         <tr><th scope="row">{{ settings.shaker_name }}</th><td>FREE</td></tr>
         <tr><th scope="row">{{ settings.frother_name }}</th><td>FREE</td></tr>
         <tr class="recap__price"><th scope="row">Your price today</th><td>${{ settings.jar_sale_price }}</td></tr>
+        <tr class="recap__then"><th scope="row">Then every month, until you cancel</th><td>${{ settings.jar_regular_price }}</td></tr>
       </tbody>
     </table>
     {%- if settings.gifts_in_stock -%}<p class="lp-stock"><span class="stock-pill">Free gifts in stock</span></p>{%- else -%}<p class="lp-stock"><span class="stock-pill stock-pill--out">Free gifts currently out of stock</span></p>{%- endif -%}
@@ -19,7 +20,7 @@
 {
   "name": "LP: Offer recap",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "What you get with your first delivery" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What you get with your first subscription delivery" },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Start My Subscription + Free Gifts" }
   ],
   "presets": [{ "name": "LP: Offer recap" }]

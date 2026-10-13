@@ -38,18 +38,17 @@
 6. 30-Day Money-Back Guarantee block (links to the refund policy)
 7. FAQ (5 questions)
 8. Footer with FDA disclaimer
-9. Sticky bottom bar on phones ("First jar $49 / then $70/mo", "Start Subscription" button)
+9. Sticky bottom bar on phones ("First jar $49", "Start Subscription" button and the full renewal sentence; appears after the hero sentence scrolls out of view)
 
-## How the button will work (important)
-A Shopify discount does not add the gifts to the cart. The offer button should be a **cart link** that adds the jar and both gifts together
-(`/cart/<jar variant id>:1,<shaker variant id>:1,<frother variant id>:1`); the two automatic discounts then make the gifts $0 at checkout.
-Set the link in Theme settings -> Offer & stock -> "Offer button link" once the products exist.
+## How the button will work (important, CORRECTED 2026-10-13)
+Shopify cart links (`/cart/<variant>:<qty>`) do NOT support subscription (selling) plans, so a cart link cannot start a subscription. Until the products exist the button links to the product page via Theme settings -> Offer & stock -> "Offer button link".
+Planned build once the products and the "Monthly" plan exist: an on-page add-to-cart form (Shopify Cart API) that adds the jar WITH its `selling_plan` id plus the two gift variants without a plan; the gift discounts then make the gifts $0. Test end to end before launch.
 
 ## Placeholders the owner must fix before publishing
 - FAQ "What is in Formul8 Nutrition?" and "Shipping" answers (editable in the theme editor)
 - Refund policy page text must match the 30-day money-back promise
 - Real reviews/ratings and a real offer end date, only if they exist
-- Theme settings -> Offer & stock -> "Offer button link" (the cart link that adds jar + both gifts) is REQUIRED before launch
+- Theme settings -> Offer & stock -> "Offer button link" (product-page link for now; later replaced by the add-to-cart form) is REQUIRED before launch
 - Create the store refund policy (Settings -> Policies); the guarantee block links to it only once it exists
 - Keep "Free gifts in stock" honest: untick `gifts_in_stock` in theme settings if a gift runs out (the page then shows "Free gifts currently out of stock")
 - Supplement Facts on the product page and label
@@ -68,7 +67,7 @@ Structure only. None of their claims, statistics, survey results, testimonials o
 | 5 | "Modern living leaves our bodies deficient": problem statistics | Problem framing | NOT built: statistics need real, cited sources |
 | 6 | "Snackable, packable, tested": customer-survey results with a footnote describing the survey | Proof, with the survey sample disclosed | NOT built: no survey exists; never invent one |
 | 7 | "Quality you can trust": testing and certifications | Trust | NOT built until real third-party tests exist |
-| 8 | Offer section with a real deadline, plan cards ("Most popular"), per-option "30-day money-back guarantee" and "free gifts included" lines | Choice plus risk reversal at the decision point | Recap box with the guarantee line: built. Deadline only if real. No plan options or autoship (no subscription). |
+| 8 | Offer section with a real deadline, plan cards ("Most popular"), per-option "30-day money-back guarantee" and "free gifts included" lines | Choice plus risk reversal at the decision point | Recap box with the guarantee line: built. Deadline only if real. Single plan only: the monthly subscription (renewal sentence under the button). |
 | 9 | Accordions: why this product, ingredients and allergies, science and certifications, directions, benefits | Answers objections without leaving the page | FAQ accordion: built. Add "Ingredients and Supplement Facts" and "Directions" accordions once the label exists. |
 | 10 | Guarantee section ("X% of customers use our guarantee") | Reassurance | Guarantee block built. Do NOT quote a usage percentage unless it is real. |
 | 11 | "Replaces handfuls of health products at a fraction of the cost" comparison | Value framing | NOT built: needs substantiated comparison claims |
@@ -83,6 +82,6 @@ Structure only. None of their claims, statistics, survey results, testimonials o
 
 ## Subscription rules for this page (owner decisions 2026-10-13)
 - Monthly subscription; $49 for the first jar then $70 per month; free shaker + frother with the first delivery only; cancel any time online; 30-day money-back guarantee per policy Section 7.
-- The approved renewal sentence is rendered by ONE snippet (`theme/snippets/subscription-terms.liquid`) directly under every buy button (homepage in Selling mode, listicle hero, reasons, recap, gifts) and in short form ("then $70/mo") in the sticky bar. Never reword it per page.
+- The approved renewal sentence is rendered by ONE snippet (`theme/snippets/subscription-terms.liquid`) directly under every buy button (homepage in Selling mode, listicle hero, reasons, recap, gifts) and, in full, inside the phone sticky bar (which appears only after the hero sentence scrolls away). There is no shortened version. Never reword it per page.
 - Never call it "one-time", a "launch price" or "regular price after launch".
 - "Cancel any time" is a promise: only true once customer accounts and the Shopify Subscriptions cancel option are live and tested.

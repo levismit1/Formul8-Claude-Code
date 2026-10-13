@@ -1,10 +1,10 @@
 <section class="lp-faq">
   <h2>{{ section.settings.heading }}</h2>
-  <details><summary>How does the subscription work?</summary><p>Formul8 Nutrition is a monthly subscription. You pay ${{ settings.jar_sale_price }} today for your first jar, then ${{ settings.jar_regular_price }} per month until you cancel. Each delivery is one jar of 30 servings. {{ settings.cancel_text }}: cancel online from your customer account or by contacting us.</p></details>
+  <details><summary>How does the subscription work?</summary><p>Formul8 Nutrition is a monthly subscription. You pay ${{ settings.jar_sale_price }} today for your first jar, then ${{ settings.jar_regular_price }} per month until you cancel. Each delivery is one jar of 30 servings. {{ settings.cancel_text }}: cancel online from your customer account or by contacting us{% if settings.support_email != blank %} at {{ settings.support_email }}{% endif %}.</p></details>
   <details><summary>What is in Formul8 Nutrition?</summary><p>{{ section.settings.a_ingredients }}</p></details>
   <details><summary>How many servings are in a jar?</summary><p>Each jar contains 30 servings.</p></details>
   <details><summary>How do the free gifts work?</summary><p>Your first order includes your first jar and both free gifts, and the gifts show as FREE at checkout. Later monthly deliveries include the jar only.{% if settings.offer_link != blank %} The button on this page adds everything to your cart for you.{% endif %} Gifts are limited by stock.</p></details>
-  <details><summary>What is the money-back guarantee?</summary><p>Your purchase is backed by our {{ settings.guarantee_days }}-day money-back guarantee. {% if shop.refund_policy.url != blank %}See our <a href="{{ shop.refund_policy.url }}">refund policy</a> for how it works.{% else %}Details are in our refund policy.{% endif %}</p></details>
+  <details><summary>What is the money-back guarantee?</summary><p>Your purchase is backed by our {{ settings.guarantee_days }}-day money-back guarantee. A refund request does not cancel your subscription: cancel separately from your customer account or by contacting us. {% if shop.refund_policy.url != blank %}See our <a href="{{ shop.refund_policy.url }}">refund policy</a> for how it works.{% else %}Details are in our refund policy.{% endif %}</p></details>
   <details><summary>What about shipping?</summary><p>{{ section.settings.a_shipping }}</p></details>
 </section>
 {% schema %}

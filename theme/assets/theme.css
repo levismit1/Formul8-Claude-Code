@@ -61,7 +61,7 @@ a { color: inherit; }
 /* ---- Listicle landing page ---- */
 .site-header--logo-only { justify-content: center; }
 .lp-hero { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem 1rem; display: grid; gap: 1.5rem 3rem;
-  grid-template-columns: 1.1fr .9fr; grid-template-areas: "copy media" "gifts media"; align-items: start; }
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); grid-template-areas: "copy media" "gifts media"; align-items: start; }
 .lp-hero__copy { grid-area: copy; }
 .lp-hero__media { grid-area: media; }
 .lp-hero__media img { display: block; width: 100%; height: auto; border-radius: 12px; }
@@ -82,7 +82,7 @@ a { color: inherit; }
 .lp-ends { margin: .5rem 0 0; font-weight: 600; }
 .lp-stock { margin: .75rem 0 0; }
 .lp-gifts__title { margin: 0 0 .6rem; font-weight: 700; color: var(--color-forest); }
-.lp-gifts__tiles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+.lp-gifts__tiles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); gap: .75rem; }
 .lp-tile { background: #fff; border: 2px solid var(--color-sage); border-radius: 12px; padding: .9rem .75rem; text-align: center; display: grid; gap: .35rem; }
 .lp-tile__tag { justify-self: center; background: var(--color-forest); color: var(--color-cream); font-size: .8rem; font-weight: 700;
   padding: .15rem .65rem; border-radius: 6px; letter-spacing: .04em; }
@@ -125,19 +125,22 @@ a { color: inherit; }
 
 .lp-sticky { display: none; }
 @media (max-width: 749px) {
-  .lp-hero { grid-template-columns: 1fr; grid-template-areas: "copy" "media" "gifts"; padding-top: 1.25rem; }
+  .lp-hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "media" "gifts"; padding-top: 1.25rem; }
   .lp-cta { display: block; }
   .lp-cta .button { display: block; text-align: center; }
   .guarantee-line--center { justify-content: center; }
   .lp-hero .lp-stock { text-align: center; }
   .lp-sticky { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; align-items: center; justify-content: space-between; gap: .75rem;
     padding: .65rem 1rem; background: #fff; border-top: 2px solid var(--color-forest); box-shadow: 0 -4px 12px rgba(0,0,0,.08); }
-    .lp-sticky__price { display: grid; line-height: 1.15; white-space: nowrap; }
+  .lp-sticky__price { display: grid; line-height: 1.15; }
   .lp-sticky__price small { font-size: .75rem; color: var(--color-green); }
   .lp-sticky__price strong { font-size: 1.3rem; }
-  .lp-sticky .button { padding: .75rem 1.25rem; font-size: .95rem; }
-  body.template-listicle { padding-bottom: 5.75rem; }
-  html { scroll-padding-bottom: 6.75rem; }
+  .lp-sticky .button { flex: 1 1 auto; min-width: 0; padding: .75rem 1rem; font-size: .95rem; text-align: center; line-height: 1.2; white-space: normal; }
+  .lp-sticky { flex-wrap: wrap; row-gap: .35rem; }
+  .lp-sticky .sub-terms { flex: 1 0 100%; margin: 0; font-size: .8rem; font-weight: 500; text-align: center; }
+  .lp-sticky--hidden { display: none; }
+  body.template-listicle { padding-bottom: 8rem; }
+  html { scroll-padding-bottom: 9rem; }
   .button--lg { font-size: 1.1rem; padding: 1rem 1.25rem; }
 }
 
@@ -188,4 +191,21 @@ a { color: inherit; }
 .sub-terms--compact { margin: 0; font-weight: 500; }
 .hero__content .sub-terms { text-align: center; }
 .button { text-wrap: balance; }
-@media (max-width: 749px) { .lp-sticky .button { white-space: nowrap; } }
+
+/* ---- Renewal sentence alignment / specificity ---- */
+.hero__content .sub-terms { margin: .7rem 0 0; font-size: .95rem; font-weight: 600; color: var(--color-forest); text-align: center; }
+@media (max-width: 749px) { .lp-hero__copy .sub-terms { text-align: center; } }
+.recap__then th, .recap__then td { font-size: 1.05rem; }
+/* ---- Footer links ---- */
+.site-footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem 1.25rem; margin: 0 0 1rem; }
+.site-footer__links a { color: var(--color-forest); font-weight: 600; text-decoration: underline; padding: .6rem .25rem; min-height: 44px; display: inline-flex; align-items: center; }
+
+/* ---- Large-text safety: allow long words to wrap, never widen the page ---- */
+.lp-hero__copy, .lp-hero__media, .lp-gifts, .reason > div { min-width: 0; }
+.lp-title, .lp-ticks span, .reason h3, .reason p, .lp-price, .sub-terms, .recap__table th { overflow-wrap: anywhere; }
+
+.button { max-width: 100%; box-sizing: border-box; overflow-wrap: anywhere; }
+.lp-tile__name, .lp-tile__tag, .gift-card h3 { overflow-wrap: anywhere; }
+.lp-tile { min-width: 0; }
+
+h1, h2, h3, summary, label { overflow-wrap: anywhere; }

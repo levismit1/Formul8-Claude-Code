@@ -51,3 +51,8 @@ Note: Shopify policies have no draft state; saving publishes the page `/policies
 3. Shipping box: $0.00 unless the order arrived damaged, defective or incorrect.
 4. "Restock items": leave unticked for opened jars. For gifts, tick only if they physically came back. (Restocking changes the gift stock count, which feeds the "Free gifts in stock" badge.)
 5. Add a note on the order, then send the refund.
+
+## Subscription follow-ups (from the 2026-10-13 review)
+- Section 7 should also say when the second charge happens and any cancellation cut-off before the next charge (owner decision).
+- Site FAQ now says: a refund request does not cancel the subscription; cancel separately from the customer account or by contacting support (matches Section 7).
+- Footer links (Account, Refund policy, Privacy policy, Contact) appear as the pages/settings exist; set Theme settings -> Offer & stock -> "Support email" once the business email exists.

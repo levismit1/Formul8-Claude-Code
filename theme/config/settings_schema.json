@@ -113,6 +113,12 @@
       },
       {
         "type": "text",
+        "id": "support_email",
+        "label": "Support email (shown as a Contact link in the footer when set)",
+        "info": "Leave empty until the business email exists."
+      },
+      {
+        "type": "text",
         "id": "shaker_name",
         "label": "Free gift 1 name",
         "default": "Formul8 Shaker Bottle"
@@ -126,8 +132,8 @@
       {
         "type": "url",
         "id": "offer_link",
-        "label": "Offer button link (product page or cart link that adds the jar + both gifts)",
-        "info": "REQUIRED before launch. Leave empty only while building: buttons then go to the all-products page and the FAQ will not promise an automatic add."
+        "label": "Offer button link (product page for now)",
+        "info": "REQUIRED before launch. Shopify cart links cannot carry a subscription plan, so until the on-page add-to-cart form is built, link to the product page (where the subscription option is selected). Empty = all-products page."
       },
       {
         "type": "text",

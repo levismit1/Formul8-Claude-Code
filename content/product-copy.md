@@ -12,7 +12,7 @@
 | Status | DRAFT |
 | Price | **$70.00** (the monthly subscription price). There is NO one-time purchase option: the product requires a selling plan. |
 | Compare-at price | NONE. The first jar is 30% off via the selling plan below, not via a struck-through price. |
-| Selling plan (Shopify Subscriptions) | "Monthly": deliver every 1 month; **30% off the first delivery** ($49), 0% off after (so $70 per month). Owner decisions 2026-10-13. Verify exact selling-plan fields against the live Shopify docs before creating. |
+| Selling plan (Shopify Subscriptions) | "Monthly": deliver every 1 month; **30% off the first delivery** ($49), 0% off after (so $70 per month). Owner decisions 2026-10-13. The OWNER creates this plan in Shopify admin with the Shopify Subscriptions app (product -> Purchase options); Claude guides and reads it back. First confirm the app can limit a discount to the first delivery. |
 | Free gifts | Separate one-time products added to the first order only; renewals contain the jar only. |
 | Vendor | Formul8 Nutrition |
 | Product type | Dietary Supplement |
@@ -68,3 +68,6 @@ Use the button on the offer page: it adds your jar and both free gifts to your c
 2. Real stock quantities for jar, shaker and frother (owner has none yet): the site says only "In stock", which must be true.
 3. Offer end date, shipping and return policy, any guarantee. (Pricing decision made 2026-10-13: monthly subscription, $49 first jar then $70 per month, gifts with the first delivery only, cancel any time online, no gift "value" claims. Auto-renewal disclosure sentence must sit next to every buy button; qualified reviewer to check.)
 4. Compliance check of all wording by whoever reviews your label.
+
+## Product-page placement note
+The renewal sentence ("$49 for your first jar, then $70 per month until you cancel. Cancel any time.") must sit DIRECTLY UNDER the product page's buy button (and be visible in the cart and checkout), not only in the description above. Free gifts are worded "with your first subscription delivery".
