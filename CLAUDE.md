@@ -24,6 +24,12 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 - Consequences: (1) goal 4 "sales analysis" cannot use sales data yet; competitor benchmarking (Grüns page) stands in until after launch. (2) The SEO "audit" is a pre-launch SEO setup of theme/pages/products, re-audited after launch. (3) Keep the store password-protected until the owner approves launch. (4) Connect the domain in Shopify (Settings -> Domains) only when ready.
 - **Reference-price rule (decided: Option A):** the product has never been sold at $70 and the gifts never at any price. Use "Launch price $49 / Regular price $70 after launch"; no struck-through "was" prices; no gift "normally"/"value" claims. Have a qualified reviewer check pricing wording before launch.
 
+## Subscription (owner decision 2026-10-13)
+- Owner WANTS Formul8 sold as a SUBSCRIPTION (recurring deliveries). Keep Section 7 (Subscription Orders) in `content/refund-policy.md`. This supersedes the earlier "delete Section 7" suggestion.
+- Details still to be decided: billing frequency, price per delivery vs one-time price, free gifts first delivery only vs every delivery, cancellation terms, and whether the 30-day guarantee covers every delivery (policy Section 7 currently says each eligible delivery is covered).
+- Shopify needs a subscription app (Shopify Subscriptions, free) with selling plans, a supported payment provider and customer accounts (for self-serve cancel). The product page, offer wording (price, frequency, free gifts, guarantee), FAQ, cart link (`selling_plan` parameter) and gift discounts must all be updated once decided.
+- Auto-renewal is regulated (US federal ROSCA and state auto-renewal laws): price, frequency, renewal and the way to cancel must be clearly disclosed next to the buy button, the customer must expressly consent, and cancelling must be easy. Have a qualified reviewer check before launch. Never describe the offer as "one-time" or omit the recurring nature once decided.
+
 ## Product facts (from owner)
 - Formul8 Nutrition, 30 servings. **Launch price $49** (Shopify: price `49.00`, NO compare-at price). Show "Regular price $70 after launch" as plain text, never as a struck-through "was" price. Owner chose this wording ("Option A") on 2026-10-12.
 - $70 → $49 is exactly 30% off. The $70 regular price is a FUTURE price: the owner must really raise the price to $70 after the launch period (keep a record of the date). If the launch price will stay indefinitely, remove all "regular price $70" wording.

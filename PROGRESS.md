@@ -59,6 +59,7 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 53 | 2026-10-12 | HTTP (no credentials) | POST token endpoint with empty body and GET storefront root on the owner-confirmed host, redirects NOT followed | owner's store | Token endpoint answers directly (HTTP 400, no redirect = real shop endpoint); storefront 301 -> owner's own domain `formul8nutrition.com` (domain is connected as primary) | n/a |
 | 54 | 2026-10-12 | API call (auth) | POST client-credentials exchange to the owner-confirmed host (no redirects) using `SHOPIFY_CLIENT_ID`/`SHOPIFY_CLIENT_SECRET` from env | owner's store | HTTP 400 `application_cannot_be_found`; no token issued. Shape check (values not printed) shows BOTH variables still contain placeholder text (`paste-your-client-id-here`-style), so no real credential has ever been sent anywhere (earlier #46/#47 exposure concern is moot) | n/a |
 | 55 | 2026-10-12 | File | Deleted temporary credential files from scratchpad | scratchpad | OK | n/a |
+| 56 | 2026-10-13 | File | Recorded owner decision: sell as a SUBSCRIPTION; keep refund-policy Section 7; list of open subscription details; marked item 4 of `content/refund-policy-review.md` resolved | CLAUDE.md, content/ | OK | revert commit |
 
 ## Status
 - [~] Refund policy: owner text saved in `content/refund-policy.md`; review done (`content/refund-policy-review.md`); waiting on owner decisions + business email
