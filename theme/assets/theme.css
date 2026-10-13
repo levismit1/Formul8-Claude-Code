@@ -132,12 +132,12 @@ a { color: inherit; }
   .lp-hero .lp-stock { text-align: center; }
   .lp-sticky { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; align-items: center; justify-content: space-between; gap: .75rem;
     padding: .65rem 1rem; background: #fff; border-top: 2px solid var(--color-forest); box-shadow: 0 -4px 12px rgba(0,0,0,.08); }
-  .lp-sticky__price { display: grid; line-height: 1.1; white-space: nowrap; }
+    .lp-sticky__price { display: grid; line-height: 1.15; white-space: nowrap; }
   .lp-sticky__price small { font-size: .75rem; color: var(--color-green); }
   .lp-sticky__price strong { font-size: 1.3rem; }
   .lp-sticky .button { padding: .75rem 1.25rem; font-size: .95rem; }
-  body.template-listicle { padding-bottom: 4.5rem; }
-  html { scroll-padding-bottom: 5.5rem; }
+  body.template-listicle { padding-bottom: 5.75rem; }
+  html { scroll-padding-bottom: 6.75rem; }
   .button--lg { font-size: 1.1rem; padding: 1rem 1.25rem; }
 }
 
@@ -181,3 +181,11 @@ a { color: inherit; }
 .pw-entry__form label { display: block; font-weight: 600; margin: 0 0 .4rem; }
 .pw-entry .waitlist__row input { flex: 1; min-width: 0; font: inherit; padding: .85rem 1rem; border: 2px solid var(--color-forest); border-radius: 10px; background: #fff; color: var(--color-forest); min-height: 48px; }
 .pw-entry .waitlist__row .button { cursor: pointer; font: inherit; font-weight: 600; min-height: 48px; padding: .75rem 1.5rem; }
+
+/* ---- Subscription terms line (directly under every buy button) ---- */
+.sub-terms { margin: .7rem 0 0; font-size: .95rem; font-weight: 600; color: var(--color-forest); line-height: 1.4; }
+.lp-center + .sub-terms, .recap .sub-terms, .gifts .sub-terms { text-align: center; }
+.sub-terms--compact { margin: 0; font-weight: 500; }
+.hero__content .sub-terms { text-align: center; }
+.button { text-wrap: balance; }
+@media (max-width: 749px) { .lp-sticky .button { white-space: nowrap; } }

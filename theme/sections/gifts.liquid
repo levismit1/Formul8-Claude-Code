@@ -7,7 +7,7 @@
 <section class="gifts">
   <div class="gifts__head">
     <h2>{{ section.settings.heading }}</h2>
-    <p>Yours free when you get Formul8 Nutrition.</p>
+    <p>Yours free with your first delivery.</p>
     {%- if settings.gifts_in_stock -%}
       <p class="stock-pill stock-pill--lg" role="status">In stock</p>
     {%- endif -%}
@@ -32,15 +32,16 @@
     <p class="gifts__note stock-text">Free gift sets are in stock.</p>
   {%- endif -%}
   <p class="gifts__cta"><a class="button" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
+  {% render 'subscription-terms' %}
 </section>
 {%- endif -%}
 {% schema %}
 {
   "name": "Free gifts",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Get 2 free gifts with your jar" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Get 2 free gifts with your first delivery" },
     { "type": "text", "id": "alt", "label": "Image description (alt text)", "default": "Formul8 Nutrition green shaker bottle and hand blender/frother" },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Claim 30% off + free gifts" }
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start My Subscription + Free Gifts" }
   ],
   "presets": [{ "name": "Free gifts" }]
 }

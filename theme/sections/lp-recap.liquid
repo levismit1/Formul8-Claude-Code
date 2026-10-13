@@ -3,15 +3,15 @@
     <h2>{{ section.settings.heading }}</h2>
     <table class="recap__table">
       <tbody>
-        <tr><th scope="row">Formul8 Nutrition (30 servings)</th><td>${{ settings.jar_sale_price }}</td></tr>
+        <tr><th scope="row">Formul8 Nutrition, first jar (30 servings)</th><td>${{ settings.jar_sale_price }}</td></tr>
         <tr><th scope="row">{{ settings.shaker_name }}</th><td>FREE</td></tr>
         <tr><th scope="row">{{ settings.frother_name }}</th><td>FREE</td></tr>
-        <tr class="recap__price"><th scope="row">Your launch price</th><td>${{ settings.jar_sale_price }}</td></tr>
+        <tr class="recap__price"><th scope="row">Your price today</th><td>${{ settings.jar_sale_price }}</td></tr>
       </tbody>
     </table>
-    <p class="recap__note">Launch price. Regular price ${{ settings.jar_regular_price }} after launch.</p>
     {%- if settings.gifts_in_stock -%}<p class="lp-stock"><span class="stock-pill">Free gifts in stock</span></p>{%- else -%}<p class="lp-stock"><span class="stock-pill stock-pill--out">Free gifts currently out of stock</span></p>{%- endif -%}
     <p class="lp-center"><a class="button button--lg" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
+    {% render 'subscription-terms' %}
     <p class="guarantee-line guarantee-line--center">{% render 'icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
   </div>
 </section>
@@ -19,8 +19,8 @@
 {
   "name": "LP: Offer recap",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "What you get today" },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Get 30% Off + Free Gifts" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What you get with your first delivery" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start My Subscription + Free Gifts" }
   ],
   "presets": [{ "name": "LP: Offer recap" }]
 }

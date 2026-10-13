@@ -95,14 +95,21 @@
       {
         "type": "number",
         "id": "jar_regular_price",
-        "label": "Regular price after launch ($)",
+        "label": "Monthly price after the first jar ($)",
         "default": 70
       },
       {
         "type": "number",
         "id": "jar_sale_price",
-        "label": "Launch price ($)",
+        "label": "First jar price ($)",
         "default": 49
+      },
+      {
+        "type": "text",
+        "id": "cancel_text",
+        "label": "Cancel wording (shown in the renewal sentence)",
+        "default": "Cancel any time",
+        "info": "Only keep 'Cancel any time' if customers really can cancel online (customer accounts + Shopify Subscriptions)."
       },
       {
         "type": "text",

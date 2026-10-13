@@ -21,9 +21,9 @@
 | Logo-only header | Header hides the nav on the listicle template | Built |
 | Social proof strip | Hidden until real rating + review count are entered | Hidden (no real data yet) |
 | Two-tone headline | "5 Reasons to Try Formul8 Nutrition" / "Your gut. Your health. Your formula." | Built |
-| 3 proof ticks | 30 servings in every jar · FREE shaker + frother with your jar · 30-day money-back guarantee | Built (all true) |
+| 3 proof ticks | 30 servings in every jar · FREE shaker + frother with your first delivery · Monthly delivery, cancel any time · 30-day money-back guarantee | Built (all true) |
 | Objection-killer line | Skipped: we don't know if Formul8 is a powder, so "no blender" style claims are not made | Skipped |
-| CTA + badge | "30% OFF" badge + "Get 30% Off + Free Gifts" (no "today": no real end date) | Built |
+| CTA + badge | "30% OFF YOUR FIRST JAR" badge + "Start My Subscription + Free Gifts" button, with the renewal sentence directly underneath: "$49 for your first jar, then $70 per month until you cancel. Cancel any time." | Built |
 | Guarantee under CTA | "Backed by our 30-day money-back guarantee" (exact owner wording; "risk-free" deliberately NOT used, terms undecided) | Built |
 | Free gift tiles | Shaker and frother tiles tagged FREE (no "value" amounts: gifts have never been sold separately) | Built |
 | Dated sale banner | Optional "Offer ends ..." line, hidden until a REAL date is entered | Hidden |
@@ -34,11 +34,11 @@
 2. Hero: headline, 3 ticks, CTA, guarantee line, "In stock", free-gift tiles, jar image (on phones: copy first, then image)
 3. "Why you'll love it": 5 numbered reasons (your formula · 30 servings · 30% off · free shaker · free frother) + gifts photo + CTA
 4. Reviews (renders only if the owner adds REAL reviews)
-5. "What you get today": jar $49 launch price + free shaker + free frother = $49 total; note "Launch price. Regular price $70 after launch."
+5. "What you get with your first delivery": first jar $49 + free shaker + free frother = $49 today; the renewal sentence under the button
 6. 30-Day Money-Back Guarantee block (links to the refund policy)
 7. FAQ (5 questions)
 8. Footer with FDA disclaimer
-9. Sticky bottom bar on phones ("Launch price $49", button)
+9. Sticky bottom bar on phones ("First jar $49 / then $70/mo", "Start Subscription" button)
 
 ## How the button will work (important)
 A Shopify discount does not add the gifts to the cart. The offer button should be a **cart link** that adds the jar and both gifts together
@@ -78,3 +78,11 @@ Structure only. None of their claims, statistics, survey results, testimonials o
 2. Add "Ingredients & Supplement Facts" and "Directions" accordions to the FAQ, marked as placeholders until the label exists.
 3. Add a shipping cut-off or delivery line to the top bar only when the owner has real shipping terms.
 4. Keep the "Most popular" idea out: Formul8 has a single offer.
+
+---
+
+## Subscription rules for this page (owner decisions 2026-10-13)
+- Monthly subscription; $49 for the first jar then $70 per month; free shaker + frother with the first delivery only; cancel any time online; 30-day money-back guarantee per policy Section 7.
+- The approved renewal sentence is rendered by ONE snippet (`theme/snippets/subscription-terms.liquid`) directly under every buy button (homepage in Selling mode, listicle hero, reasons, recap, gifts) and in short form ("then $70/mo") in the sticky bar. Never reword it per page.
+- Never call it "one-time", a "launch price" or "regular price after launch".
+- "Cancel any time" is a promise: only true once customer accounts and the Shopify Subscriptions cancel option are live and tested.
