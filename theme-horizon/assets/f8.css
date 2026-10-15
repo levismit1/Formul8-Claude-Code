@@ -2,6 +2,8 @@
    Colours come from Theme settings (Horizon colour palette + Formul8 colours) through the --f8-* variables set in snippets/f8-head.liquid. */
 .f8 { font-size: 1rem; line-height: 1.6; color: var(--f8-forest); }
 .f8 a:not(.f8-button) { color: inherit; }
+/* Horizon turns every link inside a <p> grey on hover; keep our buttons readable (specificity must beat base.css). */
+.f8 .f8-button, .f8 .f8-button:hover, .f8 .f8-button:focus-visible { color: var(--f8-cream); text-decoration: none; }
 
 .f8-header-min { display: flex; justify-content: center; align-items: center; padding: 1rem 1.5rem; background: var(--f8-forest); color: var(--f8-cream); }
 .f8-header-min a { color: inherit; text-decoration: none; font-size: 1.4rem; font-weight: 600; letter-spacing: .02em; }
@@ -196,3 +198,11 @@
 .f8-lp-tile__name, .f8-lp-tile__tag, .f8-gift-card h3 { overflow-wrap: anywhere; }
 .f8-lp-tile { min-width: 0; }
 [class*="f8-"] :is(h1, h2, h3, summary, label) { overflow-wrap: anywhere; }
+
+/* ---- FAQ expand/collapse marker (Horizon resets summary markers) ---- */
+.f8-lp-faq summary { justify-content: space-between; align-items: center; gap: 1rem; }
+.f8-lp-faq summary::after { content: '+'; flex: none; font-weight: 700; font-size: 1.3rem; line-height: 1; }
+.f8-lp-faq details[open] summary::after { content: '\2212'; }
+
+/* ---- Icons stay inline (Horizon makes svg display:block) ---- */
+.f8-icon { display: inline-block; }

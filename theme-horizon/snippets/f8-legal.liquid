@@ -5,6 +5,7 @@
 <div class="f8-legal">
   {%- capture f8_links -%}
     {%- if minimal -%}
+      {%- if settings.site_mode == 'selling' and template.name != 'password' -%}<a href="{{ routes.account_url }}">Account</a>{%- endif -%}
       {%- if shop.refund_policy.url != blank -%}<a href="{{ shop.refund_policy.url }}">Refund policy</a>{%- endif -%}
       {%- if shop.privacy_policy.url != blank -%}<a href="{{ shop.privacy_policy.url }}">Privacy policy</a>{%- endif -%}
       {%- if shop.terms_of_service.url != blank -%}<a href="{{ shop.terms_of_service.url }}">Terms of service</a>{%- endif -%}
