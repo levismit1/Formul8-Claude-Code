@@ -1,6 +1,6 @@
 <!--
 OWNER-SUPPLIED TEXT (received 2026-10-11), saved verbatim. NOT yet published to Shopify.
-Placeholders still to fill: [Insert Customer Support Email], [Insert Website URL].
+Placeholders still to fill: [Insert Website URL] (support email filled in 2026-10-15).
 See content/refund-policy-review.md for gaps found when comparing it with the website's promises.
 -->
 
@@ -22,7 +22,7 @@ If you're not completely satisfied with your Formul8 Nutrition product, you may 
 
 ## 2. How to Request a Refund
 
-To request a refund, please contact our customer support team at [Insert Customer Support Email].
+To request a refund, please contact our customer support team at support@formul8nutrition.com.
 
 Please include:
 
@@ -71,7 +71,7 @@ Refund requests do not automatically cancel future subscription orders. To stop 
 If you have questions about our refund policy or need assistance with an order, please contact:
 
 Formul8 Nutrition Customer Support
-Email: [Insert Customer Support Email]
+Email: support@formul8nutrition.com
 Website: [Insert Website URL]
 
 We're committed to making your experience with Formul8 Nutrition as simple, transparent, and satisfying as possible.
