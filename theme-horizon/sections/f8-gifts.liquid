@@ -1,0 +1,48 @@
+{%- comment -%}
+  Free-gift showcase. No 'normal price' or 'value' claims: the gifts are not sold separately yet.
+  The green "In stock" badge shows only while the theme setting `gifts_in_stock` is ticked.
+  It must always match real inventory.
+{%- endcomment -%}
+{%- if settings.site_mode == 'selling' -%}
+<section class="f8 f8-gifts">
+  <div class="f8-gifts__head">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>Yours free with your first subscription delivery.</p>
+    {%- if settings.gifts_in_stock -%}
+      <p class="f8-stock-pill f8-stock-pill--lg" role="status">In stock</p>
+    {%- endif -%}
+  </div>
+  <picture class="f8-gifts__media">
+    <source media="(max-width: 749px)" srcset="{{ 'formul8-gifts-mobile.webp' | asset_url }}" width="880" height="857" type="image/webp">
+    <source srcset="{{ 'formul8-gifts.webp' | asset_url }}" width="2000" height="857" type="image/webp">
+    <img class="f8-gifts__img" src="{{ 'formul8-gifts.jpg' | asset_url }}" width="2000" height="857"
+         alt="{{ section.settings.alt | escape }}" loading="lazy">
+  </picture>
+  <ul class="f8-gifts__cards">
+    <li class="f8-gift-card">
+      <h3>{{ settings.shaker_name }}</h3>
+      <p><strong>FREE</strong></p>
+    </li>
+    <li class="f8-gift-card">
+      <h3>{{ settings.frother_name }}</h3>
+      <p><strong>FREE</strong></p>
+    </li>
+  </ul>
+  {%- if settings.gifts_in_stock -%}
+    <p class="f8-gifts__note f8-stock-text">Free gift sets are in stock.</p>
+  {%- endif -%}
+  <p class="f8-gifts__cta"><a class="f8-button" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
+  {% render 'f8-subscription-terms' %}
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Free gifts",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Get 2 free gifts with your first subscription delivery" },
+    { "type": "text", "id": "alt", "label": "Image description (alt text)", "default": "Formul8 Nutrition green shaker bottle and hand blender/frother" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start My Subscription + Free Gifts" }
+  ],
+  "presets": [{ "name": "Free gifts" }]
+}
+{% endschema %}

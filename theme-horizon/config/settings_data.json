@@ -103,11 +103,12 @@
     "variant_button_radius": 14,
     "variant_button_width": "equal-width-buttons",
     "color_palette": {
-      "background": "#ffffff",
-      "foreground": "#000000",
-      "color1": "#333333",
-      "color2": "#DFDFDF"
-    }
+      "background": "#F5ECE5",
+      "foreground": "#2E4A37",
+      "color1": "#4A6649",
+      "color2": "#B5C4A8"
+    },
+    "support_email": "support@formul8nutrition.com"
   },
   "presets": {
     "Horizon": {

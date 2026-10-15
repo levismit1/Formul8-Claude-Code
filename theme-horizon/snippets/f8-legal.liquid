@@ -1,0 +1,19 @@
+{%- comment -%}
+  FDA disclaimer + Contact link + policy links (the policy links only when Horizon's footer is not shown).
+  Keep the FDA disclaimer: supplement rule.
+{%- endcomment -%}
+<div class="f8-legal">
+  {%- capture f8_links -%}
+    {%- if minimal -%}
+      {%- if shop.refund_policy.url != blank -%}<a href="{{ shop.refund_policy.url }}">Refund policy</a>{%- endif -%}
+      {%- if shop.privacy_policy.url != blank -%}<a href="{{ shop.privacy_policy.url }}">Privacy policy</a>{%- endif -%}
+      {%- if shop.terms_of_service.url != blank -%}<a href="{{ shop.terms_of_service.url }}">Terms of service</a>{%- endif -%}
+    {%- endif -%}
+    {%- if settings.support_email != blank -%}<a href="mailto:{{ settings.support_email }}">Contact</a>{%- endif -%}
+  {%- endcapture -%}
+  {%- if f8_links contains '<a' -%}
+    <nav class="f8-legal__links" aria-label="Footer">{{ f8_links }}</nav>
+  {%- endif -%}
+  {%- if minimal -%}<p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>{%- endif -%}
+  <p class="f8-legal__fine">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+</div>

@@ -24,6 +24,7 @@
     {%- render 'scripts' -%}
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-palette' -%}
+    {%- render 'f8-head' -%}
 
     {% if request.design_mode %}
       {%- render 'theme-editor' -%}
@@ -33,13 +34,27 @@
   </head>
 
   <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
+    {%- liquid
+      comment
+        Formul8: Waitlist mode and the listicle page use a logo-only header and no Horizon footer.
+      endcomment
+      assign f8_minimal = false
+      if settings.site_mode != 'selling' or template.suffix == 'listicle'
+        assign f8_minimal = true
+      endif
+    -%}
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
 
     {% render 'chat-drawer' %}
 
     <div class="page-wrapper">
+      {%- render 'f8-announce' -%}
       <div id="header-group">
-        {% sections 'header-group' %}
+        {%- if f8_minimal -%}
+          {%- render 'f8-header-minimal' -%}
+        {%- else -%}
+          {% sections 'header-group' %}
+        {%- endif -%}
       </div>
 
       <script>
@@ -161,7 +176,10 @@
       </main>
 
       <footer>
-        {% sections 'footer-group' %}
+        {%- unless f8_minimal -%}
+          {% sections 'footer-group' %}
+        {%- endunless -%}
+        {%- render 'f8-legal', minimal: f8_minimal -%}
       </footer>
     </div>
 

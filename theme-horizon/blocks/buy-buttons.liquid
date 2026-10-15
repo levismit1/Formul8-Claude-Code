@@ -243,6 +243,9 @@
         {%- endif -%}
       {%- endform -%}
     </product-form-component>
+    {%- if product.selling_plan_groups.size > 0 -%}
+      <div class="f8">{% render 'f8-subscription-terms' %}</div>
+    {%- endif -%}
   {%- else -%}
     <div class="product-form-buttons">
       <button

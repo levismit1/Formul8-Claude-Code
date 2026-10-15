@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "hero": {
+      "type": "lp-hero",
+      "settings": {}
+    },
+    "reasons": {
+      "type": "lp-reasons",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "lp-reviews",
+      "settings": {}
+    },
+    "recap": {
+      "type": "lp-recap",
+      "settings": {}
+    },
+    "guarantee": {
+      "type": "lp-guarantee",
+      "settings": {}
+    },
+    "faq": {
+      "type": "lp-faq",
+      "settings": {}
+    },
+    "sticky": {
+      "type": "lp-sticky-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "reasons",
+    "reviews",
+    "recap",
+    "guarantee",
+    "faq",
+    "sticky"
+  ]
+}

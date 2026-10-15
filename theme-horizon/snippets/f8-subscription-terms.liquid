@@ -1,0 +1,7 @@
+{%- comment -%}
+  The single source of the auto-renewal disclosure. Render it directly under EVERY buy button,
+  including the sticky bar on phones. There is deliberately NO shortened variant.
+  Sentence: "$49 for your first jar, then $70 per month until you cancel. Cancel any time."
+  Prices and the cancel wording come from Theme settings -> Offer & stock. Do not reword per page.
+{%- endcomment -%}
+<p class="f8-sub-terms">${{ settings.jar_sale_price }} for your first jar, then ${{ settings.jar_regular_price }} per month until you cancel. {{ settings.cancel_text }}.</p>

@@ -1,0 +1,19 @@
+{%- comment -%}
+  Owner-confirmed: 30-day money-back guarantee. The exact terms live on the store's refund policy page;
+  do not add promises here that the policy does not state.
+{%- endcomment -%}
+<section class="f8 f8-lp-guarantee" id="guarantee">
+  <span class="f8-lp-guarantee__icon">{% render 'f8-icon-shield' %}</span>
+  <h2>{{ settings.guarantee_days }}-Day Money-Back Guarantee</h2>
+  <p>{{ section.settings.body }}</p>
+  {%- if shop.refund_policy.url != blank -%}<p><a href="{{ shop.refund_policy.url }}">Read our refund policy</a></p>{%- endif -%}
+</section>
+{% schema %}
+{
+  "name": "LP: Guarantee",
+  "settings": [
+    { "type": "textarea", "id": "body", "label": "Text", "default": "Try Formul8 Nutrition with confidence. Your purchase is backed by our money-back guarantee. Full details are in our refund policy." }
+  ],
+  "presets": [{ "name": "LP: Guarantee" }]
+}
+{% endschema %}

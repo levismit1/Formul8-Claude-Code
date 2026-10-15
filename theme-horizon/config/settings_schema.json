@@ -2116,5 +2116,121 @@
         "default": "equal-width-buttons"
       }
     ]
+  },
+  {
+    "name": "Formul8 colours",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Forest, mid green, sage and cream come from the main Colors palette above (Background = cream, Foreground = forest green, Color 1 = mid green, Color 2 = sage)."
+      },
+      {
+        "type": "color",
+        "id": "color_rose",
+        "label": "Rose-gold (small highlights)",
+        "default": "#C99A8B"
+      },
+      {
+        "type": "color",
+        "id": "color_instock",
+        "label": "In-stock green (stock badge)",
+        "default": "#2E6B34"
+      }
+    ]
+  },
+  {
+    "name": "Formul8 site mode",
+    "settings": [
+      {
+        "type": "header",
+        "content": "What visitors see on the homepage"
+      },
+      {
+        "type": "select",
+        "id": "site_mode",
+        "label": "Site mode",
+        "default": "waitlist",
+        "options": [
+          {
+            "value": "waitlist",
+            "label": "Waitlist (coming soon)"
+          },
+          {
+            "value": "selling",
+            "label": "Selling (shows the offer, free gifts and Shop button)"
+          }
+        ],
+        "info": "Keep on Waitlist until the formula, Supplement Facts label, refund policy and shipping are final. Switch to Selling only at launch."
+      }
+    ]
+  },
+  {
+    "name": "Formul8 offer & stock",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Free-gift \"In stock\" badge"
+      },
+      {
+        "type": "checkbox",
+        "id": "gifts_in_stock",
+        "label": "Free gifts are in stock",
+        "default": true,
+        "info": "Turn OFF if the shaker or frother is sold out or you are low. ON shows the green 'In stock' badge. OFF shows 'Free gifts currently out of stock'."
+      },
+      {
+        "type": "header",
+        "content": "Offer facts (used on every page)"
+      },
+      {
+        "type": "number",
+        "id": "jar_regular_price",
+        "label": "Monthly price after the first jar ($)",
+        "default": 70
+      },
+      {
+        "type": "number",
+        "id": "jar_sale_price",
+        "label": "First jar price ($)",
+        "default": 49
+      },
+      {
+        "type": "text",
+        "id": "cancel_text",
+        "label": "Cancel wording (shown in the renewal sentence)",
+        "default": "Cancel any time",
+        "info": "Only keep 'Cancel any time' if customers really can cancel online (customer accounts + Shopify Subscriptions)."
+      },
+      {
+        "type": "text",
+        "id": "support_email",
+        "label": "Support email (shown as a Contact link in the footer when set)",
+        "info": "Leave empty until the business email exists."
+      },
+      {
+        "type": "text",
+        "id": "shaker_name",
+        "label": "Free gift 1 name",
+        "default": "Formul8 Shaker Bottle"
+      },
+      {
+        "type": "text",
+        "id": "frother_name",
+        "label": "Free gift 2 name",
+        "default": "Formul8 Hand Blender / Frother"
+      },
+      {
+        "type": "url",
+        "id": "offer_link",
+        "label": "Offer button link (product page for now)",
+        "info": "REQUIRED before launch. Shopify cart links cannot carry a subscription plan, so until the on-page add-to-cart form is built, link to the product page (where the subscription option is selected). Empty = all-products page."
+      },
+      {
+        "type": "text",
+        "id": "guarantee_days",
+        "label": "Money-back guarantee (days)",
+        "default": "30"
+      }
+    ]
   }
 ]

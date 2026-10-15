@@ -1,0 +1,26 @@
+{%- comment -%}
+  Renders ONLY when the owner adds real customer reviews (blocks). Never add invented reviews.
+{%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
+<section class="f8 f8-lp-reviews">
+  <h2>{{ section.settings.heading }}</h2>
+  <ul class="f8-lp-reviews__list">
+    {%- for block in section.blocks -%}
+      <li class="f8-review" {{ block.shopify_attributes }}>
+        <p class="f8-review__text">&ldquo;{{ block.settings.quote }}&rdquo;</p>
+        <p class="f8-review__who">{{ block.settings.name }}</p>
+      </li>
+    {%- endfor -%}
+  </ul>
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "LP: Reviews",
+  "settings": [{ "type": "text", "id": "heading", "label": "Heading", "default": "What customers say" }],
+  "blocks": [{ "type": "review", "name": "Review", "settings": [
+    { "type": "textarea", "id": "quote", "label": "Real customer quote" },
+    { "type": "text", "id": "name", "label": "Customer name" } ] }],
+  "presets": [{ "name": "LP: Reviews" }]
+}
+{% endschema %}

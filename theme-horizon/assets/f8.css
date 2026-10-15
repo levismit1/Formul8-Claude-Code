@@ -1,0 +1,198 @@
+/* Formul8 additions for the Horizon theme. Every class is prefixed f8- so nothing clashes with Horizon's own CSS.
+   Colours come from Theme settings (Horizon colour palette + Formul8 colours) through the --f8-* variables set in snippets/f8-head.liquid. */
+.f8 { font-size: 1rem; line-height: 1.6; color: var(--f8-forest); }
+.f8 a:not(.f8-button) { color: inherit; }
+
+.f8-header-min { display: flex; justify-content: center; align-items: center; padding: 1rem 1.5rem; background: var(--f8-forest); color: var(--f8-cream); }
+.f8-header-min a { color: inherit; text-decoration: none; font-size: 1.4rem; font-weight: 600; letter-spacing: .02em; }
+
+.f8-legal { background: var(--f8-sage); color: var(--f8-forest); padding: 2rem 1.5rem; text-align: center; font-size: 1rem; line-height: 1.6; }
+.f8-legal p { margin: 0 auto .5rem; max-width: 46rem; }
+.f8-legal__fine { font-size: .9rem; }
+.f8-legal__links { display: flex; flex-wrap: wrap; justify-content: center; gap: .25rem 1.25rem; margin: 0 0 1rem; }
+.f8-legal__links a { color: var(--f8-forest); font-weight: 600; text-decoration: underline; padding: .6rem .25rem; min-height: 44px; display: inline-flex; align-items: center; }
+
+.f8-hero__media, .f8-hero__img { display: block; width: 100%; height: auto; }
+.f8-hero__content { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; text-align: center; }
+.f8-hero__content h1 { margin: 0 0 .75rem; font-size: clamp(1.8rem, 4vw, 2.75rem); font-weight: 400; line-height: 1.15; }
+.f8-hero__content p { margin: 0 0 1.5rem; font-size: 1.1rem; color: var(--f8-green); }
+
+.f8-button { display: inline-block; padding: .9rem 2.25rem; border-radius: 999px;
+  background: var(--f8-forest); color: var(--f8-cream); text-decoration: none;
+  font-weight: 600; letter-spacing: .04em; border: 2px solid var(--f8-forest);
+  transition: background .2s, color .2s; }
+.f8-button:hover, .f8-button:focus-visible { background: var(--f8-green); border-color: var(--f8-green); }
+.f8-button:focus-visible { outline: 3px solid var(--f8-forest); outline-offset: 3px; box-shadow: 0 0 0 6px #fff; }
+
+/* ---- In-stock messaging (green) ---- */
+.f8-announce { display: flex; justify-content: center; align-items: center; gap: .6rem; flex-wrap: wrap;
+  padding: .55rem 1rem; background: #fff; color: var(--f8-forest); font-size: .95rem; text-align: center; }
+.f8-stock-pill { display: inline-block; padding: .15rem .7rem; border-radius: 999px;
+  background: var(--f8-instock); color: #fff; font-weight: 700; font-size: .85rem; letter-spacing: .03em; }
+.f8-stock-pill--lg { font-size: 1rem; padding: .3rem 1rem; }
+.f8-stock-text { color: var(--f8-instock); font-weight: 700; }
+
+/* ---- Free gifts ---- */
+.f8-gifts { max-width: 70rem; margin: 0 auto; padding: 3rem 1.5rem; text-align: center; }
+.f8-gifts h2 { margin: 0 0 .5rem; font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 400; }
+.f8-gifts__head p { margin: 0 0 .75rem; color: var(--f8-green); font-size: 1.1rem; }
+.f8-gifts__head .f8-stock-pill { color: #fff; font-size: 1rem; }
+.f8-gifts__media, .f8-gifts__img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.f8-gifts__cards { list-style: none; padding: 0; margin: 1.5rem 0; display: grid; gap: 1rem;
+  grid-template-columns: repeat(2, 1fr); }
+.f8-gift-card { background: #fff; border: 1px solid var(--f8-sage); border-radius: 12px; padding: 1.25rem 1rem; }
+.f8-gift-card h3 { margin: 0 0 .25rem; font-size: 1.1rem; font-weight: 600; }
+.f8-gift-card p { margin: 0; font-size: 1.15rem; }
+.f8-gift-card s { color: var(--f8-green); margin-right: .35rem; }
+.f8-gifts__note { margin: 0 0 1.5rem; }
+@media (max-width: 749px) { .f8-gifts__cards { grid-template-columns: 1fr; } }
+
+/* ---- Guarantee line (homepage + listicle) ---- */
+.f8-guarantee-line { display: flex; align-items: center; justify-content: center; gap: .4rem; margin: .9rem 0 0;
+  font-size: 1rem; color: var(--f8-green); }
+.f8-guarantee-line .f8-icon { color: var(--f8-green); flex: none; }
+.f8-lp-hero { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem 1rem; display: grid; gap: 1.5rem 3rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); grid-template-areas: "copy media" "gifts media"; align-items: start; }
+.f8-lp-hero__copy { grid-area: copy; }
+.f8-lp-hero__media { grid-area: media; }
+.f8-lp-hero__media img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.f8-lp-gifts { grid-area: gifts; }
+.f8-lp-proof { margin: 0 0 1rem; font-size: 1.05rem; }
+.f8-lp-proof__stars { color: #B7791F; letter-spacing: .1em; margin-right: .3rem; }
+.f8-lp-title { margin: 0 0 1.25rem; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.08; font-weight: 700; }
+.f8-lp-title__a { display: block; color: var(--f8-forest); }
+.f8-lp-title__b { display: block; color: var(--f8-green); font-weight: 600; font-size: .62em; margin-top: .5rem; line-height: 1.2; }
+.f8-lp-ticks { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: .7rem; font-size: 1.1rem; }
+.f8-lp-ticks li { display: flex; gap: .6rem; align-items: flex-start; }
+.f8-lp-ticks .f8-icon { color: var(--f8-green); flex: none; margin-top: .1rem; }
+.f8-lp-cta { position: relative; display: inline-block; margin-top: .75rem; }
+.f8-lp-cta__badge { position: absolute; top: -.9rem; left: 1.25rem; z-index: 1; background: var(--f8-sage); color: var(--f8-forest);
+  font-weight: 700; font-size: .8rem; letter-spacing: .04em; padding: .2rem .8rem; border-radius: 999px; border: 2px solid var(--f8-forest); }
+.f8-button--lg { font-size: 1.2rem; padding: 1.1rem 2.5rem; }
+.f8-guarantee-line--center { justify-content: flex-start; }
+.f8-lp-ends { margin: .5rem 0 0; font-weight: 600; }
+.f8-lp-stock { margin: .75rem 0 0; }
+.f8-lp-gifts__title { margin: 0 0 .6rem; font-weight: 700; color: var(--f8-forest); }
+.f8-lp-gifts__tiles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); gap: .75rem; }
+.f8-lp-tile { background: #fff; border: 2px solid var(--f8-sage); border-radius: 12px; padding: .9rem .75rem; text-align: center; display: grid; gap: .35rem; }
+.f8-lp-tile__tag { justify-self: center; background: var(--f8-forest); color: var(--f8-cream); font-size: .8rem; font-weight: 700;
+  padding: .15rem .65rem; border-radius: 6px; letter-spacing: .04em; }
+.f8-lp-tile__name { font-weight: 600; }
+
+.f8-lp-reasons, .f8-lp-recap, .f8-lp-guarantee, .f8-lp-faq, .f8-lp-reviews { max-width: 60rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.f8-lp-reasons h2, .f8-lp-recap h2, .f8-lp-guarantee h2, .f8-lp-faq h2, .f8-lp-reviews h2 { margin: 0 0 1.25rem; text-align: center;
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 600; }
+.f8-lp-reasons__list { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 1rem; }
+.f8-reason { display: flex; gap: 1rem; align-items: flex-start; background: #fff; border: 1px solid var(--f8-sage); border-radius: 12px; padding: 1.1rem 1.25rem; }
+.f8-reason__n { flex: none; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: var(--f8-forest); color: var(--f8-cream);
+  display: grid; place-items: center; font-weight: 700; font-size: 1.15rem; }
+.f8-reason h3 { margin: 0 0 .2rem; font-size: 1.2rem; }
+.f8-reason p { margin: 0; }
+.f8-lp-reasons__media img { display: block; width: 100%; height: auto; border-radius: 12px; margin-bottom: 1.5rem; }
+.f8-lp-center { text-align: center; margin: 1.5rem 0 0; }
+
+.f8-recap { background: #fff; border: 2px solid var(--f8-forest); border-radius: 16px; padding: 2rem 1.5rem; max-width: 36rem; margin: 0 auto; }
+.f8-recap__table { width: 100%; border-collapse: collapse; font-size: 1.05rem; }
+.f8-recap__table th { text-align: left; font-weight: 500; }
+.f8-recap__table td { text-align: right; white-space: nowrap; }
+.f8-recap__table th, .f8-recap__table td { padding: .6rem 0; border-bottom: 1px solid var(--f8-sage); }
+.f8-recap__value th, .f8-recap__value td { font-weight: 700; }
+.f8-recap__price th, .f8-recap__price td { font-size: 1.6rem; font-weight: 700; border-bottom: 0; padding-top: 1rem; }
+.f8-recap .f8-lp-stock, .f8-recap .f8-guarantee-line { text-align: center; justify-content: center; }
+.f8-recap .f8-lp-stock { margin: 1rem 0 0; }
+
+.f8-lp-guarantee { text-align: center; }
+.f8-lp-guarantee__icon { color: var(--f8-green); display: inline-block; }
+.f8-lp-guarantee p { max-width: 40rem; margin: 0 auto .75rem; }
+
+.f8-lp-faq details { background: #fff; border: 1px solid var(--f8-sage); border-radius: 10px; margin-bottom: .6rem; }
+.f8-lp-faq summary { cursor: pointer; font-weight: 600; padding: .95rem 1.1rem; min-height: 44px; }
+.f8-lp-faq details p { margin: 0; padding: 0 1.1rem 1rem; }
+
+.f8-lp-reviews__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+.f8-review { background: #fff; border: 1px solid var(--f8-sage); border-radius: 12px; padding: 1.1rem 1.25rem; }
+.f8-review__text { margin: 0 0 .4rem; font-size: 1.1rem; }
+.f8-review__who { margin: 0; font-weight: 600; color: var(--f8-green); }
+
+.f8-lp-sticky { display: none; }
+@media (max-width: 749px) {
+  .f8-lp-hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "media" "gifts"; padding-top: 1.25rem; }
+  .f8-lp-cta { display: block; }
+  .f8-lp-cta .f8-button { display: block; text-align: center; }
+  .f8-guarantee-line--center { justify-content: center; }
+  .f8-lp-hero .f8-lp-stock { text-align: center; }
+  .f8-lp-sticky { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; align-items: center; justify-content: space-between; gap: .75rem;
+    padding: .65rem 1rem; background: #fff; border-top: 2px solid var(--f8-forest); box-shadow: 0 -4px 12px rgba(0,0,0,.08); }
+  .f8-lp-sticky__price { display: grid; line-height: 1.15; }
+  .f8-lp-sticky__price small { font-size: .75rem; color: var(--f8-green); }
+  .f8-lp-sticky__price strong { font-size: 1.3rem; }
+  .f8-lp-sticky .f8-button { flex: 1 1 auto; min-width: 0; padding: .75rem 1rem; font-size: .95rem; text-align: center; line-height: 1.2; white-space: normal; }
+  .f8-lp-sticky { flex-wrap: wrap; row-gap: .35rem; }
+  .f8-lp-sticky .f8-sub-terms { flex: 1 0 100%; margin: 0; font-size: .8rem; font-weight: 500; text-align: center; }
+  .f8-lp-sticky--hidden { display: none; }
+  body:has(.f8-lp-sticky) { padding-bottom: 8rem; }
+  html:has(.f8-lp-sticky) { scroll-padding-bottom: 9rem; }
+  .f8-button--lg { font-size: 1.1rem; padding: 1rem 1.25rem; }
+}
+
+/* ---- Helpers ---- */
+.f8-vh { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.f8-stock-pill--out { background: #fff; color: var(--f8-forest); border: 2px solid var(--f8-forest); }
+
+/* ---- Launch price wording ---- */
+.f8-lp-price { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 700; color: var(--f8-forest); }
+.f8-lp-price span { font-size: 1rem; font-weight: 500; color: var(--f8-green); }
+.f8-recap__note { text-align: center; margin: .75rem 0 0; color: var(--f8-green); }
+
+/* ---- Waitlist (coming soon) ---- */
+.f8-waitlist { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+.f8-waitlist h1 { margin: 0 0 .75rem; font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 700; line-height: 1.1; text-align: center; }
+.f8-waitlist h2 { margin: 2.25rem 0 .75rem; font-size: clamp(1.35rem, 3vw, 1.75rem); font-weight: 600; }
+.f8-waitlist .f8-waitlist__lead { text-align: center; font-size: 1.2rem; color: var(--f8-green); margin: 0 0 1rem; }
+.f8-waitlist p { margin: 0 0 1rem; }
+.f8-waitlist__ingredients { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.f8-waitlist__ingredients li { background: #fff; border: 1px solid var(--f8-sage); border-radius: 12px; padding: .9rem 1.1rem; }
+.f8-waitlist__join { margin-top: 2.5rem; background: #fff; border: 2px solid var(--f8-forest); border-radius: 16px; padding: 1.5rem 1.25rem 1.25rem; text-align: center; }
+.f8-waitlist__join h2 { margin-top: 0; }
+.f8-waitlist__form label { display: block; text-align: left; font-weight: 600; margin: 0 0 .4rem; }
+.f8-waitlist__row { display: flex; gap: .6rem; }
+.f8-waitlist__row input { flex: 1; min-width: 0; font: inherit; padding: .85rem 1rem; border: 2px solid var(--f8-forest); border-radius: 10px; background: #fff; color: var(--f8-forest); min-height: 48px; }
+.f8-waitlist__row input:focus-visible { outline: 3px solid var(--f8-forest); outline-offset: 2px; }
+.f8-waitlist__row .f8-button { cursor: pointer; font: inherit; font-weight: 600; letter-spacing: .04em; min-height: 48px; padding: .75rem 1.5rem; }
+.f8-waitlist .f8-waitlist__consent { font-size: .9rem; color: var(--f8-green); margin: .75rem 0 0; text-align: left; }
+.f8-waitlist .f8-waitlist__ok { display: block; font-weight: 700; color: var(--f8-instock); font-size: 1.05rem; margin: .5rem 0; text-align: center; }
+.f8-waitlist__ok .f8-icon { color: var(--f8-instock); vertical-align: -.3em; margin-right: .45rem; }
+.f8-waitlist__err { text-align: left; margin: 0 0 .75rem; padding: .6rem .9rem; border: 2px solid var(--f8-forest); border-radius: 10px; background: var(--f8-cream); font-weight: 600; }
+.f8-waitlist__err ul { margin: 0; padding-left: 1.1rem; }
+.f8-waitlist .f8-waitlist__note { margin: 1.75rem 0 0; text-align: center; font-size: .95rem; }
+@media (max-width: 549px) { .f8-waitlist__row { flex-direction: column; } .f8-waitlist__row .f8-button { width: 100%; } }
+
+.f8-waitlist h1 { text-wrap: balance; }
+.f8-waitlist__row input::placeholder, .f8-pw-entry input::placeholder { color: var(--f8-green); opacity: 1; }
+.f8-pw-entry { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem 3rem; text-align: center; }
+.f8-pw-entry summary { cursor: pointer; display: inline-block; padding: .6rem .9rem; min-height: 44px; font-weight: 600; text-decoration: underline; }
+.f8-pw-entry__form { text-align: left; max-width: 26rem; margin: .75rem auto 0; }
+.f8-pw-entry__form label { display: block; font-weight: 600; margin: 0 0 .4rem; }
+.f8-pw-entry .f8-waitlist__row input { flex: 1; min-width: 0; font: inherit; padding: .85rem 1rem; border: 2px solid var(--f8-forest); border-radius: 10px; background: #fff; color: var(--f8-forest); min-height: 48px; }
+.f8-pw-entry .f8-waitlist__row .f8-button { cursor: pointer; font: inherit; font-weight: 600; min-height: 48px; padding: .75rem 1.5rem; }
+
+/* ---- Subscription terms line (directly under every buy button) ---- */
+.f8-sub-terms { margin: .7rem 0 0; font-size: .95rem; font-weight: 600; color: var(--f8-forest); line-height: 1.4; }
+.f8-lp-center + .f8-sub-terms, .f8-recap .f8-sub-terms, .f8-gifts .f8-sub-terms { text-align: center; }
+.f8-sub-terms--compact { margin: 0; font-weight: 500; }
+.f8-hero__content .f8-sub-terms { text-align: center; }
+.f8-button { text-wrap: balance; }
+
+/* ---- Renewal sentence alignment / specificity ---- */
+.f8-hero__content .f8-sub-terms { margin: .7rem 0 0; font-size: .95rem; font-weight: 600; color: var(--f8-forest); text-align: center; }
+@media (max-width: 749px) { .f8-lp-hero__copy .f8-sub-terms { text-align: center; } }
+.f8-recap__then th, .f8-recap__then td { font-size: 1.05rem; }
+
+/* ---- Large-text safety: allow long words to wrap, never widen the page ---- */
+.f8-lp-hero__copy, .f8-lp-hero__media, .f8-lp-gifts, .f8-reason > div { min-width: 0; }
+.f8-lp-title, .f8-lp-ticks span, .f8-reason h3, .f8-reason p, .f8-lp-price, .f8-sub-terms, .f8-recap__table th { overflow-wrap: anywhere; }
+
+.f8-button { max-width: 100%; box-sizing: border-box; overflow-wrap: anywhere; }
+.f8-lp-tile__name, .f8-lp-tile__tag, .f8-gift-card h3 { overflow-wrap: anywhere; }
+.f8-lp-tile { min-width: 0; }
+[class*="f8-"] :is(h1, h2, h3, summary, label) { overflow-wrap: anywhere; }

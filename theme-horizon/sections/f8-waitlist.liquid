@@ -1,0 +1,68 @@
+{%- comment -%}
+  Coming-soon + waitlist block (owner-supplied wording, content/waitlist-copy.md). Shown only in Waitlist mode.
+  Do not add benefit claims, amounts, strains or flavour. Keep the in-development line.
+  Sign-ups are Shopify customers tagged "newsletter" (email-marketing subscription) and "waitlist".
+{%- endcomment -%}
+{%- if settings.site_mode != 'selling' or template.name == 'password' -%}
+<section class="f8 f8-waitlist">
+  <h1>{{ section.settings.headline }}</h1>
+  <p class="f8-waitlist__lead"><strong>{{ section.settings.lead }}</strong></p>
+  <p>{{ section.settings.intro }}</p>
+
+  <h2>{{ section.settings.ingredients_heading }}</h2>
+  <ul class="f8-waitlist__ingredients" role="list">
+    {%- for block in section.blocks -%}
+      <li {{ block.shopify_attributes }}><strong>{{ block.settings.name }}</strong> &mdash; {{ block.settings.text }}</li>
+    {%- endfor -%}
+  </ul>
+
+  <h2>{{ section.settings.routine_heading }}</h2>
+  <p>{{ section.settings.routine_text }}</p>
+
+  <div class="f8-waitlist__join">
+    {%- form 'customer', id: 'waitlist-form', class: 'f8-waitlist__form' -%}
+      <input type="hidden" name="contact[tags]" value="newsletter,waitlist">
+      {%- if form.posted_successfully? -%}
+        <p class="f8-waitlist__ok" role="status" tabindex="-1" autofocus>{% render 'f8-icon-check' %}<span>Thanks! You're on the waitlist.</span></p>
+      {%- else -%}
+        <h2>{{ section.settings.join_heading }}</h2>
+        <p>{{ section.settings.join_text }}</p>
+        {%- if form.errors -%}
+          <div class="f8-waitlist__err" id="waitlist-error" role="alert" tabindex="-1" autofocus>{{ form.errors | default_errors }}</div>
+        {%- endif -%}
+        <label for="waitlist-email">Email address</label>
+        <div class="f8-waitlist__row">
+          <input id="waitlist-email" type="email" name="contact[email]" autocomplete="email" required placeholder="you@example.com" value="{{ form.email }}"{% if form.errors %} aria-invalid="true" aria-describedby="waitlist-error waitlist-consent"{% else %} aria-describedby="waitlist-consent"{% endif %}>
+          <button type="submit" class="f8-button">{{ section.settings.button_label }}</button>
+        </div>
+        <p class="f8-waitlist__consent" id="waitlist-consent">By joining you agree to receive product development updates, early access news and launch offers by email. Unsubscribe any time.{% if shop.privacy_policy.url != blank %} <a href="{{ shop.privacy_policy.url }}">Privacy policy</a>{% endif %}</p>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+
+  <p class="f8-waitlist__note"><em>{{ section.settings.disclaimer | default: 'Product in development. Ingredients, quantities, flavor, and final product specifications are subject to change.' }}</em></p>
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Waitlist (coming soon)",
+  "settings": [
+    { "type": "text", "id": "headline", "label": "Headline", "default": "Your Gut. Your Health. Your Formula." },
+    { "type": "text", "id": "lead", "label": "Lead line", "default": "Meet the next generation of daily gut wellness." },
+    { "type": "textarea", "id": "intro", "label": "Intro", "default": "Formul8 Nutrition is developing a refreshing, easy-to-mix daily gut health powder designed around digestive support, beneficial gut bacteria, and everyday wellness." },
+    { "type": "text", "id": "ingredients_heading", "label": "Ingredients heading", "default": "What's Inside Our Proposed Formula?" },
+    { "type": "text", "id": "routine_heading", "label": "Routine heading", "default": "Simple Routine. Thoughtful Ingredients." },
+    { "type": "textarea", "id": "routine_text", "label": "Routine text", "default": "We're developing Formul8 to make daily gut wellness convenient, approachable, and enjoyable." },
+    { "type": "text", "id": "join_heading", "label": "Join heading", "default": "Be First to Experience Formul8." },
+    { "type": "textarea", "id": "join_text", "label": "Join text", "default": "Join our exclusive waitlist for product development updates, early access, and launch offers." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "JOIN THE WAITLIST" },
+    { "type": "textarea", "id": "disclaimer", "label": "In-development line (keep it)", "default": "Product in development. Ingredients, quantities, flavor, and final product specifications are subject to change." }
+  ],
+  "blocks": [
+    { "type": "ingredient", "name": "Ingredient", "settings": [
+      { "type": "text", "id": "name", "label": "Name" },
+      { "type": "textarea", "id": "text", "label": "Description (owner wording only)" } ] }
+  ],
+  "presets": [{ "name": "Waitlist (coming soon)", "blocks": [{"type": "ingredient", "settings": {"name": "Prebiotic Fiber", "text": "Designed to nourish beneficial bacteria and support digestive wellness."}}, {"type": "ingredient", "settings": {"name": "L-Glutamine", "text": "An amino acid that plays an important role in normal intestinal function."}}, {"type": "ingredient", "settings": {"name": "Green Banana Resistant Starch", "text": "A source of fermentable carbohydrates that may support the gut microbiome."}}, {"type": "ingredient", "settings": {"name": "Probiotics", "text": "Selected beneficial microorganisms being considered to support gut microbiome balance."}}, {"type": "ingredient", "settings": {"name": "Ginger Root Extract", "text": "A botanical ingredient traditionally associated with digestive comfort."}}] }]
+}
+{% endschema %}

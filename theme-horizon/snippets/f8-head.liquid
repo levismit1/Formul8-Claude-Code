@@ -1,0 +1,15 @@
+{%- comment -%}
+  Formul8 colours + stylesheet. Rendered in layout/theme.liquid and layout/password.liquid.
+  forest/green/sage/cream follow Horizon's colour palette (Theme settings -> Colors) so there is ONE place to change them.
+{%- endcomment -%}
+<style>
+  :root {
+    --f8-forest: {{ settings.color_palette.foreground | default: '#2E4A37' }};
+    --f8-green: {{ settings.color_palette.color1 | default: '#4A6649' }};
+    --f8-sage: {{ settings.color_palette.color2 | default: '#B5C4A8' }};
+    --f8-cream: {{ settings.color_palette.background | default: '#F5ECE5' }};
+    --f8-rose: {{ settings.color_rose }};
+    --f8-instock: {{ settings.color_instock }};
+  }
+</style>
+{{ 'f8.css' | asset_url | stylesheet_tag }}

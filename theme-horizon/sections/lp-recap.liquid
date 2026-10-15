@@ -1,0 +1,28 @@
+<section class="f8 f8-lp-recap">
+  <div class="f8-recap">
+    <h2>{{ section.settings.heading }}</h2>
+    <table class="f8-recap__table">
+      <tbody>
+        <tr><th scope="row">Formul8 Nutrition, first jar (30 servings)</th><td>${{ settings.jar_sale_price }}</td></tr>
+        <tr><th scope="row">{{ settings.shaker_name }}</th><td>FREE</td></tr>
+        <tr><th scope="row">{{ settings.frother_name }}</th><td>FREE</td></tr>
+        <tr class="f8-recap__price"><th scope="row">Your price today</th><td>${{ settings.jar_sale_price }}</td></tr>
+        <tr class="f8-recap__then"><th scope="row">Then every month, until you cancel</th><td>${{ settings.jar_regular_price }}</td></tr>
+      </tbody>
+    </table>
+    {%- if settings.gifts_in_stock -%}<p class="f8-lp-stock"><span class="f8-stock-pill">Free gifts in stock</span></p>{%- else -%}<p class="f8-lp-stock"><span class="f8-stock-pill f8-stock-pill--out">Free gifts currently out of stock</span></p>{%- endif -%}
+    <p class="f8-lp-center"><a class="f8-button f8-button--lg" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a></p>
+    {% render 'f8-subscription-terms' %}
+    <p class="f8-guarantee-line f8-guarantee-line--center">{% render 'f8-icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "LP: Offer recap",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What you get with your first subscription delivery" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start My Subscription + Free Gifts" }
+  ],
+  "presets": [{ "name": "LP: Offer recap" }]
+}
+{% endschema %}
