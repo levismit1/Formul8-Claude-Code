@@ -1,0 +1,22 @@
+{%- comment -%}
+  Sign-up box right under the hero banner (owner request 2026-10-17). Waitlist mode / password page only.
+  Same form and owner wording as the lower form; keep the in-development line.
+{%- endcomment -%}
+{%- if settings.site_mode != 'selling' or template.name == 'password' -%}
+<section class="f8 f8-waitlist f8-signup" id="f8-signup">
+  {% render 'f8-waitlist-form', uid: section.id, heading: section.settings.heading, text: section.settings.text, button_label: section.settings.button_label %}
+  <p class="f8-waitlist__note"><em>{{ section.settings.disclaimer }}</em></p>
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Waitlist sign-up (top)",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Be First to Experience Formul8." },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Join our exclusive waitlist for product development updates, early access, and launch offers." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "JOIN THE WAITLIST" },
+    { "type": "textarea", "id": "disclaimer", "label": "In-development line (keep it)", "default": "Product in development. Ingredients, quantities, flavor, and final product specifications are subject to change." }
+  ],
+  "presets": [{ "name": "Waitlist sign-up (top)" }]
+}
+{% endschema %}

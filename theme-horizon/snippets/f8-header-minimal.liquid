@@ -1,4 +1,7 @@
 {%- comment -%} Logo-only header: Waitlist mode and the listicle page (no cart, menu or search). {%- endcomment -%}
 <header class="f8-header-min">
-  <a href="{{ routes.root_url }}">{{ shop.name }}</a>
+  <a class="f8-header-min__name" href="{{ routes.root_url }}">{{ shop.name }}</a>
+  {%- if settings.site_mode != 'selling' and template.suffix != 'listicle' -%}
+    <a class="f8-header-min__cta" href="{{ routes.root_url }}#f8-signup">Join the waitlist</a>
+  {%- endif -%}
 </header>

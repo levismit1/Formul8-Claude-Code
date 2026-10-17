@@ -86,11 +86,75 @@
         "alt": "Formul8 Nutrition green shaker bottle and hand blender/frother",
         "button_label": "Start My Subscription + Free Gifts"
       }
+    },
+    "signup": {
+      "type": "f8-signup",
+      "settings": {}
+    },
+    "offer": {
+      "type": "f8-offer",
+      "settings": {}
+    },
+    "steps": {
+      "type": "f8-steps",
+      "settings": {}
+    },
+    "faq": {
+      "type": "f8-faq",
+      "blocks": {
+        "q1": {
+          "type": "item",
+          "settings": {
+            "question": "When will Formul8 launch?",
+            "answer": "We haven't announced a launch date yet. Join the waitlist and we'll email you."
+          }
+        },
+        "q2": {
+          "type": "item",
+          "settings": {
+            "question": "Can I buy Formul8 now?",
+            "answer": "Not yet. Formul8 is still in development. Waitlist members get product development updates, early access, and launch offers."
+          }
+        },
+        "q3": {
+          "type": "item",
+          "settings": {
+            "question": "What is Formul8 Nutrition?",
+            "answer": "Formul8 Nutrition is developing a refreshing, easy-to-mix daily gut health powder designed around digestive support, beneficial gut bacteria, and everyday wellness."
+          }
+        },
+        "q4": {
+          "type": "item",
+          "settings": {
+            "question": "How many servings are in a jar?",
+            "answer": "Each jar contains 30 servings."
+          }
+        },
+        "q5": {
+          "type": "item",
+          "settings": {
+            "question": "Will the ingredients or details change?",
+            "answer": "Product in development. Ingredients, quantities, flavor, and final product specifications are subject to change."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "hero",
+    "signup",
+    "offer",
+    "steps",
     "waitlist",
+    "faq",
     "gifts"
   ]
 }

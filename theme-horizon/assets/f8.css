@@ -2,11 +2,13 @@
    Colours come from Theme settings (Horizon colour palette + Formul8 colours) through the --f8-* variables set in snippets/f8-head.liquid. */
 .f8 { font-size: 1rem; line-height: 1.6; color: var(--f8-forest); }
 .f8 a:not(.f8-button) { color: inherit; }
-/* Horizon turns every link inside a <p> grey on hover; keep our buttons readable (specificity must beat base.css). */
-.f8 .f8-button, .f8 .f8-button:hover, .f8 .f8-button:focus-visible { color: var(--f8-cream); text-decoration: none; }
+/* Horizon turns every link inside a <p> grey on hover with a nested rule of specificity (0,3,2); the doubled class (0,4,0) keeps our buttons readable. */
+.f8 .f8-button.f8-button, .f8 .f8-button.f8-button:hover, .f8 .f8-button.f8-button:focus-visible { color: var(--f8-cream); text-decoration: none; }
 
-.f8-header-min { display: flex; justify-content: center; align-items: center; padding: 1rem 1.5rem; background: var(--f8-forest); color: var(--f8-cream); }
+.f8-header-min { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem 1.5rem; padding: .75rem 1.5rem; background: var(--f8-forest); color: var(--f8-cream); }
 .f8-header-min a { color: inherit; text-decoration: none; font-size: 1.4rem; font-weight: 600; letter-spacing: .02em; }
+.f8-header-min a.f8-header-min__cta { font-size: .95rem; letter-spacing: .04em; padding: .45rem 1.1rem; border: 2px solid var(--f8-cream); border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center; }
+.f8-header-min a.f8-header-min__cta:hover, .f8-header-min a.f8-header-min__cta:focus-visible { background: var(--f8-cream); color: var(--f8-forest); }
 
 .f8-legal { background: var(--f8-sage); color: var(--f8-forest); padding: 2rem 1.5rem; text-align: center; font-size: 1rem; line-height: 1.6; }
 .f8-legal p { margin: 0 auto .5rem; max-width: 46rem; }
@@ -206,3 +208,44 @@
 
 /* ---- Icons stay inline (Horizon makes svg display:block) ---- */
 .f8-icon { display: inline-block; }
+
+/* ---- Waitlist page v2: sign-up box under the hero ---- */
+.f8-signup { padding-top: 1.75rem; padding-bottom: .5rem; }
+.f8-signup .f8-waitlist__join { margin-top: 0; }
+.f8-signup .f8-waitlist__note { margin-top: 1rem; }
+
+/* ---- Planned offer / price call-out ---- */
+.f8-offer { max-width: 60rem; margin: 0 auto; padding: 2.5rem 1.5rem 2rem; text-align: center; }
+.f8-offer__eyebrow { margin: 0 0 .5rem; font-size: .9rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--f8-green); }
+.f8-offer h2 { margin: 0 0 1.25rem; font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 600; line-height: 1.15; }
+.f8-offer__card { background: #fff; border: 2px solid var(--f8-forest); border-radius: 16px; padding: 1.5rem 1.25rem; max-width: 36rem; margin: 0 auto 1.75rem; }
+.f8-offer__price { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: .25rem .75rem; }
+.f8-offer__was { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 600; color: var(--f8-green); text-decoration: line-through; text-decoration-thickness: .1em; }
+.f8-offer__now { font-size: clamp(2.6rem, 9vw, 4rem); font-weight: 800; line-height: 1; color: var(--f8-forest); }
+.f8-offer__for { flex-basis: 100%; margin-top: .35rem; font-size: 1.05rem; font-weight: 600; }
+.f8-offer__then { margin: .75rem 0 0; font-size: 1.2rem; font-weight: 700; }
+.f8-offer__gifts-line { margin: .9rem 0 0; font-size: 1.1rem; }
+.f8-offer .f8-gifts__cards { max-width: 36rem; margin-left: auto; margin-right: auto; }
+.f8-offer__cta { margin: 1.5rem 0 0; }
+.f8-offer__note { max-width: 40rem; margin: 1rem auto 0; font-size: .9rem; color: var(--f8-green); }
+
+/* ---- How it will work ---- */
+.f8-steps { max-width: 60rem; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.f8-steps h2 { margin: 0 0 1.25rem; text-align: center; font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 600; }
+.f8-steps__list { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 1rem; }
+.f8-steps__note { margin: 0; text-align: center; font-size: .9rem; color: var(--f8-green); }
+
+/* ---- Waitlist FAQ ---- */
+.f8-faq { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.5rem 3rem; }
+.f8-faq h2 { margin: 0 0 1.25rem; text-align: center; font-size: clamp(1.6rem, 3.5vw, 2.25rem); font-weight: 600; }
+.f8-faq details { background: #fff; border: 1px solid var(--f8-sage); border-radius: 10px; margin-bottom: .6rem; }
+.f8-faq summary { cursor: pointer; font-weight: 600; padding: .95rem 1.1rem; min-height: 44px; justify-content: space-between; align-items: center; gap: 1rem; }
+.f8-faq summary::after { content: '+'; flex: none; font-weight: 700; font-size: 1.3rem; line-height: 1; }
+.f8-faq details[open] summary::after { content: '\2212'; }
+.f8-faq details p { margin: 0; padding: 0 1.1rem 1rem; }
+
+/* ---- Waitlist page: keep the banner whole but not taller than the first screen, so the sign-up box is near the top ---- */
+@media (min-width: 900px) {
+  .f8-hero--waitlist .f8-hero__media { max-width: 1100px; margin: .75rem auto 0; border-radius: 12px; overflow: hidden; }
+}
+.f8-signup { padding-top: 1rem; }

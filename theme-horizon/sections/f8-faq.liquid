@@ -1,0 +1,35 @@
+{%- comment -%}
+  Waitlist FAQ. Answers are editable blocks (owner wording / confirmed facts only). The planned-offer answer is built
+  from the theme's price settings so prices live in one place. Waitlist mode / password page only.
+{%- endcomment -%}
+{%- if settings.site_mode != 'selling' or template.name == 'password' -%}
+<section class="f8 f8-faq">
+  <h2>{{ section.settings.heading }}</h2>
+  {%- for block in section.blocks -%}
+    <details {{ block.shopify_attributes }}><summary>{{ block.settings.question }}</summary><p>{{ block.settings.answer }}</p></details>
+    {%- if forloop.index == 2 -%}
+      <details><summary>What is the planned offer?</summary><p>We plan to offer your first jar for ${{ settings.jar_sale_price }}, then ${{ settings.jar_regular_price }} per month until you cancel, with a free shaker bottle and a free hand blender/frother with your first subscription delivery. Pricing and offer details may change before launch.</p></details>
+    {%- endif -%}
+  {%- endfor -%}
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Waitlist FAQ",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Questions" }
+  ],
+  "blocks": [
+    { "type": "item", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question" },
+      { "type": "textarea", "id": "answer", "label": "Answer (confirmed facts only)" } ] }
+  ],
+  "presets": [{ "name": "Waitlist FAQ", "blocks": [
+    {"type": "item", "settings": {"question": "When will Formul8 launch?", "answer": "We haven't announced a launch date yet. Join the waitlist and we'll email you."}},
+    {"type": "item", "settings": {"question": "Can I buy Formul8 now?", "answer": "Not yet. Formul8 is still in development. Waitlist members get product development updates, early access, and launch offers."}},
+    {"type": "item", "settings": {"question": "What is Formul8 Nutrition?", "answer": "Formul8 Nutrition is developing a refreshing, easy-to-mix daily gut health powder designed around digestive support, beneficial gut bacteria, and everyday wellness."}},
+    {"type": "item", "settings": {"question": "How many servings are in a jar?", "answer": "Each jar contains 30 servings."}},
+    {"type": "item", "settings": {"question": "Will the ingredients or details change?", "answer": "Product in development. Ingredients, quantities, flavor, and final product specifications are subject to change."}}
+  ] }]
+}
+{% endschema %}

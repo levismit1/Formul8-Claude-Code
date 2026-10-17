@@ -1,0 +1,28 @@
+{%- comment -%}
+  "How it will work": three plain steps. Prices from theme settings. No claim about cancelling here: the full terms
+  (including how to cancel) are shown before purchase, and "cancel any time" is only true once customer accounts are live.
+{%- endcomment -%}
+{%- if settings.site_mode != 'selling' or template.name == 'password' -%}
+<section class="f8 f8-steps">
+  <h2>{{ section.settings.heading }}</h2>
+  <ol class="f8-steps__list">
+    <li class="f8-reason"><span class="f8-reason__n">1</span><div><h3>Join the waitlist</h3>
+      <p>Get product development updates, early access and launch offers by email.</p></div></li>
+    <li class="f8-reason"><span class="f8-reason__n">2</span><div><h3>Start your subscription at launch</h3>
+      <p>Your first jar is planned at ${{ settings.jar_sale_price }}, with a free shaker bottle and a free hand blender/frother with your first delivery.</p></div></li>
+    <li class="f8-reason"><span class="f8-reason__n">3</span><div><h3>Get a jar every month</h3>
+      <p>Each delivery is one jar with 30 servings, planned at ${{ settings.jar_regular_price }} per month until you cancel.</p></div></li>
+  </ol>
+  <p class="f8-steps__note">{{ section.settings.note }}</p>
+</section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "How it will work",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "How it will work" },
+    { "type": "textarea", "id": "note", "label": "Small print (keep it)", "default": "Planned and subject to change. Full subscription terms, including how to cancel, will be shown before you buy." }
+  ],
+  "presets": [{ "name": "How it will work" }]
+}
+{% endschema %}

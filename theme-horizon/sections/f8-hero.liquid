@@ -3,7 +3,7 @@
   so the headline/CTA sit in a band below it rather than over the jar.
   Image is eager + high priority (it is the LCP element).
 {%- endcomment -%}
-<section class="f8 f8-hero">
+<section class="f8 f8-hero{% if settings.site_mode != 'selling' or template.name == 'password' %} f8-hero--waitlist{% endif %}">
   <picture class="f8-hero__media">
     {%- if section.settings.image == blank -%}
       <source media="(max-width: 749px)" srcset="{{ 'formul8-hero-mobile.webp' | asset_url }}" width="880" height="857" type="image/webp">
