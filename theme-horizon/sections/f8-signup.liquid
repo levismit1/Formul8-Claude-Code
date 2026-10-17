@@ -5,7 +5,7 @@
 {%- if settings.site_mode != 'selling' or template.name == 'password' -%}
 <section class="f8 f8-waitlist f8-signup" id="f8-signup">
   {% render 'f8-waitlist-form', uid: section.id, heading: section.settings.heading, text: section.settings.text, button_label: section.settings.button_label %}
-  <p class="f8-waitlist__note"><em>{{ section.settings.disclaimer }}</em></p>
+  <p class="f8-waitlist__note"><em>{{ section.settings.disclaimer | default: 'Product in development. Ingredients, quantities, flavor, and final product specifications are subject to change.' }}</em></p>
 </section>
 {%- endif -%}
 {% schema %}

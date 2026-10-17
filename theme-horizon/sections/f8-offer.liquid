@@ -13,7 +13,7 @@
   endif
 -%}
 <section class="f8 f8-offer" id="f8-offer">
-  <p class="f8-offer__eyebrow">{{ section.settings.eyebrow }}</p>
+  <p class="f8-offer__eyebrow">{{ section.settings.eyebrow | default: 'Planned for launch · subject to change' }}</p>
   <h2>{{ section.settings.heading }}</h2>
   <div class="f8-offer__card">
     <p class="f8-offer__price">
@@ -35,7 +35,7 @@
     <li class="f8-gift-card"><h3>{{ settings.frother_name }}</h3><p><strong>FREE</strong></p></li>
   </ul>
   <p class="f8-offer__cta"><a class="f8-button f8-button--lg" href="#f8-signup">{{ section.settings.button_label }}</a></p>
-  <p class="f8-offer__note">{{ section.settings.note }}</p>
+  <p class="f8-offer__note">{{ section.settings.note | default: 'Planned offer for waitlist members. Pricing, offer details and availability may change before launch, and Formul8 is not yet available to order. Full subscription terms, including how to cancel, will be shown before you buy.' }}</p>
 </section>
 {%- endif -%}
 {% schema %}

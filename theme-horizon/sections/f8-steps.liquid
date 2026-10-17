@@ -13,7 +13,7 @@
     <li class="f8-reason"><span class="f8-reason__n">3</span><div><h3>Get a jar every month</h3>
       <p>Each delivery is one jar with 30 servings, planned at ${{ settings.jar_regular_price }} per month until you cancel.</p></div></li>
   </ol>
-  <p class="f8-steps__note">{{ section.settings.note }}</p>
+  <p class="f8-steps__note">{{ section.settings.note | default: 'Planned and subject to change. Full subscription terms, including how to cancel, will be shown before you buy.' }}</p>
 </section>
 {%- endif -%}
 {% schema %}
