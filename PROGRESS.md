@@ -77,3 +77,4 @@ Every API call and file change is logged here. No Shopify store calls have been 
 - [ ] SEO audit + changes
 | 62 | 2026-10-20 | API call (auth) | POST client-credentials exchange to owner-confirmed host `3wha1w-sr.myshopify.com`, redirects NOT followed | owner's store | HTTP 200, token issued (24h); scopes match the requested list | token expires itself |
 | 63 | 2026-10-20 | API call (read) | GET themes.json | owner store | HTTP 200: "Horizon" (unpublished), "Formul8 Draft" (role MAIN = the LIVE theme, do not edit). Token file deleted | n/a |
+| 64 | 2026-10-20 | API call (write) | Created UNPUBLISHED theme "Formul8 Build" (id 166384533733) and copied all 482 files from Horizon (id 165604557029) via assets API; role checked != main before every write; 23 files initially rejected for load order, retried OK | owner's store, new theme only | Live theme 166174654693 untouched | delete theme 166384533733 in admin |
