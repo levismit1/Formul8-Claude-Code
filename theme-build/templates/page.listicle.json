@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "hero": {
+      "type": "f8-lp-hero",
+      "settings": {}
+    },
+    "reasons": {
+      "type": "f8-lp-reasons",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "f8-lp-reviews",
+      "settings": {}
+    },
+    "recap": {
+      "type": "f8-lp-recap",
+      "settings": {}
+    },
+    "guarantee": {
+      "type": "f8-lp-guarantee",
+      "settings": {}
+    },
+    "faq": {
+      "type": "f8-lp-faq",
+      "settings": {}
+    },
+    "sticky": {
+      "type": "f8-lp-sticky-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "reasons",
+    "reviews",
+    "recap",
+    "guarantee",
+    "faq",
+    "sticky"
+  ]
+}

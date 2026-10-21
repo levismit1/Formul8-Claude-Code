@@ -1,0 +1,70 @@
+<div class="f8">
+{%- comment -%}
+  Listicle landing-page hero. Persuasion order follows the owner's reference page:
+  proof strip -> two-tone headline -> 3 ticks -> big CTA + badge -> guarantee under CTA -> free-gift tiles.
+  Every statement here is a Formul8 fact the owner confirmed. The social-proof strip stays hidden
+  until real numbers are entered; the offer-end line stays hidden until a real date is entered.
+{%- endcomment -%}
+<section class="lp-hero">
+  <div class="lp-hero__copy">
+    {%- if section.settings.rating != blank and section.settings.review_count != blank -%}
+      <p class="lp-proof"><span class="lp-proof__stars" aria-hidden="true">★</span>
+        <strong>{{ section.settings.rating }}</strong> average rating · {{ section.settings.review_count }} reviews</p>
+    {%- endif -%}
+    <h1 class="lp-title">
+      <span class="lp-title__a">{{ section.settings.headline_1 }}</span>
+      <span class="lp-title__b">{{ section.settings.headline_2 }}</span>
+    </h1>
+    <p class="lp-price">First jar <strong>${{ settings.jar_sale_price }}</strong> <span>&middot; then ${{ settings.jar_regular_price }} per month</span></p>
+    <ul class="lp-ticks">
+      <li>{% render 'f8-icon-check' %} <span>30 servings in every jar</span></li>
+      <li>{% render 'f8-icon-check' %} <span>FREE shaker bottle + hand blender/frother with your first subscription delivery</span></li>
+      <li>{% render 'f8-icon-check' %} <span>Monthly delivery. {{ settings.cancel_text }}.</span></li>
+      <li>{% render 'f8-icon-check' %} <span>{{ settings.guarantee_days }}-day money-back guarantee</span></li>
+    </ul>
+    <div class="lp-cta">
+      {%- if section.settings.badge != blank -%}<span class="lp-cta__badge">{{ section.settings.badge }}</span>{%- endif -%}
+      <a class="f8-button f8-button--lg" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+    </div>
+    {% render 'f8-subscription-terms' %}
+    <p class="guarantee-line guarantee-line--center">{% render 'f8-icon-check' %} Backed by our {{ settings.guarantee_days }}-day money-back guarantee</p>
+    {%- if section.settings.offer_end != blank -%}
+      <p class="lp-ends">Offer ends {{ section.settings.offer_end }}</p>
+    {%- endif -%}
+    {%- if settings.gifts_in_stock -%}<p class="lp-stock"><span class="stock-pill">Free gifts in stock</span></p>{%- else -%}<p class="lp-stock"><span class="stock-pill stock-pill--out">Free gifts currently out of stock</span></p>{%- endif -%}
+  </div>
+  <div class="lp-hero__media">
+    <picture>
+      <source srcset="{{ 'formul8-hero-mobile.webp' | asset_url }}" width="880" height="857" type="image/webp">
+      <img src="{{ 'formul8-hero.jpg' | asset_url }}" width="2000" height="857"
+           alt="{{ section.settings.alt | escape }}" loading="eager" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="lp-gifts">
+    <p class="lp-gifts__title">Your free gifts (with your first subscription delivery)</p>
+    <ul class="lp-gifts__tiles">
+      <li class="lp-tile"><span class="lp-tile__tag">FREE</span><span class="lp-tile__name">{{ settings.shaker_name }}</span></li>
+      <li class="lp-tile"><span class="lp-tile__tag">FREE</span><span class="lp-tile__name">{{ settings.frother_name }}</span></li>
+    </ul>
+  </div>
+</section>
+</div>
+{% schema %}
+{
+  "name": "LP: Hero",
+  "settings": [
+    { "type": "header", "content": "Social proof (hidden until filled with REAL numbers)" },
+    { "type": "text", "id": "rating", "label": "Average rating (real number only)" },
+    { "type": "text", "id": "review_count", "label": "Number of reviews, e.g. 1,250" },
+    { "type": "header", "content": "Headline" },
+    { "type": "text", "id": "headline_1", "label": "Headline line 1", "default": "5 Reasons to Try Formul8 Nutrition" },
+    { "type": "text", "id": "headline_2", "label": "Headline line 2 (green)", "default": "Your gut. Your health. Your formula." },
+    { "type": "header", "content": "Button" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start My Subscription + Free Gifts" },
+    { "type": "text", "id": "badge", "label": "Small badge above button", "default": "30% OFF YOUR FIRST JAR" },
+    { "type": "text", "id": "offer_end", "label": "Offer end date (REAL date only; empty hides)", "info": "Example: October 31" },
+    { "type": "text", "id": "alt", "label": "Image description (alt text)", "default": "Formul8 Nutrition dietary supplement jar, 30 servings, in dark green packaging" }
+  ],
+  "presets": [{ "name": "LP: Hero" }]
+}
+{% endschema %}

@@ -1,0 +1,9 @@
+<div class="f8">
+  <section class="site-foot">
+    <p class="site-foot__fine">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+    {%- if settings.support_email != blank -%}<p><a href="mailto:{{ settings.support_email }}">Contact: {{ settings.support_email }}</a></p>{%- endif -%}
+  </section>
+</div>
+{% schema %}
+{ "name": "Formul8 FDA note" }
+{% endschema %}

@@ -1,0 +1,97 @@
+{%- comment -%}
+  Product page. Sold only as a subscription: the buy button sends the first selling plan of the product
+  (created by the owner in the Shopify Subscriptions app). Card details are entered on Shopify's own
+  secure checkout page, never on this site.
+  Free gifts are added to the cart only when the owner ticks "Add the two free gifts" (after the two gift
+  discounts are active and tested), otherwise the customer would be charged for them.
+{%- endcomment -%}
+{%- assign variant = product.selected_or_first_available_variant -%}
+{%- assign plan = product.selling_plan_groups.first.selling_plans.first -%}
+<div class="f8">
+<section class="pdp">
+  <div class="pdp__media">
+    {%- for image in product.images limit: 6 -%}
+      {{ image | image_url: width: 1000 | image_tag: widths: '400, 600, 800, 1000', sizes: '(min-width: 750px) 50vw, 100vw', loading: 'lazy', alt: image.alt | default: product.title }}
+    {%- else -%}
+      <picture>
+        <source media="(max-width: 749px)" srcset="{{ 'formul8-hero-mobile.webp' | asset_url }}" type="image/webp">
+        <img src="{{ 'formul8-hero.jpg' | asset_url }}" width="2000" height="857" alt="Formul8 Nutrition dietary supplement jar, 30 servings, in dark green packaging">
+      </picture>
+    {%- endfor -%}
+  </div>
+
+  <div class="pdp__info">
+    <h1 class="pdp__title">{{ product.title }}</h1>
+    {%- if settings.gifts_in_stock and variant.available -%}<p class="stock-pill" role="status">In stock</p>{%- endif -%}
+    <p class="pdp__price">Monthly subscription</p>
+    {%- if section.settings.short_text != blank -%}<p class="pdp__lead">{{ section.settings.short_text }}</p>{%- endif -%}
+
+    {%- if plan and variant.available -%}
+      <form method="post" action="{{ routes.cart_add_url }}" class="pdp__form" id="f8-buy-form" data-cart-url="{{ routes.cart_url }}"
+            data-jar="{{ variant.id }}" data-plan="{{ plan.id }}"
+            {%- if section.settings.add_gifts -%}
+              {%- assign g1 = section.settings.gift_shaker.selected_or_first_available_variant -%}
+              {%- assign g2 = section.settings.gift_frother.selected_or_first_available_variant -%}
+              {%- if g1.available and g2.available %} data-gifts="{{ g1.id }},{{ g2.id }}"{% endif -%}
+            {%- endif -%}>
+        <input type="hidden" name="id" value="{{ variant.id }}">
+        <input type="hidden" name="selling_plan" value="{{ plan.id }}">
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="f8-button f8-button--lg pdp__buy">{{ section.settings.button_label }}</button>
+        <p class="pdp__err" id="f8-buy-error" role="alert" hidden>Sorry, we could not add this to your cart. Please try again.</p>
+      </form>
+    {%- else -%}
+      <p><span class="f8-button f8-button--lg pdp__buy" aria-disabled="true">{% if variant.available %}Not available yet{% else %}Sold out{% endif %}</span></p>
+    {%- endif -%}
+    {% render 'f8-subscription-terms' %}
+    <p class="guarantee-line">{% render 'f8-icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
+    <p class="pdp__secure">You will enter your card details on Shopify's secure checkout page.</p>
+
+    <div class="pdp__gifts">
+      <h2>Free with your first subscription delivery</h2>
+      <ul>
+        <li>{{ settings.shaker_name }}</li>
+        <li>{{ settings.frother_name }}</li>
+      </ul>
+    </div>
+
+    <div class="pdp__desc">{{ product.description }}</div>
+
+    <details class="pdp__facts">
+      <summary>Supplement Facts</summary>
+      <p>{{ section.settings.facts_text }}</p>
+    </details>
+    <p class="pdp__fda">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+  </div>
+</section>
+</div>
+<script>
+  (function () {
+    var form = document.getElementById('f8-buy-form');
+    if (!form || !window.fetch) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button'), err = document.getElementById('f8-buy-error');
+      btn.disabled = true; err.hidden = true;
+      var items = [{ id: Number(form.dataset.jar), quantity: 1, selling_plan: Number(form.dataset.plan) }];
+      (form.dataset.gifts || '').split(',').filter(Boolean).forEach(function (id) { items.push({ id: Number(id), quantity: 1 }); });
+      fetch('{{ routes.cart_add_url }}.js', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: items }) })
+        .then(function (r) { if (!r.ok) throw new Error('add failed'); window.location.href = form.dataset.cartUrl; })
+        .catch(function () { btn.disabled = false; err.hidden = false; });
+    });
+  })();
+</script>
+{% schema %}
+{
+  "name": "Formul8 product",
+  "settings": [
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start My Subscription" },
+    { "type": "textarea", "id": "short_text", "label": "Short intro", "default": "Formul8 Nutrition is a dietary supplement. Each jar contains 30 servings." },
+    { "type": "textarea", "id": "facts_text", "label": "Supplement Facts (placeholder until the final label exists)", "default": "Supplement Facts panel, ingredient list and directions will be added here from the final label. This product is not available to buy until they are." },
+    { "type": "header", "content": "Free gifts" },
+    { "type": "checkbox", "id": "add_gifts", "label": "Add the two free gifts to the cart with the jar", "default": false, "info": "Tick ONLY after both gift discounts are active and tested, otherwise customers would be charged for the gifts." },
+    { "type": "product", "id": "gift_shaker", "label": "Gift 1: shaker bottle product" },
+    { "type": "product", "id": "gift_frother", "label": "Gift 2: hand blender / frother product" }
+  ]
+}
+{% endschema %}

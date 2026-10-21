@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "f8-product",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

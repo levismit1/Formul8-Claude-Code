@@ -1,0 +1,12 @@
+<div class="f8">
+  <section class="cart-terms">
+    {%- if cart.item_count > 0 -%}
+      {% render 'f8-subscription-terms' %}
+      <p class="guarantee-line">{% render 'f8-icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
+      <p class="pdp__secure">You will enter your card details on Shopify's secure checkout page.</p>
+    {%- endif -%}
+  </section>
+</div>
+{% schema %}
+{ "name": "Formul8 cart terms" }
+{% endschema %}
