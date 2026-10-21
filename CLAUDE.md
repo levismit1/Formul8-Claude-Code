@@ -93,4 +93,5 @@ Owner is an e-commerce owner and a **beginner**: explain steps plainly, define j
 - `PROGRESS.md` – audit log
 - `.mcp.json` – project MCP servers (Shopify Dev MCP)
 - `content/` – draft copy for owner review (`product-copy.md`, `listicle-outline.md`, `refund-policy.md`, `refund-policy-review.md`, `waitlist-copy.md`)
-- `theme/` – local DRAFT Shopify theme. Push only with `shopify theme push --unpublished`, never `--live`
+- `theme-build/` – OVERLAY of files added/changed on top of Shopify's Horizon theme (the real store theme, draft "Formul8 Build" id 166384533733). Live theme is "Formul8 Draft" (166174654693): never touch. Uploaded via Admin assets API (no Shopify CLI here).
+- `theme/` – local DRAFT Shopify theme (older starter). Push only with `shopify theme push --unpublished`, never `--live`
