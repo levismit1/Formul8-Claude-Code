@@ -2,6 +2,7 @@
 <section class="lp-faq">
   <h2>{{ section.settings.heading }}</h2>
   <details><summary>How does the subscription work?</summary><p>Formul8 Nutrition is a monthly subscription. You pay ${{ settings.jar_sale_price }} today for your first jar, then ${{ settings.jar_regular_price }} per month until you cancel. Each delivery is one jar of 30 servings. {{ settings.cancel_text }}: cancel online from your customer account or by contacting us{% if settings.support_email != blank %} at {{ settings.support_email }}{% endif %}.</p></details>
+  <details><summary>Can I buy a jar once without subscribing?</summary><p>Yes. On the product page choose Buy once: one jar for the regular price, no subscription and no renewals. The ${{ settings.jar_sale_price }} first-jar price and the free gifts are for subscribers.</p></details>
   <details><summary>What is in Formul8 Nutrition?</summary><p>{{ section.settings.a_ingredients }}</p></details>
   <details><summary>How many servings are in a jar?</summary><p>Each jar contains 30 servings.</p></details>
   <details><summary>How do the free gifts work?</summary><p>Your first order includes your first jar and both free gifts, and the gifts show as FREE at checkout. Later monthly deliveries include the jar only.{% if settings.offer_link != blank %} The button on this page adds everything to your cart for you.{% endif %} Gifts are limited by stock.</p></details>

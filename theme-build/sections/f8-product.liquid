@@ -23,30 +23,44 @@
   <div class="pdp__info">
     <h1 class="pdp__title">{{ product.title }}</h1>
     {%- if settings.gifts_in_stock and variant.available -%}<p class="stock-pill" role="status">In stock</p>{%- endif -%}
-    <p class="pdp__price">Monthly subscription</p>
-    {%- if section.settings.short_text != blank -%}<p class="pdp__lead">{{ section.settings.short_text }}</p>{%- endif -%}
+        {%- if section.settings.short_text != blank -%}<p class="pdp__lead">{{ section.settings.short_text }}</p>{%- endif -%}
 
-    {%- if plan and variant.available -%}
+    {%- if variant.available -%}
+      {%- assign once_price = variant.price | money_without_trailing_zeros -%}
       <form method="post" action="{{ routes.cart_add_url }}" class="pdp__form" id="f8-buy-form" data-cart-url="{%- if section.settings.discount_code != blank -%}/discount/{{ section.settings.discount_code | url_encode }}?redirect={{ routes.cart_url | url_encode }}{%- else -%}{{ routes.cart_url }}{%- endif -%}"
             data-jar="{{ variant.id }}" data-plan="{{ plan.id }}"
+            data-label-sub="{{ section.settings.button_label | escape }}" data-label-once="{{ section.settings.button_label_once | escape }}"
             {%- if section.settings.add_gifts -%}
               {%- assign g1 = section.settings.gift_shaker.selected_or_first_available_variant -%}
               {%- assign g2 = section.settings.gift_frother.selected_or_first_available_variant -%}
               {%- if g1.available and g2.available %} data-gifts="{{ g1.id }},{{ g2.id }}"{% endif -%}
             {%- endif -%}>
         <input type="hidden" name="id" value="{{ variant.id }}">
-        <input type="hidden" name="selling_plan" value="{{ plan.id }}">
         <input type="hidden" name="quantity" value="1">
         {%- if section.settings.discount_code != blank -%}
           <input type="hidden" name="return_to" value="/discount/{{ section.settings.discount_code | url_encode }}?redirect={{ routes.cart_url | url_encode }}">
         {%- endif -%}
-        <button type="submit" class="f8-button f8-button--lg pdp__buy">{{ section.settings.button_label }}</button>
+        <fieldset class="pdp__choices">
+          <legend class="pdp__choices-title">Choose how to buy</legend>
+          {%- if plan -%}
+            <label class="pdp__choice">
+              <input type="radio" name="selling_plan" value="{{ plan.id }}" checked data-mode="sub">
+              <span><strong>Subscribe</strong> &ndash; ${{ settings.jar_sale_price }} for your first jar, then ${{ settings.jar_regular_price }} per month</span>
+            </label>
+          {%- endif -%}
+          <label class="pdp__choice">
+            <input type="radio" name="selling_plan" value="" {% unless plan %}checked{% endunless %} data-mode="once">
+            <span><strong>Buy once</strong> &ndash; {{ once_price }}</span>
+          </label>
+        </fieldset>
+        <button type="submit" class="f8-button f8-button--lg pdp__buy" id="f8-buy-btn">{% if plan %}{{ section.settings.button_label }}{% else %}{{ section.settings.button_label_once }}{% endif %}</button>
         <p class="pdp__err" id="f8-buy-error" role="alert" hidden>Sorry, we could not add this to your cart. Please try again.</p>
       </form>
     {%- else -%}
-      <p><span class="f8-button f8-button--lg pdp__buy" aria-disabled="true">{% if variant.available %}Not available yet{% else %}Sold out{% endif %}</span></p>
+      <p><span class="f8-button f8-button--lg pdp__buy" aria-disabled="true">Sold out</span></p>
     {%- endif -%}
-    {% render 'f8-subscription-terms' %}
+    <div id="f8-terms-sub"{% unless plan %} hidden{% endunless %}>{% render 'f8-subscription-terms' %}</div>
+    <p class="sub-terms" id="f8-terms-once"{% if plan %} hidden{% endif %}>One-time purchase: {{ once_price }}. This does not start a subscription.</p>
     <p class="guarantee-line">{% render 'f8-icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
     <p class="pdp__secure">You will enter your card details on Shopify's secure checkout page.</p>
 
@@ -71,15 +85,27 @@
 <script>
   (function () {
     var form = document.getElementById('f8-buy-form');
-    if (!form || !window.fetch) return;
+    if (!form) return;
+    var btn = document.getElementById('f8-buy-btn'), err = document.getElementById('f8-buy-error');
+    var tSub = document.getElementById('f8-terms-sub'), tOnce = document.getElementById('f8-terms-once');
+    function isSub() { var r = form.querySelector('input[name="selling_plan"]:checked'); return !!(r && r.value); }
+    function sync() {
+      var sub = isSub();
+      tSub.hidden = !sub; tOnce.hidden = sub;
+      btn.textContent = sub ? form.dataset.labelSub : form.dataset.labelOnce;
+    }
+    form.addEventListener('change', sync); sync();
+    if (!window.fetch) return;
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var btn = form.querySelector('button'), err = document.getElementById('f8-buy-error');
       btn.disabled = true; err.hidden = true;
-      var items = [{ id: Number(form.dataset.jar), quantity: 1, selling_plan: Number(form.dataset.plan) }];
-      (form.dataset.gifts || '').split(',').filter(Boolean).forEach(function (id) { items.push({ id: Number(id), quantity: 1 }); });
+      var sub = isSub();
+      var item = { id: Number(form.dataset.jar), quantity: 1 };
+      if (sub) item.selling_plan = Number(form.dataset.plan);
+      var items = [item];
+      if (sub) (form.dataset.gifts || '').split(',').filter(Boolean).forEach(function (id) { items.push({ id: Number(id), quantity: 1 }); });
       fetch('{{ routes.cart_add_url }}.js', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: items }) })
-        .then(function (r) { if (!r.ok) throw new Error('add failed'); window.location.href = form.dataset.cartUrl; })
+        .then(function (r) { if (!r.ok) throw new Error('add failed'); window.location.href = sub ? form.dataset.cartUrl : '{{ routes.cart_url }}'; })
         .catch(function () { btn.disabled = false; err.hidden = false; });
     });
   })();
@@ -88,7 +114,8 @@
 {
   "name": "Formul8 product",
   "settings": [
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start My Subscription" },
+    { "type": "text", "id": "button_label", "label": "Button label (Subscribe)", "default": "Start My Subscription" },
+    { "type": "text", "id": "button_label_once", "label": "Button label (Buy once)", "default": "Add to Cart" },
     { "type": "textarea", "id": "short_text", "label": "Short intro", "default": "Formul8 Nutrition is a dietary supplement. Each jar contains 30 servings." },
     { "type": "textarea", "id": "facts_text", "label": "Supplement Facts (placeholder until the final label exists)", "default": "Supplement Facts panel, ingredient list and directions will be added here from the final label. This product is not available to buy until they are." },
     { "type": "text", "id": "discount_code", "label": "First-jar discount code (applied automatically)", "default": "FIRST30", "info": "Shopify discount: 30% off the first payment of a subscription. Leave empty for none." },

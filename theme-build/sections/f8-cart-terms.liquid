@@ -1,7 +1,9 @@
 <div class="f8">
   <section class="cart-terms">
     {%- if cart.item_count > 0 -%}
-      {% render 'f8-subscription-terms' %}
+      {%- assign has_sub = false -%}
+      {%- for item in cart.items -%}{%- if item.selling_plan_allocation != blank -%}{%- assign has_sub = true -%}{%- endif -%}{%- endfor -%}
+      {%- if has_sub -%}{% render 'f8-subscription-terms' %}{%- endif -%}
       <p class="guarantee-line">{% render 'f8-icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
       <p class="pdp__secure">You will enter your card details on Shopify's secure checkout page.</p>
     {%- endif -%}
