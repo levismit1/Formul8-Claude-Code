@@ -82,6 +82,7 @@ Every API call and file change is logged here. No Shopify store calls have been 
 | 79 | 2026-10-22 | API write (tried) | discountAutomaticBxgyUpdate to make gift discounts subscription-only | 2 gift discounts | REJECTED by Shopify ("not supported by automatic bxgy discounts"); no change. Gifts limited from the theme buy button instead; known limitation recorded | n/a |
 | 80 | 2026-10-22 | File + API write (LIVE theme, owner-approved) | `f8-product`: "Choose how to buy" radios (Subscribe preselected / Buy once), button label + terms switch, gifts + selling plan added only for Subscribe; `f8-cart-terms`: renewal sentence only if cart has a selling plan; `f8-lp-faq`: "Can I buy once?" answer; `f8.css` radio styles | theme-build/, live theme 166384533733 | theme-check NO OFFENSES; all 4 pushed files read back identical; not browser-tested (store password-protected) | revert commit and re-push |
 | 81 | 2026-10-22 | API write | productUpdate: jar description gets bullet "Or buy a single jar once for $70, with no subscription (the $49 first-jar price and free gifts are for subscribers)." Product stays DRAFT | jar product | Read back: line present | edit description in admin |
+| 82 | 2026-10-23 | File | Corrected CLAUDE.md Layout note: "Formul8 Build" is the published theme (owner approved direct edits), old "Formul8 Draft" unpublished | CLAUDE.md | OK | revert commit |
 
 ## Status
 - [~] Refund policy: owner text saved in `content/refund-policy.md`; review done (`content/refund-policy-review.md`); waiting on owner decisions + business email
