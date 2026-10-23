@@ -7,6 +7,9 @@
 {%- endcomment -%}
 {%- assign variant = product.selected_or_first_available_variant -%}
 {%- assign plan = product.selling_plan_groups.first.selling_plans.first -%}
+{%- comment -%} Products of type "Accessory" are the free gifts: no price, no buy button, "not sold separately". {%- endcomment -%}
+{%- assign is_gift = false -%}
+{%- if product.type == 'Accessory' -%}{%- assign is_gift = true -%}{%- endif -%}
 <div class="f8">
 <section class="pdp">
   <div class="pdp__media">
@@ -22,8 +25,12 @@
 
   <div class="pdp__info">
     <h1 class="pdp__title">{{ product.title }}</h1>
-    {%- if settings.gifts_in_stock and variant.available -%}<p class="stock-pill" role="status">In stock</p>{%- endif -%}
-        {%- if section.settings.short_text != blank -%}<p class="pdp__lead">{{ section.settings.short_text }}</p>{%- endif -%}
+    {%- if settings.gifts_in_stock and variant.available and is_gift == false -%}<p class="stock-pill" role="status">In stock</p>{%- endif -%}
+        {%- if is_gift -%}
+      <p class="pdp__lead"><strong>Free gift with your first Formul8 subscription delivery.</strong> Not sold separately.</p>
+      <p><a class="f8-button f8-button--lg pdp__buy" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">See the Formul8 subscription</a></p>
+    {%- else -%}
+    {%- if section.settings.short_text != blank -%}<p class="pdp__lead">{{ section.settings.short_text }}</p>{%- endif -%}
 
     {%- if variant.available -%}
       {%- assign once_price = variant.price | money_without_trailing_zeros -%}
@@ -71,13 +78,16 @@
         <li>{{ settings.frother_name }}</li>
       </ul>
     </div>
+    {%- endif -%}
 
     <div class="pdp__desc">{{ product.description }}</div>
 
+    {%- unless is_gift -%}
     <details class="pdp__facts">
       <summary>Supplement Facts</summary>
       <p>{{ section.settings.facts_text }}</p>
     </details>
+    {%- endunless -%}
     <p class="pdp__fda">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
   </div>
 </section>
