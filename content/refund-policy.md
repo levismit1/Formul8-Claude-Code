@@ -73,6 +73,7 @@ If you have questions about our refund policy or need assistance with an order, 
 Formul8 Nutrition Customer Support
 Email: support@formul8nutrition.com
 Website: https://formul8nutrition.com
+Mailing address: 8005 Perry St #103, Overland Park, KS 66204
 
 We're committed to making your experience with Formul8 Nutrition as simple, transparent, and satisfying as possible.
 
