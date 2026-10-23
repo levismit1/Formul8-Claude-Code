@@ -22,7 +22,7 @@
     <h1>{{ section.settings.heading }}</h1>
     <p>{{ section.settings.subheading }}</p>
     {%- if section.settings.button_label != blank -%}
-      <a class="f8-button" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+      <a class="f8-button" href="{{ section.settings.button_link | default: settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
     {%- endif -%}
     {% render 'f8-subscription-terms' %}
     <p class="guarantee-line">{% render 'f8-icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
@@ -36,8 +36,8 @@
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Hero image (leave empty to use the bundled jar banner)" },
     { "type": "text", "id": "alt", "label": "Image description (alt text)", "default": "Formul8 Nutrition dietary supplement jar, 30 servings, with falling green leaves and the words Your gut. Your health. Your formula." },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Your gut. Your health. Your formula." },
-    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Formul8 Nutrition is a dietary supplement. Each jar contains 30 servings." },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "30% off your first jar when you subscribe" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Plus a free shaker bottle and hand blender/frother with your first subscription delivery." },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Formul8" },
     { "type": "url", "id": "button_link", "label": "Button link" }
   ],

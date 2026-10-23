@@ -1,0 +1,31 @@
+<div class="f8">
+<section class="featured">
+  <a class="featured__media" href="{{ settings.offer_link | default: routes.all_products_collection_url }}" aria-label="{{ section.settings.title | escape }}">
+    <picture>
+      <source srcset="{{ 'formul8-jar-square.webp' | asset_url }}" width="900" height="900" type="image/webp">
+      <img src="{{ 'formul8-jar-square.jpg' | asset_url }}" width="900" height="900" alt="Formul8 Nutrition dietary supplement jar, 30 servings, in dark green packaging" loading="lazy">
+    </picture>
+  </a>
+  <div class="featured__info">
+    <h2>{{ section.settings.title }}</h2>
+    <p class="featured__sub">{{ section.settings.subtitle }}</p>
+    <ul class="featured__prices">
+      <li><strong>Subscribe:</strong> ${{ settings.jar_sale_price }} for your first jar, then ${{ settings.jar_regular_price }} per month</li>
+      <li><strong>Buy once:</strong> ${{ settings.jar_regular_price }}</li>
+    </ul>
+    <a class="f8-button f8-button--lg" href="{{ settings.offer_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label }}</a>
+    <p class="guarantee-line">{% render 'f8-icon-check' %} {{ settings.guarantee_days }}-day money-back guarantee</p>
+  </div>
+</section>
+</div>
+{% schema %}
+{
+  "name": "Formul8 featured jar",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Formul8 Nutrition" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Dietary supplement. 30 servings per jar." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Formul8" }
+  ],
+  "presets": [{ "name": "Formul8 featured jar" }]
+}
+{% endschema %}

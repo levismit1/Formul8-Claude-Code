@@ -2169,7 +2169,7 @@
         "type": "select",
         "id": "site_mode",
         "label": "Site mode",
-        "default": "waitlist",
+        "default": "selling",
         "options": [
           {
             "value": "waitlist",
