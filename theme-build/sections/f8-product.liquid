@@ -92,6 +92,11 @@
   </div>
 </section>
 </div>
+{%- unless is_gift -%}
+<script type="application/ld+json">
+  {{ product | structured_data }}
+</script>
+{%- endunless -%}
 <script>
   (function () {
     var form = document.getElementById('f8-buy-form');

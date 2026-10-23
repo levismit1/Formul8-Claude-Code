@@ -31,6 +31,10 @@
       {%- render 'theme-editor' -%}
     {% endif %}
 
+    {%- if product and product.type == 'Accessory' -%}
+      <meta name="robots" content="noindex, nofollow">
+    {%- endif -%}
+
     {{ content_for_header }}
   </head>
 
