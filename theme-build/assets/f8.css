@@ -237,3 +237,5 @@ h1, h2, h3, summary, label { overflow-wrap: anywhere; }
 .pdp .pdp__secure { text-align: left; }
 .pdp .sub-terms { text-align: left; margin: .75rem 0 0; }
 @media (max-width: 749px) { .pdp__media { position: static; } }
+
+.pdp__banner, .pdp__banner img { display: block; width: 100%; height: auto; }

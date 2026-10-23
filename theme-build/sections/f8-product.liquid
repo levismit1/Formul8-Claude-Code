@@ -11,6 +11,13 @@
 {%- assign is_gift = false -%}
 {%- if product.type == 'Accessory' -%}{%- assign is_gift = true -%}{%- endif -%}
 <div class="f8">
+{%- unless is_gift -%}
+<picture class="pdp__banner">
+  <source media="(max-width: 749px)" srcset="{{ 'formul8-hero-mobile.webp' | asset_url }}" width="880" height="857" type="image/webp">
+  <source srcset="{{ 'formul8-hero.webp' | asset_url }}" width="2000" height="857" type="image/webp">
+  <img src="{{ 'formul8-hero.jpg' | asset_url }}" width="2000" height="857" alt="Formul8 Nutrition dietary supplement jar, 30 servings, with falling green leaves and the words Your gut. Your health. Your formula." loading="eager" fetchpriority="high">
+</picture>
+{%- endunless -%}
 <section class="pdp">
   <div class="pdp__media">
     {%- for image in product.images limit: 6 -%}
