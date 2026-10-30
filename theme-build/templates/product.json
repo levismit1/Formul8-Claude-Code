@@ -2,7 +2,16 @@
   "sections": {
     "main": {
       "type": "f8-product",
-      "settings": {}
+      "settings": {
+        "button_label": "Start My Subscription",
+        "button_label_once": "Add to Cart",
+        "short_text": "Formul8 Nutrition is a dietary supplement. Each jar contains 30 servings.",
+        "facts_text": "Supplement Facts panel, ingredient list and directions will be added here from the final label. This product is not available to buy until they are.",
+        "discount_code": "FIRST30",
+        "add_gifts": true,
+        "gift_shaker": "formul8-shaker-bottle",
+        "gift_frother": "formul8-hand-blender-frother"
+      }
     }
   },
   "order": [
