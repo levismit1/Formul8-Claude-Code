@@ -250,3 +250,8 @@ h1, h2, h3, summary, label { overflow-wrap: anywhere; }
 .featured__prices { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: .4rem; }
 .featured__info .guarantee-line { justify-content: flex-start; }
 @media (max-width: 749px) { .featured { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1rem; } }
+
+.pdp__facts-img { display: block; width: 100%; max-width: 640px; height: auto; margin: .5rem 0 1rem; background: #fff; border: 1px solid var(--color-sage); border-radius: 8px; }
+.pdp__facts-text { margin: 0 0 1rem; }
+.pdp__facts-text > summary { cursor: pointer; font-size: .95rem; min-height: 44px; display: flex; align-items: center; }
+.pdp__facts-text p { font-size: .95rem; margin: .5rem 0; }

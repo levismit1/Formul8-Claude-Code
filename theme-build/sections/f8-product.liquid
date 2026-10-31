@@ -90,9 +90,22 @@
     <div class="pdp__desc">{{ product.description }}</div>
 
     {%- unless is_gift -%}
-    <details class="pdp__facts">
+    <details class="pdp__facts" open>
       <summary>Supplement Facts</summary>
-      <p>{{ section.settings.facts_text }}</p>
+      <img class="pdp__facts-img" src="{{ 'formul8-supplement-facts.png' | asset_url }}" width="860" height="439" loading="lazy"
+           alt="Supplement Facts panel for Formul8 Nutrition. Serving size 1 scoop (4.2 g), 30 servings per container. The full text is shown below.">
+      <details class="pdp__facts-text">
+        <summary>Read the Supplement Facts as text</summary>
+        <p><strong>Serving Size:</strong> 1 Scoop (4.2 g). <strong>Servings Per Container:</strong> 30.</p>
+        <p><strong>Amount per serving:</strong> Calories 10. Total Carbohydrates 2 g (1% DV**). Dietary Fiber 2 g (6% DV**).</p>
+        <p><strong>Greens Blend 2,000 mg***:</strong> Barley Grass Powder (leaf), Broccoli Powder (<em>Brassica oleracea</em>) (leaf), Spirulina Powder (<em>Arthrospira platensis</em>) (whole plant), Green Tea Powder (leaf), Alfalfa Extract (whole herb), Wheat Grass (<em>Triticum aestivum</em> L.) (leaf).</p>
+        <p><strong>Reds Blend 1,500 mg***:</strong> Beet Root Powder (<em>Beta vulgaris</em>) (root), Hibiscus Powder (flower), Strawberry Juice Powder (fruit), Cranberry Powder (<em>Vaccinium macrocarpon</em> L.) (fruit), Acai Juice Powder (fruit), Blueberry Extract (berry), Pomegranate Powder (fruit).</p>
+        <p><strong>Metabolic Support Blend 300 mg***:</strong> Cinnamon (<em>Cinnamomum cassia</em>) (bark), Turmeric Extract (root), Panax ginseng Powder (root), Ashwagandha Powder (root), Mangosteen Extract (<em>Garcinia Mangostana</em> L.) (pericarp), Black Pepper Extract (fruit).</p>
+        <p><strong>Digestive Support 200 mg***:</strong> Inulin (from <em>Helianthus tuberosus</em>) (root), Ginger Powder (root), Sodium Alginate.</p>
+        <p>**Percent Daily Values are based on a 2,000 calorie diet. ***Daily Value (DV) not established.</p>
+        <p><strong>Other Ingredients:</strong> Citric Acid, Stevia Extract (leaf).</p>
+        <p><strong>Contains:</strong> Wheat.</p>
+      </details>
     </details>
     {%- endunless -%}
     <p class="pdp__fda">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
@@ -139,7 +152,6 @@
     { "type": "text", "id": "button_label", "label": "Button label (Subscribe)", "default": "Start My Subscription" },
     { "type": "text", "id": "button_label_once", "label": "Button label (Buy once)", "default": "Add to Cart" },
     { "type": "textarea", "id": "short_text", "label": "Short intro", "default": "Formul8 Nutrition is a dietary supplement. Each jar contains 30 servings." },
-    { "type": "textarea", "id": "facts_text", "label": "Supplement Facts (placeholder until the final label exists)", "default": "Supplement Facts panel, ingredient list and directions will be added here from the final label. This product is not available to buy until they are." },
     { "type": "text", "id": "discount_code", "label": "First-jar discount code (applied automatically)", "default": "FIRST30", "info": "Shopify discount: 30% off the first payment of a subscription. Leave empty for none." },
     { "type": "header", "content": "Free gifts" },
     { "type": "checkbox", "id": "add_gifts", "label": "Add the two free gifts to the cart with the jar", "default": false, "info": "Tick ONLY after both gift discounts are active and tested, otherwise customers would be charged for the gifts." },

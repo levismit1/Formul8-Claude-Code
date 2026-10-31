@@ -1,3 +1,5 @@
+> **SUPERSEDED 2026-10-31:** the proposed-formula ingredient wording in this file (prebiotic fiber, L-glutamine, green banana resistant starch, probiotics) is OBSOLETE. The real Supplement Facts panel is `content/formul8-supplement-facts.png`. Do not reuse the old ingredient text.
+
 <!--
 OWNER-SUPPLIED TEXT (received 2026-10-12), saved verbatim. NOT on the website or Shopify yet.
 It describes a product IN DEVELOPMENT with a WAITLIST.
