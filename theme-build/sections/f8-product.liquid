@@ -41,7 +41,7 @@
 
     {%- if variant.available -%}
       {%- assign once_price = variant.price | money_without_trailing_zeros -%}
-      <form method="post" action="{{ routes.cart_add_url }}" class="pdp__form" id="f8-buy-form" data-cart-url="{%- if section.settings.discount_code != blank -%}/discount/{{ section.settings.discount_code | url_encode }}?redirect={{ routes.cart_url | url_encode }}{%- else -%}{{ routes.cart_url }}{%- endif -%}"
+      <form class="pdp__form" novalidate id="f8-buy-form" data-cart-url="{%- if section.settings.discount_code != blank -%}/discount/{{ section.settings.discount_code | url_encode }}?redirect={{ routes.cart_url | url_encode }}{%- else -%}{{ routes.cart_url }}{%- endif -%}"
             data-jar="{{ variant.id }}" data-plan="{{ plan.id }}"
             data-label-sub="{{ section.settings.button_label | escape }}" data-label-once="{{ section.settings.button_label_once | escape }}"
             {%- if section.settings.add_gifts -%}
@@ -49,25 +49,21 @@
               {%- assign g2 = section.settings.gift_frother.selected_or_first_available_variant -%}
               {%- if g1.available and g2.available %} data-gifts="{{ g1.id }},{{ g2.id }}"{% endif -%}
             {%- endif -%}>
-        <input type="hidden" name="id" value="{{ variant.id }}">
-        <input type="hidden" name="quantity" value="1">
-        {%- if section.settings.discount_code != blank -%}
-          <input type="hidden" name="return_to" value="/discount/{{ section.settings.discount_code | url_encode }}?redirect={{ routes.cart_url | url_encode }}">
-        {%- endif -%}
         <fieldset class="pdp__choices">
           <legend class="pdp__choices-title">Choose how to buy</legend>
           {%- if plan -%}
             <label class="pdp__choice">
-              <input type="radio" name="selling_plan" value="{{ plan.id }}" checked data-mode="sub">
+              <input type="radio" name="f8_purchase" value="{{ plan.id }}" checked data-mode="sub">
               <span><strong>Subscribe</strong> &ndash; ${{ settings.jar_sale_price }} for your first jar, then ${{ settings.jar_regular_price }} per month</span>
             </label>
           {%- endif -%}
           <label class="pdp__choice">
-            <input type="radio" name="selling_plan" value="" {% unless plan %}checked{% endunless %} data-mode="once">
+            <input type="radio" name="f8_purchase" value="" {% unless plan %}checked{% endunless %} data-mode="once">
             <span><strong>Buy once</strong> &ndash; {{ once_price }}</span>
           </label>
         </fieldset>
         <button type="submit" class="f8-button f8-button--lg pdp__buy" id="f8-buy-btn">{% if plan %}{{ section.settings.button_label }}{% else %}{{ section.settings.button_label_once }}{% endif %}</button>
+        <noscript><p class="pdp__err">Please turn on JavaScript to add this to your cart.</p></noscript>
         <p class="pdp__err" id="f8-buy-error" role="alert" hidden>Sorry, we could not add this to your cart. Please try again.</p>
       </form>
     {%- else -%}
@@ -120,28 +116,54 @@
 <script>
   (function () {
     var form = document.getElementById('f8-buy-form');
-    if (!form) return;
+    if (!form || form.dataset.f8Bound) return;
+    form.dataset.f8Bound = '1';
     var btn = document.getElementById('f8-buy-btn'), err = document.getElementById('f8-buy-error');
     var tSub = document.getElementById('f8-terms-sub'), tOnce = document.getElementById('f8-terms-once');
-    function isSub() { var r = form.querySelector('input[name="selling_plan"]:checked'); return !!(r && r.value); }
+    var cartUrl = '{{ routes.cart_url }}';
+    function isSub() { var r = form.querySelector('input[name="f8_purchase"]:checked'); return !!(r && r.value); }
     function sync() {
       var sub = isSub();
       tSub.hidden = !sub; tOnce.hidden = sub;
       btn.textContent = sub ? form.dataset.labelSub : form.dataset.labelOnce;
     }
     form.addEventListener('change', sync); sync();
-    if (!window.fetch) return;
+    function json(url, body) {
+      return fetch(url, { method: body ? 'POST' : 'GET', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: body ? JSON.stringify(body) : undefined })
+        .then(function (r) { if (!r.ok) throw new Error(url); return r.json(); });
+    }
+    function matches(line, w) { return line.variant_id === w.id && !!line.selling_plan_allocation === !!w.plan; }
+    // Make sure each item we just added is in the cart exactly once (quantity 1), even if something else added it too.
+    function normalize(wanted) {
+      return json('/cart.js').then(function (cart) {
+        var fixes = [];
+        cart.items.forEach(function (line) {
+          wanted.forEach(function (w) { if (matches(line, w) && line.quantity !== 1) fixes.push(line.key); });
+        });
+        return fixes.reduce(function (p, key) { return p.then(function () { return json('/cart/change.js', { id: key, quantity: 1 }); }); }, Promise.resolve());
+      });
+    }
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      btn.disabled = true; err.hidden = true;
+      if (window.__f8Adding) return;
+      window.__f8Adding = true; btn.disabled = true; err.hidden = true;
       var sub = isSub();
-      var item = { id: Number(form.dataset.jar), quantity: 1 };
-      if (sub) item.selling_plan = Number(form.dataset.plan);
-      var items = [item];
-      if (sub) (form.dataset.gifts || '').split(',').filter(Boolean).forEach(function (id) { items.push({ id: Number(id), quantity: 1 }); });
-      fetch('{{ routes.cart_add_url }}.js', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items: items }) })
-        .then(function (r) { if (!r.ok) throw new Error('add failed'); window.location.href = sub ? form.dataset.cartUrl : '{{ routes.cart_url }}'; })
-        .catch(function () { btn.disabled = false; err.hidden = false; });
+      var wanted = [{ id: Number(form.dataset.jar), plan: sub ? Number(form.dataset.plan) : 0 }];
+      if (sub) (form.dataset.gifts || '').split(',').filter(Boolean).forEach(function (id) { wanted.push({ id: Number(id), plan: 0 }); });
+      json('/cart.js').then(function (cart) {
+        var items = [];
+        wanted.forEach(function (w) {
+          if (cart.items.some(function (line) { return matches(line, w); })) return;
+          var it = { id: w.id, quantity: 1 };
+          if (w.plan) it.selling_plan = w.plan;
+          items.push(it);
+        });
+        return items.length ? json('{{ routes.cart_add_url }}.js', { items: items }) : null;
+      })
+        .then(function () { return new Promise(function (res) { setTimeout(res, 700); }); })
+        .then(function () { return normalize(wanted); })
+        .then(function () { window.location.href = sub ? form.dataset.cartUrl : cartUrl; })
+        .catch(function () { window.__f8Adding = false; btn.disabled = false; err.hidden = false; });
     });
   })();
 </script>
