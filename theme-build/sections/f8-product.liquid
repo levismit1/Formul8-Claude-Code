@@ -41,7 +41,7 @@
 
     {%- if variant.available -%}
       {%- assign once_price = variant.price | money_without_trailing_zeros -%}
-      <form class="pdp__form" novalidate id="f8-buy-form" data-cart-url="{%- if section.settings.discount_code != blank -%}/discount/{{ section.settings.discount_code | url_encode }}?redirect={{ routes.cart_url | url_encode }}{%- else -%}{{ routes.cart_url }}{%- endif -%}"
+      <form class="pdp__form" novalidate id="f8-buy-form" data-cart-url="{{ routes.cart_url }}" data-code="{{ section.settings.discount_code | escape }}"
             data-jar="{{ variant.id }}" data-plan="{{ plan.id }}"
             data-label-sub="{{ section.settings.button_label | escape }}" data-label-once="{{ section.settings.button_label_once | escape }}"
             {%- if section.settings.add_gifts -%}
@@ -162,7 +162,8 @@
       })
         .then(function () { return new Promise(function (res) { setTimeout(res, 700); }); })
         .then(function () { return normalize(wanted); })
-        .then(function () { window.location.href = sub ? form.dataset.cartUrl : cartUrl; })
+        .then(function () { return sub && form.dataset.code ? json('/cart/update.js', { discount: form.dataset.code }).catch(function () {}) : null; })
+        .then(function () { window.location.href = cartUrl; })
         .catch(function () { window.__f8Adding = false; btn.disabled = false; err.hidden = false; });
     });
   })();
