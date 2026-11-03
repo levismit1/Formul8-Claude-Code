@@ -113,7 +113,6 @@
     form.dataset.f8Bound = '1';
     var btn = document.getElementById('f8-buy-btn'), err = document.getElementById('f8-buy-error');
     var tSub = document.getElementById('f8-terms-sub'), tOnce = document.getElementById('f8-terms-once');
-    var cartUrl = '{{ routes.cart_url }}';
     function isSub() { var r = form.querySelector('input[name="f8_purchase"]:checked'); return !!(r && r.value); }
     function sync() {
       var sub = isSub();
@@ -156,7 +155,7 @@
         .then(function () { return new Promise(function (res) { setTimeout(res, 700); }); })
         .then(function () { return normalize(wanted); })
         .then(function () { return sub && form.dataset.code ? json('/cart/update.js', { discount: form.dataset.code }).catch(function () {}) : null; })
-        .then(function () { window.location.href = cartUrl; })
+        .then(function () { window.location.href = '/checkout'; })
         .catch(function () { window.__f8Adding = false; btn.disabled = false; err.hidden = false; });
     });
   })();
@@ -166,7 +165,7 @@
   "name": "Formul8 product",
   "settings": [
     { "type": "text", "id": "button_label", "label": "Button label (Subscribe)", "default": "Start My Subscription" },
-    { "type": "text", "id": "button_label_once", "label": "Button label (Buy once)", "default": "Add to Cart" },
+    { "type": "text", "id": "button_label_once", "label": "Button label (Buy once)", "default": "Buy Now" },
     { "type": "textarea", "id": "short_text", "label": "Short intro", "default": "Formul8 Nutrition is a dietary supplement. Each jar contains 30 servings." },
     { "type": "text", "id": "discount_code", "label": "First-jar discount code (applied automatically)", "default": "FIRST30", "info": "Shopify discount: 30% off the first payment of a subscription. Leave empty for none." },
     { "type": "header", "content": "Free gifts" },
